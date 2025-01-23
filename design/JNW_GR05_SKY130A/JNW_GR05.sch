@@ -61,3 +61,4 @@ C {devices/ipin.sym} -140 -530 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -190 -340 0 0 {name=p2 lab=VSS}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -140 -430 0 0 {name=x1[2:0]}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 0 -430 0 0 {name=x2 }
+C {JNW_GR05_SKY130A/T_to_I_Manuel.sym} -120 -640 0 0 {name=x1}
