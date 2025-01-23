@@ -29,15 +29,15 @@ N -100 -390 -100 -340 {
 lab=VSS}
 N -160 -430 -140 -430 {
 lab=VSS}
-N -100 -490 -100 -460 {
+N -100 -630 -100 -600 {
 lab=VDD_1V8}
 N -100 -400 -100 -390 {
 lab=VSS}
-N 40 -490 40 -470 {
+N 40 -630 40 -610 {
 lab=VDD_1V8}
 N -20 -430 -0 -430 {
 lab=VSS}
-N 40 -470 40 -460 {
+N 40 -610 40 -600 {
 lab=VDD_1V8}
 N 40 -400 40 -340 {
 lab=VSS}
@@ -47,17 +47,30 @@ N -160 -430 -160 -340 {
 lab=VSS}
 N -20 -430 -20 -340 {
 lab=VSS}
-N -140 -530 -100 -530 {
+N -140 -670 -100 -670 {
 lab=VDD_1V8}
-N -100 -530 -100 -500 {
+N -100 -670 -100 -640 {
 lab=VDD_1V8}
-N -100 -500 -100 -490 {
+N -100 -640 -100 -630 {
 lab=VDD_1V8}
-N 40 -530 40 -490 {
+N 40 -670 40 -630 {
 lab=VDD_1V8}
-N -100 -530 40 -530 {
+N -100 -670 40 -670 {
 lab=VDD_1V8}
-C {devices/ipin.sym} -140 -530 0 0 {name=p1 lab=VDD_1V8}
+N -100 -600 -100 -580 {
+lab=VDD_1V8}
+N -100 -500 -100 -460 {
+lab=#net1}
+N -180 -540 -120 -540 {
+lab=VSS}
+N -180 -540 -180 -340 {
+lab=VSS}
+N 40 -600 40 -590 {
+lab=VDD_1V8}
+N 40 -590 40 -460 {
+lab=VDD_1V8}
+C {devices/ipin.sym} -140 -670 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -190 -340 0 0 {name=p2 lab=VSS}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -140 -430 0 0 {name=x1[2:0]}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 0 -430 0 0 {name=x2 }
+C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -100 -580 1 0 {name=x3 }
