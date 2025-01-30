@@ -15,50 +15,38 @@ Manual: https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.pdf
 } -1500 -1380 0 0 0.6 0.6 {}
 T {Connnect Source and Gate to make it a diode
 } -350 -320 0 0 0.6 0.6 {}
-N -100 -430 -80 -430 {
-lab=VSS}
-N -100 -400 -80 -400 {
-lab=VSS}
-N -80 -430 -80 -400 {
-lab=VSS}
-N -190 -340 -180 -340 {
-lab=VSS}
-N -180 -340 -100 -340 {
-lab=VSS}
-N -100 -390 -100 -340 {
-lab=VSS}
-N -160 -430 -140 -430 {
-lab=VSS}
-N -100 -490 -100 -460 {
+N -120 -580 -60 -580 {
 lab=VDD_1V8}
-N -100 -400 -100 -390 {
+N -60 -580 -60 -540 {
+lab=VDD_1V8}
+N -60 -400 -60 -340 {
 lab=VSS}
-N 40 -490 40 -470 {
-lab=VDD_1V8}
-N -20 -430 -0 -430 {
+N -100 -340 -60 -340 {
 lab=VSS}
-N 40 -470 40 -460 {
-lab=VDD_1V8}
-N 40 -400 40 -340 {
+N -170 -460 -140 -460 {
+lab=I_BIAS_T2I}
+N 40 -460 100 -460 {
+lab=I_OF_T_OUT}
+N -60 -340 160 -340 {
 lab=VSS}
-N -100 -340 40 -340 {
+N 160 -360 160 -340 {
 lab=VSS}
-N -160 -430 -160 -340 {
+N 140 -400 140 -360 {
 lab=VSS}
-N -20 -430 -20 -340 {
+N 140 -360 140 -340 {
 lab=VSS}
-N -140 -530 -100 -530 {
-lab=VDD_1V8}
-N -100 -530 -100 -500 {
-lab=VDD_1V8}
-N -100 -500 -100 -490 {
-lab=VDD_1V8}
-N 40 -530 40 -490 {
-lab=VDD_1V8}
-N -100 -530 40 -530 {
-lab=VDD_1V8}
-C {devices/ipin.sym} -140 -530 0 0 {name=p1 lab=VDD_1V8}
-C {devices/ipin.sym} -190 -340 0 0 {name=p2 lab=VSS}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -140 -430 0 0 {name=x1[2:0]}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 0 -430 0 0 {name=x2 }
-C {JNW_GR05_SKY130A/T_to_I_Manuel.sym} -120 -640 0 0 {name=x1}
+N 100 -460 160 -460 {
+lab=I_OF_T_OUT}
+N 160 -460 160 -440 {
+lab=I_OF_T_OUT}
+N 160 -460 160 -440 {
+lab=I_OF_T_OUT}
+N 160 -460 270 -460 {
+lab=I_OF_T_OUT}
+C {devices/ipin.sym} -120 -580 0 0 {name=p1 lab=VDD_1V8}
+C {JNW_GR05_SKY130A/T_to_I_Manuel.sym} -60 -460 0 0 {name=x1}
+C {devices/ipin.sym} -100 -340 0 0 {name=p2 lab=VSS}
+C {devices/ipin.sym} -170 -460 0 0 {name=p3 lab=I_BIAS_T2I}
+C {devices/ipin.sym} -170 -460 0 0 {name=p4 lab=I_BIAS_T2I}
+C {devices/opin.sym} 270 -460 0 0 {name=p5 lab=I_OF_T_OUT}
+C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} 160 -440 1 0 {name=x2 }
