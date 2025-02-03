@@ -1,0 +1,172 @@
+[33mcommit 7be1204f2c555036f9e1a3c00ab8fdc41acb6306[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Mon Feb 3 17:44:33 2025 +0100
+
+    Automatischer Commit: 17:44:33
+
+ ...01-16_2018321284_Nordkallotruta (Copy).gpx | 64717 [32m++++++++++++++++[m
+ 1 file changed, 64717 insertions(+)
+
+[33mcommit 8d31dfb618e19ec990272ca3acaa678a3f25dd74[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Mon Feb 3 17:43:46 2025 +0100
+
+    Automatischer Commit: 17:43:46
+
+ .../2025-01-16_2018321284_Nordkallotruta.gpx  | 64717 [32m++++++++++++++++[m
+ 1 file changed, 64717 insertions(+)
+
+[33mcommit 10a4d8069ebecf60634869efd5650e1d28b9cbca[m[33m ([m[1;35mrefs/stash[m[33m)[m
+Merge: c1a0887 05f5e48 5ac202a
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Mon Feb 3 17:28:50 2025 +0100
+
+    WIP on main: c1a0887 Dummy resistor simulation
+
+[33mcommit 05f5e48af4251e0fd4dd8626efdc3930b62ec093[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Mon Feb 3 17:28:50 2025 +0100
+
+    index on main: c1a0887 Dummy resistor simulation
+
+[33mcommit 5ac202aa1a6fd13e2ca19b4e02ea341f71b1d78e[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Mon Feb 3 17:28:50 2025 +0100
+
+    untracked files on main: c1a0887 Dummy resistor simulation
+
+ design/JNW_GR05_SKY130A/Manuel_OTA.sch    | 144 [32m++++++++++++++++[m
+ design/JNW_GR05_SKY130A/Manuel_OTA.sym    |  47 [32m++++++[m
+ design/JNW_GR05_SKY130A/T_to_I_Manuel.sch | 193 [32m++++++++++++++++++++++[m
+ design/JNW_GR05_SKY130A/T_to_I_Manuel.sym |  36 [32m++++[m
+ sim/JNW_GR05/xdut.spi                     |   2 [32m+[m
+ 5 files changed, 422 insertions(+)
+
+[33mcommit c1a0887c416fec9a608f4e67d6e637ebc958f635[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Mon Feb 3 17:15:31 2025 +0100
+
+    Dummy resistor simulation
+
+ design/JNW_GR05_SKY130A/JNW_GR05.sch | 66 [32m++++++++++++++[m[31m--------------[m
+ sim/JNW_GR05/tran.meas               |  2 [32m+[m
+ sim/JNW_GR05/tran.spi                |  2 [32m+[m[31m-[m
+ 3 files changed, 37 insertions(+), 33 deletions(-)
+
+[33mcommit beb65f8a939769ebbe28ff89661956fba2f756a3[m[33m ([m[1;32mManuel[m[33m)[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Mon Feb 3 15:06:07 2025 +0100
+
+    Demo Design
+
+ design/JNW_GR05_SKY130A/JNW_GR05.sch | 7 [32m+++++[m[31m--[m
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+[33mcommit c4875eaabd843679b1b63f5106e98dbb62ac0aad[m[33m ([m[1;32mwiederhergestellter-branch[m[33m, [m[1;32mneuer-branch-name[m[33m)[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Thu Jan 30 12:17:31 2025 +0100
+
+    Started with toplevel design
+
+ design/JNW_GR05_SKY130A/JNW_GR05.sch | 68 [32m++++++++++++[m[31m----------------[m
+ 1 file changed, 28 insertions(+), 40 deletions(-)
+
+[33mcommit f4748a5160dbd2018da6aedb0fb0435b1629a60b[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Thu Jan 23 14:52:56 2025 +0100
+
+    Started top level design, setup T_to_I converter (mit subfix Manuel)
+
+ design/JNW_GR05_SKY130A/JNW_GR05.sch | 1 [32m+[m
+ 1 file changed, 1 insertion(+)
+
+[33mcommit 8b966c8926fa851f11a70464ae97f88b926503a9[m[33m ([m[1;31morigin/Manuel[m[33m)[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Thu Jan 23 13:08:43 2025 +0100
+
+    Automatischer Commit: 13:08:43
+
+ design/JNW_GR05_SKY130A/JNW_GR05.sch | 31 [32m++++++++++++++++++++[m[31m--------[m
+ sim/JNW_GR05/xdut.spi                |  2 [32m++[m
+ 2 files changed, 24 insertions(+), 9 deletions(-)
+
+[33mcommit 4d3abbeee108e664e8798ce560e4e9ee440e2d16[m
+Merge: c44a475 e6cf270
+Author: justlikemanuel <156502624+justlikemanuel@users.noreply.github.com>
+Date:   Wed Jan 22 11:40:21 2025 +0100
+
+    Merge pull request #1 from analogicus/Manuel
+    
+    Manuel
+
+[33mcommit e6cf27079a6ec5bb56536b4af489aa86474e9568[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Wed Jan 22 11:39:55 2025 +0100
+
+    Implemented Diodes
+
+ design/JNW_GR05_SKY130A/JNW_GR05.sch | 23 [32m++++++++++++++[m[31m---------[m
+ 1 file changed, 14 insertions(+), 9 deletions(-)
+
+[33mcommit 89a1c80b2795a053ed19e35cf1db67145b5fdd06[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Wed Jan 22 11:36:07 2025 +0100
+
+    Test commit rights
+
+ design/JNW_GR05_SKY130A/JNW_GR05.sch | 50 [32m++++++++++++++++++++[m[31m---[m
+ sim/JNW_GR05/Makefile                | 55 [32m++++++++++++++++++++++++++[m
+ sim/JNW_GR05/cicsim.yaml             |  9 [32m+++++[m
+ sim/JNW_GR05/summary.yaml            | 16 [32m++++++++[m
+ sim/JNW_GR05/tran.meas               |  9 [32m+++++[m
+ sim/JNW_GR05/tran.py                 | 18 [32m+++++++++[m
+ sim/JNW_GR05/tran.spi                | 59 [32m++++++++++++++++++++++++++++[m
+ sim/JNW_GR05/tran.yaml               | 10 [32m+++++[m
+ 8 files changed, 220 insertions(+), 6 deletions(-)
+
+[33mcommit 9158641e02aa6ab713dcf3635f163224db39ec70[m
+Author: Manuel Buchfink <buchfink_manuel@web.de>
+Date:   Mon Jan 20 21:42:47 2025 +0100
+
+    Manuel tries to push
+
+ README.md | 2 [32m+[m[31m-[m
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[33mcommit c44a475daf16828cd03c4fc07d70c1ca608e4cf0[m
+Author: Carsten Wulff <carsten@wulff.no>
+Date:   Fri Jan 3 09:20:41 2025 +0100
+
+    Updated gitignore
+
+ .gitignore | 3 [32m+++[m
+ 1 file changed, 3 insertions(+)
+
+[33mcommit c9da2df44cb6bac600cef9ef02c9b4a8e5602c61[m
+Author: Carsten Wulff <carsten@wulff.no>
+Date:   Fri Jan 3 08:37:15 2025 +0100
+
+    Made JNW_GR05_SKY130A
+
+ .github/workflows/docs.yaml          | 30 [32m+++++++++++++++++[m
+ .github/workflows/drc.yaml           | 18 [32m++++++++++[m
+ .github/workflows/gds.yaml           | 18 [32m++++++++++[m
+ .github/workflows/lvs.yaml           | 20 [32m+++++++++++[m
+ .github/workflows/sim.yaml           | 21 [32m++++++++++++[m
+ .gitignore                           | 18 [32m++++++++++[m
+ README.md                            | 50 [32m++++++++++++++++++++++++++++[m
+ config.yaml                          | 19 [32m+++++++++++[m
+ design/JNW_ATR_SKY130A               |  1 [32m+[m
+ design/JNW_GR05_SKY130A/JNW_GR05.md  |  0
+ design/JNW_GR05_SKY130A/JNW_GR05.sch | 20 [32m+++++++++++[m
+ design/JNW_TR_SKY130A                |  1 [32m+[m
+ info.yaml                            | 20 [32m+++++++++++[m
+ sim/Makefile                         |  4 [32m+++[m
+ sim/cicsim.yaml                      |  1 [32m+[m
+ tech                                 |  1 [32m+[m
+ work/.magicrc                        |  2 [32m++[m
+ work/Makefile                        | 20 [32m+++++++++++[m
+ work/mos.24bit.dstyle                |  1 [32m+[m
+ work/mos.24bit.std.cmap              |  1 [32m+[m
+ work/xschemrc                        |  2 [32m++[m
+ 21 files changed, 268 insertions(+)
