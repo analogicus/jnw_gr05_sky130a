@@ -43,10 +43,13 @@ N 160 -460 160 -440 {
 lab=I_OF_T_OUT}
 N 160 -460 270 -460 {
 lab=I_OF_T_OUT}
+N -180 -460 -170 -460 {
+lab=I_BIAS_T2I}
+N -190 -460 -180 -460 {
+lab=I_BIAS_T2I}
 C {devices/ipin.sym} -120 -580 0 0 {name=p1 lab=VDD_1V8}
 C {JNW_GR05_SKY130A/T_to_I_Manuel.sym} -60 -460 0 0 {name=x1}
 C {devices/ipin.sym} -100 -340 0 0 {name=p2 lab=VSS}
-C {devices/ipin.sym} -170 -460 0 0 {name=p3 lab=I_BIAS_T2I}
-C {devices/ipin.sym} -170 -460 0 0 {name=p4 lab=I_BIAS_T2I}
+C {devices/ipin.sym} -190 -460 0 0 {name=p3 lab=I_BIAS_T2I}
 C {devices/opin.sym} 270 -460 0 0 {name=p5 lab=I_OF_T_OUT}
 C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} 160 -440 1 0 {name=x2 }
