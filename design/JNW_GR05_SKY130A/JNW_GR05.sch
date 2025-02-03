@@ -13,43 +13,45 @@ F                 Full view
 
 Manual: https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.pdf
 } -1500 -1380 0 0 0.6 0.6 {}
-T {Connnect Source and Gate to make it a diode
-} -350 -320 0 0 0.6 0.6 {}
-N -120 -580 -60 -580 {
+N -140 -600 -80 -600 {
 lab=VDD_1V8}
-N -60 -580 -60 -540 {
+N -80 -600 -60 -600 {
 lab=VDD_1V8}
-N -60 -400 -60 -340 {
-lab=VSS}
-N -100 -340 -60 -340 {
-lab=VSS}
-N -170 -460 -140 -460 {
-lab=I_BIAS_T2I}
-N 40 -460 100 -460 {
+N -30 -460 -0 -460 {
 lab=I_OF_T_OUT}
-N -60 -340 160 -340 {
-lab=VSS}
-N 160 -360 160 -340 {
-lab=VSS}
-N 140 -400 140 -360 {
-lab=VSS}
-N 140 -360 140 -340 {
-lab=VSS}
-N 100 -460 160 -460 {
+N -30 -460 -30 -450 {
 lab=I_OF_T_OUT}
-N 160 -460 160 -440 {
+N -30 -480 -30 -450 {
 lab=I_OF_T_OUT}
-N 160 -460 160 -440 {
-lab=I_OF_T_OUT}
-N 160 -460 270 -460 {
-lab=I_OF_T_OUT}
-N -180 -460 -170 -460 {
-lab=I_BIAS_T2I}
-N -190 -460 -180 -460 {
-lab=I_BIAS_T2I}
-C {devices/ipin.sym} -120 -580 0 0 {name=p1 lab=VDD_1V8}
-C {JNW_GR05_SKY130A/T_to_I_Manuel.sym} -60 -460 0 0 {name=x1}
-C {devices/ipin.sym} -100 -340 0 0 {name=p2 lab=VSS}
-C {devices/ipin.sym} -190 -460 0 0 {name=p3 lab=I_BIAS_T2I}
-C {devices/opin.sym} 270 -460 0 0 {name=p5 lab=I_OF_T_OUT}
-C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} 160 -440 1 0 {name=x2 }
+N -30 -600 -30 -560 {
+lab=VDD_1V8}
+N -60 -600 -30 -600 {
+lab=VDD_1V8}
+N -70 -520 -70 -410 {
+lab=VSS}
+N -70 -410 -70 -340 {
+lab=VSS}
+N -70 -520 -50 -520 {
+lab=VSS}
+N -70 -410 -50 -410 {
+lab=VSS}
+N -90 -190 -30 -190 {
+lab=VSS}
+N -30 -220 -30 -190 {
+lab=VSS}
+N -30 -230 -30 -220 {
+lab=VSS}
+N -70 -270 -70 -190 {
+lab=VSS}
+N -70 -340 -70 -270 {
+lab=VSS}
+N -70 -270 -50 -270 {
+lab=VSS}
+N -30 -370 -30 -310 {
+lab=#net1}
+C {devices/ipin.sym} -140 -600 0 0 {name=p1 lab=VDD_1V8}
+C {devices/ipin.sym} -90 -190 0 0 {name=p2 lab=VSS}
+C {devices/opin.sym} 0 -460 0 0 {name=p5 lab=I_OF_T_OUT}
+C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -30 -560 1 0 {name=x1 }
+C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -30 -450 1 0 {name=x2 }
+C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -30 -310 1 0 {name=x3 }
