@@ -3,15 +3,15 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/JNW_GR05_lpe.spi
+.include ../../../work/lpe/JNW_GR05_2_lpe.spi
 #else
-.include ../../../work/xsch/JNW_GR05.spice
+.include ../../../work/xsch/JNW_GR05_2.spice
 #endif
 
 *-----------------------------------------------------------------
 * OPTIONS
 *-----------------------------------------------------------------
-.option TNOM=-10 GMIN=1e-15 reltol=1e-3
+.option TNOM=27 GMIN=1e-15 reltol=1e-3
 
 *-----------------------------------------------------------------
 * PARAMETERS
@@ -24,7 +24,7 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  dc 1.8
+VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
 
 *-----------------------------------------------------------------
 * DUT
@@ -49,7 +49,7 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-tran 1n 100u 100n
+tran 1n 10n 1p
 write
 quit
 

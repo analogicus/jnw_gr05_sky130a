@@ -143,6 +143,12 @@ N 250 -440 250 -390 {
 lab=VDD}
 N -520 120 -480 120 {
 lab=VSS}
+N -90 -10 -90 40 {
+lab=VSS}
+N -90 40 0 40 {
+lab=VSS}
+N -90 -110 -90 -80 {
+lab=OT_out}
 C {devices/ipin.sym} -960 -640 2 1 {name=p1 lab=VDD
 }
 C {devices/ipin.sym} -790 220 0 0 {name=p2 lab=VSS}
@@ -166,3 +172,6 @@ spiceprefix=X
 C {JNW_GR05_SKY130A/OTA_Manuel.sym} -180 -110 0 0 {name=x2}
 C {devices/lab_wire.sym} -90 -110 0 0 {name=p4 sig_type=std_logic lab=OT_out}
 C {devices/lab_wire.sym} -240 -510 0 0 {name=p3 sig_type=std_logic lab=V_current_drive}
+C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 780 1350 0 0 {name=x7 }
+C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -490 -520 0 0 {name=x8 }
+C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -90 -20 0 0 {name=x9 }

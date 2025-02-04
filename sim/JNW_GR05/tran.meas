@@ -6,6 +6,8 @@ load {cicname}.raw
 echo "MEAS_START"
 
 
+meas tran I_Cap param='106f * diff(v(V_cap))' at=5u
+meas tran vc1 find v(xdut.V_cap) at=5u
 
 echo "MEAS_END"
 .endc

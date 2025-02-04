@@ -17,4 +17,4 @@ doc:
   #       - <cell>
   #       - <cell>
 sim:
-  # <simdir>: command
+  make typical
