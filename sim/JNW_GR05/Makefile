@@ -4,7 +4,7 @@ all: typical etc mc summary
 
 
 
-TB=tran
+TB=dc
 VIEW=Sch
 #VIEW=Lay
 CELL=JNW_GR05

@@ -196,7 +196,7 @@ C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -240 180 0 0 {name=x6 }
 C {/home/manuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex2025/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -140 -210 0 0 {name=x7[10:0]}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 40 180 0 1 {name=x8 }
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 200 180 0 0 {name=x9 }
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -580 180 0 1 {name=x10 }
+C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -580 180 0 1 {name=x10[3:0]}
 C {/home/manuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex2025/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -580 -350 0 1 {name=x11 }
 C {devices/lab_pin.sym} 0 -140 0 1 {name=p6 sig_type=std_logic lab=V_diff_pair_bias}
 C {devices/lab_pin.sym} -300 -170 0 1 {name=p7 sig_type=std_logic lab=V_diff_pair_bias_res}
