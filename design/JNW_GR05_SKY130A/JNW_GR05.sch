@@ -17,8 +17,6 @@ N -840 -590 -820 -590 {
 lab=VSS}
 N -600 -610 -490 -610 {
 lab=V_cap}
-N -540 -460 -490 -460 {
-lab=VSS}
 N -840 -590 -840 -460 {
 lab=VSS}
 N -860 -630 -820 -630 {
@@ -33,13 +31,18 @@ N -540 -540 -510 -540 {
 lab=VSS}
 N -540 -540 -540 -460 {
 lab=VSS}
-N -490 -470 -450 -470 {
-lab=V_cap}
-N -490 -500 -490 -470 {
-lab=V_cap}
+N -490 -500 -490 -460 {
+lab=V_load}
+N -540 -420 -510 -420 {
+lab=VSS}
+N -540 -380 -490 -380 {
+lab=VSS}
+N -540 -460 -540 -380 {
+lab=VSS}
 C {devices/ipin.sym} -860 -630 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -860 -590 0 0 {name=p2 lab=VSS}
 C {JNW_GR05_SKY130A/T_to_I_Manuel.sym} -640 -610 0 0 {name=x2}
 C {devices/lab_wire.sym} -490 -610 0 0 {name=p4 sig_type=std_logic lab=V_cap}
 C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -490 -580 1 0 {name=x1 }
-C {devices/lab_wire.sym} -450 -470 0 0 {name=p3 sig_type=std_logic lab=V_load}
+C {devices/lab_wire.sym} -490 -480 0 0 {name=p3 sig_type=std_logic lab=V_load}
+C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -490 -460 1 0 {name=x3 }

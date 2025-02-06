@@ -6,8 +6,8 @@ V {}
 S {}
 E {}
 N -640 30 -640 90 {
-lab=#net1}
-N -600 120 -520 120 {
+lab=V_bjt_n}
+N -540 120 -480 120 {
 lab=VSS}
 N -640 150 -640 220 {
 lab=VSS}
@@ -15,39 +15,31 @@ N -440 150 -440 220 {
 lab=VSS}
 N -540 120 -540 220 {
 lab=VSS}
-N -640 220 -440 220 {
+N -540 220 -440 220 {
 lab=VSS}
-N -640 -80 -640 -50 {
-lab=#net2}
-N -790 220 -640 220 {
+N -760 220 -640 220 {
 lab=VSS}
-N -440 -60 -440 90 {
-lab=#net3}
 N -640 -100 -330 -100 {
-lab=#net2}
-N -640 -100 -640 -80 {
-lab=#net2}
+lab=V_n}
+N -640 -100 -640 -50 {
+lab=V_n}
 N -440 -120 -330 -120 {
-lab=#net3}
-N -440 -120 -440 -60 {
-lab=#net3}
+lab=V_p}
+N -440 -120 -440 90 {
+lab=V_p}
 N -360 -80 -330 -80 {
 lab=VSS}
 N -360 -80 -360 220 {
 lab=VSS}
-N -380 220 -360 220 {
+N -440 220 -360 220 {
 lab=VSS}
-N -440 220 -380 220 {
-lab=VSS}
-N -540 -140 -330 -140 {
+N -640 -640 -480 -640 {
 lab=VDD}
-N -840 -640 -600 -640 {
-lab=VDD}
-N -160 -110 -40 -110 {
+N -90 -110 -40 -110 {
 lab=OT_out}
 N -360 220 0 220 {
 lab=VSS}
-N 0 -80 0 220 {
+N 0 40 0 220 {
 lab=VSS}
 N 0 -110 40 -110 {
 lab=VSS}
@@ -55,13 +47,11 @@ N 40 -110 40 -0 {
 lab=VSS}
 N -0 0 40 -0 {
 lab=VSS}
-N -600 -640 0 -640 {
+N -440 -640 0 -640 {
 lab=VDD}
-N 30 -640 40 -640 {
+N 0 -640 40 -640 {
 lab=VDD}
-N 0 -640 30 -640 {
-lab=VDD}
-N 0 -480 0 -140 {
+N 0 -390 0 -140 {
 lab=V_current_drive}
 N 0 -640 -0 -540 {
 lab=VDD}
@@ -70,52 +60,38 @@ lab=VDD}
 N 40 -640 40 -510 {
 lab=VDD}
 N -440 -480 -440 -120 {
-lab=#net3}
+lab=V_p}
 N -100 -510 -100 -440 {
 lab=V_current_drive}
-N -80 -440 0 -440 {
-lab=V_current_drive}
-N -960 -140 -540 -140 {
+N -960 -140 -330 -140 {
 lab=VDD}
 N -960 -640 -960 -140 {
 lab=VDD}
-N -960 -640 -870 -640 {
-lab=VDD}
-N -870 -640 -840 -640 {
+N -960 -640 -700 -640 {
 lab=VDD}
 N -440 -640 -440 -540 {
 lab=VDD}
 N -480 -640 -480 -510 {
 lab=VDD}
-N -400 -510 -40 -510 {
+N -100 -510 -40 -510 {
 lab=V_current_drive}
 N -480 -510 -440 -510 {
 lab=VDD}
-N 210 -360 210 -320 {
+N 210 -360 210 -300 {
 lab=I_OF_T_OUT}
-N 40 -640 120 -640 {
-lab=VDD}
-N 210 -520 210 -420 {
-lab=VDD}
-N 120 -640 200 -640 {
+N 40 -640 210 -640 {
 lab=VDD}
 N 210 -390 250 -390 {
 lab=VDD}
-N 250 -570 250 -440 {
+N 210 -640 250 -640 {
 lab=VDD}
-N 200 -640 240 -640 {
-lab=VDD}
-N 0 -390 120 -390 {
+N 0 -390 170 -390 {
 lab=V_current_drive}
-N 140 -390 170 -390 {
-lab=V_current_drive}
-N 210 -320 210 -300 {
-lab=I_OF_T_OUT}
 N 210 -300 350 -300 {
 lab=I_OF_T_OUT}
 N -640 -410 -640 -100 {
-lab=#net2}
-N -600 -440 -80 -440 {
+lab=V_n}
+N -100 -440 0 -440 {
 lab=V_current_drive}
 N -700 -440 -640 -440 {
 lab=VDD}
@@ -123,25 +99,13 @@ N -700 -640 -700 -440 {
 lab=VDD}
 N -640 -640 -640 -470 {
 lab=VDD}
-N 120 -390 140 -390 {
-lab=V_current_drive}
-N 210 -640 210 -570 {
+N 210 -640 210 -420 {
 lab=VDD}
-N 240 -640 250 -640 {
-lab=VDD}
-N 250 -640 250 -620 {
-lab=VDD}
-N 250 -620 250 -570 {
+N 250 -640 250 -390 {
 lab=VDD}
 N -760 -10 -660 -10 {
 lab=VSS}
 N -760 -10 -760 220 {
-lab=VSS}
-N 210 -570 210 -520 {
-lab=VDD}
-N 250 -440 250 -390 {
-lab=VDD}
-N -520 120 -480 120 {
 lab=VSS}
 N -90 -10 -90 40 {
 lab=VSS}
@@ -149,6 +113,32 @@ N -90 40 0 40 {
 lab=VSS}
 N -90 -110 -90 -80 {
 lab=OT_out}
+N -600 120 -540 120 {
+lab=VSS}
+N -640 220 -540 220 {
+lab=VSS}
+N 0 -80 -0 0 {
+lab=VSS}
+N -400 -510 -100 -510 {
+lab=V_current_drive}
+N -600 -440 -100 -440 {
+lab=V_current_drive}
+N 0 -480 0 -440 {
+lab=V_current_drive}
+N -480 -640 -440 -640 {
+lab=VDD}
+N 0 -440 0 -390 {
+lab=V_current_drive}
+N -700 -640 -640 -640 {
+lab=VDD}
+N -790 220 -760 220 {
+lab=VSS}
+N -0 0 0 40 {
+lab=VSS}
+N -160 -110 -90 -110 {
+lab=OT_out}
+N -250 -70 -250 50 {
+lab=PROBE}
 C {devices/ipin.sym} -960 -640 2 1 {name=p1 lab=VDD
 }
 C {devices/ipin.sym} -790 220 0 0 {name=p2 lab=VSS}
@@ -166,12 +156,15 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pnp_05v5.sym} -620 120 0 1 {name=Q1
 model=pnp_05v5_W3p40L3p40
-m=1
+m=10
 spiceprefix=X
 }
-C {JNW_GR05_SKY130A/OTA_Manuel.sym} -180 -110 0 0 {name=x2}
 C {devices/lab_wire.sym} -90 -110 0 0 {name=p4 sig_type=std_logic lab=OT_out}
 C {devices/lab_wire.sym} -240 -510 0 0 {name=p3 sig_type=std_logic lab=V_current_drive}
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 780 1350 0 0 {name=x7 }
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -490 -520 0 0 {name=x8 }
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -90 -20 0 0 {name=x9 }
+C {devices/lab_wire.sym} -360 -120 0 0 {name=p6 sig_type=std_logic lab=V_p}
+C {devices/lab_wire.sym} -360 -100 0 0 {name=p7 sig_type=std_logic lab=V_n}
+C {JNW_GR05_SKY130A/OTA_Manuel.sym} -180 -110 0 0 {name=x2}
+C {devices/opin.sym} -250 50 0 0 {name=p8 lab=PROBE}
+C {devices/lab_wire.sym} -640 70 0 0 {name=p10 sig_type=std_logic lab=V_bjt_n}
