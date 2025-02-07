@@ -1,0 +1,12 @@
+* Measure bias
+.control
+
+load {cicname}.raw
+
+echo "MEAS_START"
+
+meas tran v_cap find v(xdut.V_cap) at=1u
+meas tran i_cap find i(VSS) at=1u
+
+echo "MEAS_END"
+.endc
