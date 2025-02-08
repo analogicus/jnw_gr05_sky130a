@@ -1,15 +1,33 @@
 import yaml
 import matplotlib.pyplot as plt
 
-# Datei laden
-file_path = 'output_tran/tran_SchGtKttTtVt.yaml'
-with open(file_path, 'r') as file:
+# Der Pfad zur YAML-Datei
+yaml_file_path = 'output_tran/tran_SchGtKttTtVt.yaml'
+
+# Listen für die Temperaturwerte, i_out- und v_out-Werte
+temperatures = []
+i_out = []
+v_out = []
+
+# YAML-Datei öffnen und laden
+with open(yaml_file_path, 'r') as file:
     data = yaml.load(file, Loader=yaml.FullLoader)
 
-# Extrahieren der Daten
-temperatures = [-20, -40, 0, 100, 120, 20, 40, 60, 80]
-i_out = [data[f'i_out_{temp}'] for temp in temperatures]
-v_out = [data[f'v_out_{temp}'] for temp in temperatures]
+    # Durch alle Schlüssel in den YAML-Daten iterieren
+    for key, value in data.items():
+        # Extrahiere die Temperatur aus dem Schlüssel
+        if key.startswith('i_out'):
+            temp = int(key.split('_')[-1])  # Temperatur aus dem Schlüssel extrahieren
+            temperatures.append(temp)
+            i_out.append(value)
+        elif key.startswith('v_out'):
+            temp = int(key.split('_')[-1])  # Temperatur aus dem Schlüssel extrahieren
+            v_out.append(value)
+
+# Sortiere die Temperaturen und bestimme die Schrittgröße
+temperatures, i_out, v_out = zip(*sorted(zip(temperatures, i_out, v_out)))
+
+step_size = abs(temperatures[1] - temperatures[0])
 
 # Scatter Plot mit zwei Y-Achsen
 fig, ax1 = plt.subplots(figsize=(10, 6))
@@ -27,7 +45,7 @@ ax2.scatter(temperatures, v_out, color='tab:red', label='v_out', marker='x')
 ax2.tick_params(axis='y', labelcolor='tab:red')
 
 # Titel und Gitter
-plt.title('Scatter Plot: Temperatur-Sweep für i_out und v_out')
+plt.title(f'Scatter Plot: Temperatur-Sweep für i_out und v_out (Schrittgröße: {step_size}°C)')
 plt.grid(True)
 
 # Legende
