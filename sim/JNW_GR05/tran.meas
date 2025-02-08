@@ -5,11 +5,32 @@ load {cicname}.raw
 
 echo "MEAS_START"
 
-meas tran v_out find v(xdut.PROBE1) at=1u
-meas tran v_current_mirror find v(xdut.vbias) at=1u
+# meas tran v_bias find v(xdut.x11.V_diff_pair_bias) at=1u
+# meas tran v_current_mirror find v(xdut.x11.V_diff_pair_bias_res) at=1u
 
-meas tran i_bias0 find i(v_i0) at=1u
-meas tran i_bias1 find i(v_i1) at=1u
+# meas tran i_bias0 find i(v_i0) at=1u
+
+
+set fend = .raw
+foreach vtemp -40 -20 0 20 40 60 80 100 120
+	load {cicname}_$vtemp$fend
+	meas tran i_out_$vtemp find i(v_i1) at=1u
+	meas tran v_out_$vtemp find v(xdut.sys_out) at=1u
+end
+
+	
+
+# meas tran V_drive find v(xdut.V_current_drive) at=1u
+
+# BJT
+# meas tran V_big find v(xdut.V_bjt_n) at=1u
+# meas tran V_small find v(xdut.V_p) at=1u
+
+# OTA
+# meas tran ota_n find v(xdut.V_n) at=1u
+# meas tran ota_p find v(xdut.V_p) at=1u
+# meas tran ota_out find v(xdut.OTA_out) at=1u
+# meas tran ota_output_stage find i(v_i2) at=1u
 
 echo "MEAS_END"
 .endc

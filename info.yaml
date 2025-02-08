@@ -1,15 +1,12 @@
 library: JNW_GR05_SKY130A
 cell: JNW_GR05
-# Your name
-author: justlikemanuel
+author: Manuel Buchfink
 # Your github username
-github: analogicus
+github: justlikemanuel
 # I want to sleep
-tagline: The answer is (at least in NMR) 42
-# buchfink_manuel@web.de
-email: anon@anon.com
-# Your github site, usually <github username>.github.io
-url: analogicus.github.io
+tagline: I want to sleep
+email: buchfink_manuel@web.de
+url: justlikemanuel.github.io
 doc:
   libraries:
     JNW_GR05_SKY130A:

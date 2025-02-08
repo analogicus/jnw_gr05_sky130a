@@ -38,7 +38,9 @@ Manuel
 | :---         | :---:     | :---:   | :---                                      |
 | VDD_1V8         | Input     | VDD_1V8 | Main supply                              |
 | VSS         | Input     | Ground  |                                           |
-| PWRUP_1V8     | Input    | VDD_1V8 | Power up the circuit                       |
+| PWRUP_1V8     | Input    | VDD_1V8 | Power up the circuit  (not implemented yet)                     |
+|I_OUT / Output / I=f(T) / Temperature dependent output current |
+
 
 
 # Key parameters
@@ -48,3 +50,6 @@ Manuel
 | Technology          |         | Skywater 130 nm |         |       |
 | AVDD                | 1.7    | 1.8           | 1.9    | V     |
 | Temperature         | -40     | 27            | 125     | C     |
+
+![I_out/V_out vs. Temperature ](sim/JNW_GR05/output_vs_temperature.png)
+

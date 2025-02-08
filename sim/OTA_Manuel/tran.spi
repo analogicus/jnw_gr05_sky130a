@@ -3,9 +3,9 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/JNW_GR05_lpe.spi
+.include ../../../work/lpe/OTA_Manuel_lpe.spi
 #else
-.include ../../../work/xsch/JNW_GR05.spice
+.include ../../../work/xsch/OTA_Manuel.spice
 #endif
 
 *-----------------------------------------------------------------
@@ -24,11 +24,13 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  dc 1.8
-# v_load PROBE1 VSS dc 0
-v_i0 I0 0 dc 0
-v_i1 I1 0 dc 0
-v_i2 I2 0 dc 0
+VDD  VDD  VSS dc {AVDD}
+
+V_in_n V_n VSS dc 0.7
+V_in_p V_p VSS dc 0.7
+
+V_bias probe VSS dc 0
+v_out I_out_int VSS dc 0
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
@@ -52,14 +54,8 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-# write
-
-set fend = .raw
-foreach vtemp -40 -20 0 20 40 60 80 100 120
-	option temp=$vtemp
-	tran 1n 5u 10n
-	write {cicname}_$vtemp$fend
-end
+tran 1n 10u 1n
+write
 quit
 
 
