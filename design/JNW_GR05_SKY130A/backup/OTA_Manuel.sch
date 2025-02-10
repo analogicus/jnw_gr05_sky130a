@@ -235,16 +235,16 @@ C {devices/ipin.sym} -280 0 2 1 {name=p3 lab=V_n}
 C {devices/ipin.sym} 80 0 2 0 {name=p4 lab=V_p
 }
 C {devices/opin.sym} 240 -160 2 1 {name=p5 lab=I_out}
-C {/home/justlikemanuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 40 0 0 1 {name=x3[9:0]}
-C {/home/justlikemanuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -240 0 0 0 {name=x1[9:0]}
-C {/home/justlikemanuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 200 -350 0 0 {name=x4}
+C {/home/manuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex2025/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 40 0 0 1 {name=x3[9:0]}
+C {/home/manuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex2025/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -240 0 0 0 {name=x1[9:0]}
+C {/home/manuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex2025/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 200 -350 0 0 {name=x4}
 C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -360 -140 1 0 {name=x5}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -240 180 0 0 {name=x6}
-C {/home/justlikemanuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -140 -210 0 0 {name=x7}
+C {/home/manuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex2025/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -140 -210 0 0 {name=x7}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 40 180 0 1 {name=x8}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 200 180 0 0 {name=x9}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -580 180 0 1 {name=x10}
-C {/home/justlikemanuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -580 -350 0 1 {name=x11}
+C {/home/manuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex2025/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -580 -350 0 1 {name=x11}
 C {devices/lab_pin.sym} 0 -100 0 1 {name=p6 sig_type=std_logic lab=V_diff_pair_bias}
 C {devices/lab_pin.sym} -300 -170 0 1 {name=p7 sig_type=std_logic lab=V_diff_pair_bias_res}
 C {devices/lab_pin.sym} 0 50 0 1 {name=p8 sig_type=std_logic lab=V_d_dp_p}
@@ -257,8 +257,8 @@ C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -360 60 1 0 {name=x2}
 C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -360 170 1 0 {name=x3}
 C {JNW_ATR_SKY130A/JNWATR_PCH_12C5F0.sym} -320 -210 0 1 {name=x2[19:0] }
 C {devices/lab_pin.sym} -370 -370 0 1 {name=p10 sig_type=std_logic lab=V_2nd_current_mirror}
-C {/home/justlikemanuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 640 -350 0 0 {name=x6[4:0]}
-C {/home/justlikemanuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 640 -100 0 0 {name=x4[2:0]}
+C {/home/manuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex2025/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 640 -350 0 0 {name=x6[4:0]}
+C {/home/manuel/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex2025/ip/jnw_bias_sky130a/design/JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 640 -100 0 0 {name=x4[2:0]}
 C {devices/lab_wire.sym} 500 -100 0 0 {name=p12 sig_type=std_logic lab=OTA_out}
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 590 -10 0 0 {name=x12 }
 C {devices/lab_wire.sym} 680 -210 0 0 {name=p13 sig_type=std_logic lab=Output_stage}
