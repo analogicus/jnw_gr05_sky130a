@@ -25,9 +25,7 @@ def main(name="output_tran/tran_SchGtKttTtVt"):
                 temp = int(key.split('_')[-1])
                 v_out.append(value)
     
-    # Sort the data
-    temperatures, i_out, v_out = zip(*sorted(zip(temperatures, i_out, v_out)))
-    
+
     # Polynomial fitting
     poly_coeffs = np.polyfit(temperatures, i_out, 2)  # Quadratic fit
     poly_eq = np.poly1d(poly_coeffs)
