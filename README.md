@@ -6,16 +6,16 @@
 [![SIM](../../actions/workflows/sim.yaml/badge.svg)](../../actions/workflows/sim.yaml)
 
 # Who
-Manuel
+Group 04 (,...,Manuel,...)
 
 # Why
 
-<explain why you made this module>
+This module creates an output current (almost linearly) dependent of the present temperatutre.
 
 # How
 
-<explain short how you made this module>
-
+Use temperature-dependency in the diode equation, and use that to create a temperature dependent voltage between the base-emitter voltage of two different BJTs.
+Caution: The plot you find at the bottom of this page is as of now just a local upload, might be included into the github actions at a later point.
 
 # What
 
