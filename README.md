@@ -29,7 +29,7 @@ Caution: The plot you find at the bottom of this page is as of now just a local 
 
 | Version | Status | Comment|
 | :---| :---| :---|
-|0.1.0 | :Yes: | Fulfills the criterions for milestone 01 |
+|0.1.0 | :Approved: | Fulfills the criterions for milestone 01 |
 
 
 # Signal interface
