@@ -39,7 +39,7 @@ Caution: The plot you find at the bottom of this page is as of now just a local 
 | VDD_1V8         | Input     | VDD_1V8 | Main supply                              |
 | VSS         | Input     | Ground  |                                           |
 | PWRUP_1V8     | Input    | VDD_1V8 | Power up the circuit  (not implemented yet)                     |
-|I_OUT / Output / I=f(T) / Temperature dependent output current |
+|I_OUT | Output | I=f(T) | Temperature dependent output current |
 
 
 
