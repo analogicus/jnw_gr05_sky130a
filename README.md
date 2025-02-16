@@ -10,11 +10,11 @@ Group 04 (,...,Manuel,...)
 
 # Why
 
-This module creates an output current (almost linearly) dependent of the present temperatutre.
+This module creates an output current (almost linearly) dependent on the present temperatutre.
 
 # How
 
-Use temperature-dependency in the diode equation, and use that to create a temperature dependent voltage between the base-emitter voltage of two different BJTs.
+Observe temperature-dependency in the diode equation, and use that to create a temperature dependent voltage based on the difference in the base-emitter voltage of two different BJTs.
 Caution: The plot you find at the bottom of this page is as of now just a local upload, might be included into the github actions at a later point.
 
 # What
