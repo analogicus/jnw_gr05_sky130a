@@ -6,7 +6,7 @@
 [![SIM](../../actions/workflows/sim.yaml/badge.svg)](../../actions/workflows/sim.yaml)
 
 # Who
-Group 04 (Manuel,Emilien,Amir,Fabrice)
+Group 05 (Manuel,Emilien,Amir,Fabrice)
 
 # Why
 
