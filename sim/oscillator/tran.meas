@@ -1,0 +1,12 @@
+* Measure oscillator
+.control
+
+load {cicname}.raw
+
+echo "MEAS_START"
+
+# clk
+meas tran clk find v(CLK) at=1u
+
+echo "MEAS_END"
+.endc
