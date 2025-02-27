@@ -3,9 +3,9 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/JNW_GR05_lpe.spi
+.include ../../../work/lpe/OTA_Manuel_lpe.spi
 #else
-.include ../../../work/xsch/JNW_GR05.spice
+.include ../../../work/xsch/OTA_Manuel.spice
 #endif
 
 *-----------------------------------------------------------------
@@ -18,19 +18,14 @@
 *-----------------------------------------------------------------
 .param TRF = 10p
 
-# dirty fix
-.param vdda = 1.8
 .param AVDD = {vdda}
 
 *-----------------------------------------------------------------
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  dc 1.8
-# v_load PROBE1 VSS dc 0
-v_i0 I0 0 dc 0
-v_i1 I1 0 dc 0
-v_i2 I2 0 dc 0
+VDD  VDD  VSS  pwl 0 0 10n {AVDD}
+
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
@@ -54,14 +49,8 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-# write
-
-set fend = .raw
-foreach vtemp -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120
-	option temp=$vtemp
-	tran 1n 5u 10n
-	write {cicname}_$vtemp$fend
-end
+tran 1n 10n 1p
+write
 quit
 
 

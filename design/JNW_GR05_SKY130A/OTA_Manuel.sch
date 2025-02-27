@@ -1,5 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -9,7 +8,7 @@ T {Cascoding?} 330 -20 0 0 0.4 0.4 {}
 T {Bias Cicuitry
 } -280 -290 0 0 0.4 0.4 {}
 N -40 -0 0 -0 {
-lab=V_diff_pair_bias}
+lab=VDD}
 N -360 -300 -360 -240 {
 lab=VDD}
 N -400 -210 -360 -210 {
@@ -20,14 +19,8 @@ N -400 -300 -400 -270 {
 lab=VDD}
 N -400 -300 -360 -300 {
 lab=VDD}
-N -40 -100 -40 -0 {
-lab=V_diff_pair_bias}
-N -160 -100 -160 -20 {
-lab=V_diff_pair_bias}
 N -200 -0 -160 0 {
-lab=V_diff_pair_bias}
-N -160 -20 -160 -0 {
-lab=V_diff_pair_bias}
+lab=VDD}
 N -200 30 -200 150 {
 lab=V_d_dp_n}
 N 0 30 -0 150 {
@@ -189,9 +182,9 @@ lab=VSS}
 N 590 -100 590 -70 {
 lab=I_out}
 N 680 -70 680 10 {
-lab=I_out}
+lab=I_out_int}
 N 680 10 680 50 {
-lab=I_out}
+lab=I_out_int}
 N 430 -100 510 -100 {
 lab=I_out}
 N 510 -100 590 -100 {
@@ -226,6 +219,8 @@ N 800 -100 800 240 {
 lab=VSS}
 N 590 240 800 240 {
 lab=VSS}
+N -160 -0 -40 -0 {lab=VDD}
+N -100 -30 -100 -0 {lab=VDD}
 C {devices/ipin.sym} -760 -420 2 1 {name=p1 lab=VDD
 }
 C {devices/ipin.sym} -760 240 2 1 {name=p2 lab=VSS
@@ -263,3 +258,5 @@ C {devices/lab_wire.sym} 500 -100 0 0 {name=p12 sig_type=std_logic lab=OTA_out}
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 590 -10 0 0 {name=x12 }
 C {devices/lab_wire.sym} 680 -210 0 0 {name=p13 sig_type=std_logic lab=Output_stage}
 C {devices/opin.sym} 680 50 2 1 {name=p14 lab=I_out_int}
+C {devices/lab_pin.sym} -100 -30 0 1 {name=p15 sig_type=std_logic lab=VDD
+}

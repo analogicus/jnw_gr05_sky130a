@@ -6,16 +6,16 @@
 [![SIM](../../actions/workflows/sim.yaml/badge.svg)](../../actions/workflows/sim.yaml)
 
 # Who
-Manuel
+Group 05 (Manuel,Emilien,Amir,Fabrice)
 
 # Why
 
-<explain why you made this module>
+This module creates an output current (almost linearly) dependent on the present temperatutre.
 
 # How
 
-<explain short how you made this module>
-
+Observe temperature-dependency in the diode equation, and use that to create a temperature dependent voltage based on the difference in the base-emitter voltage of two different BJTs.
+Caution: The plot you find at the bottom of this page is as of now just a local upload, might be included into the github actions at a later point.
 
 # What
 
@@ -29,7 +29,7 @@ Manuel
 
 | Version | Status | Comment|
 | :---| :---| :---|
-|0.1.0 | :x: | Make something |
+|0.1.0 | :Approved: | Fulfills the criterions for milestone 01 |
 
 
 # Signal interface
@@ -39,7 +39,7 @@ Manuel
 | VDD_1V8         | Input     | VDD_1V8 | Main supply                              |
 | VSS         | Input     | Ground  |                                           |
 | PWRUP_1V8     | Input    | VDD_1V8 | Power up the circuit  (not implemented yet)                     |
-|I_OUT / Output / I=f(T) / Temperature dependent output current |
+|I_out | Output | I=f(T) | Temperature dependent output current |
 
 
 
