@@ -167,7 +167,11 @@ C {devices/ipin.sym} -1440 -120 0 0 {name=p8 lab=VSS}
 C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -1110 -390 1 0 {name=x2[3:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -1070 -780 0 1 {name=x5 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -510 -850 0 0 {name=x6[2:0]}
+=======
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -510 -850 0 0 {name=x6[1:0]}
+>>>>>>> 2bdbacad0f56bc8deabf18d7293e7c6aeacd12e1
 =======
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -510 -850 0 0 {name=x6[1:0]}
 >>>>>>> 2bdbacad0f56bc8deabf18d7293e7c6aeacd12e1
