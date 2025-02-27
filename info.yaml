@@ -12,4 +12,4 @@ doc:
     JNW_GR05_SKY130A:
       - JNW_GR05      - 
 sim:
-  JNW_GR05: make typical
+  JNW_GR05: make typical && make summary

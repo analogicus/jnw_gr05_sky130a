@@ -1,0 +1,119 @@
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/JNW_GR05.sch
+**.subckt JNW_GR05 VDD_1V8 VSS Vout
+*.ipin VDD_1V8
+*.ipin VSS
+*.opin Vout
+x2 VDD_1V8 Vout VSS T_to_I_Manuel
+R1 Vout VSS 1k m=1
+V1 VDD_1V8 VSS 1.8
+**** begin user architecture code
+
+
+
+* ngspice commands
+.include corner.spi
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  JNW_GR05_SKY130A/T_to_I_Manuel.sym # of pins=3
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/T_to_I_Manuel.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/T_to_I_Manuel.sch
+.subckt T_to_I_Manuel VDD I_OF_T_OUT VSS
+*.ipin VDD
+*.ipin VSS
+*.opin I_OF_T_OUT
+x1 V_bjt_n V_n VSS JNWTR_RPPO2
+x3 V_n V_current_drive VDD VDD JNWATR_PCH_4C5F0
+x4 V_current_drive V_current_drive VDD VDD JNWATR_PCH_4C5F0
+x5 V_current_drive OT_out VSS VSS JNWATR_NCH_4C5F0
+x6 V_p V_current_drive VDD VDD JNWATR_PCH_4C5F0
+x7<3> I_OF_T_OUT V_current_drive VDD VDD JNWATR_PCH_4C5F0
+x7<2> I_OF_T_OUT V_current_drive VDD VDD JNWATR_PCH_4C5F0
+x7<1> I_OF_T_OUT V_current_drive VDD VDD JNWATR_PCH_4C5F0
+x7<0> I_OF_T_OUT V_current_drive VDD VDD JNWATR_PCH_4C5F0
+XQ3 VSS VSS V_p sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQ1 VSS VSS V_bjt_n sky130_fd_pr__pnp_05v5_W3p40L3p40 m=10 mult=10
+x9 OT_out VSS JNWTR_CAPX1
+x7 VDD V_p OT_out V_n VSS JNWBIAS_OTA
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RPPO2.sym # of pins=3
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO2.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO2.sch
+.subckt JNWTR_RPPO2 N P B
+*.iopin P
+*.iopin N
+*.iopin B
+XXA1 N P B JNWTR_RES2
+.ends
+
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym # of pins=4
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sch
+.subckt JNWATR_PCH_4C5F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym # of pins=4
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sch
+.subckt JNWATR_NCH_4C5F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__nfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_CAPX1.sym # of pins=2
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX1.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX1.sch
+.subckt JNWTR_CAPX1 A B
+*.iopin A
+*.iopin B
+XC1 B A sky130_fd_pr__cap_mim_m3_1 W=5 L=5 MF=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/emilien/pro/aicex/ip/jnw_bias_sky130a/design/JNW_BIAS_SKY130A/JNWBIAS_OTA.sym # of pins=5
+** sym_path: /home/emilien/pro/aicex/ip/jnw_bias_sky130a/design/JNW_BIAS_SKY130A/JNWBIAS_OTA.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_bias_sky130a/design/JNW_BIAS_SKY130A/JNWBIAS_OTA.sch
+.subckt JNWBIAS_OTA VDD_1V8 VIP VO VIN VSS
+*.opin VO
+*.ipin VIP
+*.ipin VIN
+*.ipin VDD_1V8
+*.ipin VSS
+**** begin user architecture code
+
+XOTA VIP VIN VO_INT VDD_1V8 VSS cpdk_ideal_ota GAIN=1000 UGBW=1e7
+
+**** end user architecture code
+R1 VO VO_INT 1k m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RES2.sym # of pins=3
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_RES2.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_RES2.sch
+.subckt JNWTR_RES2 N P B
+*.iopin N
+*.iopin P
+*.iopin B
+XR1_0 INT_0 N B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_1 P INT_0 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+.ends
+
+.end
