@@ -24,8 +24,7 @@ def main(name="output_tran/tran_SchGtKttTtVt"):
             elif key.startswith('v_out'):
                 temp = int(key.split('_')[-1])
                 v_out.append(value)
-    
-git p
+
     # Polynomial fitting
     poly_coeffs = np.polyfit(temperatures, i_out, 2)  # Quadratic fit
     poly_eq = np.poly1d(poly_coeffs)
@@ -62,13 +61,13 @@ git p
     # Sensitivity calculation
     min_i_out, max_i_out = min(i_out) * 1e6, max(i_out) * 1e6
     temperature_range = max(temperatures) - min(temperatures)
-    sensitivity = (max_i_out - min_i_out) / temperature_range
+    sensitivity = (max_i_out - min_i_out) / temperature_range * 1000 # from uA to nA)
     
     # Annotation box
     ax1.text(0.05, 0.75, 
              f'Min i_out: {min_i_out:.2f} µA, Max i_out: {max_i_out:.2f} µA \n'
              f'Temperature Range: {temperature_range}°C \n'
-             f'Sensitivity: {sensitivity:.4f} µA/°C \n'
+             f'Sensitivity: {sensitivity:.4f} nA/°C \n'
              f'Polynomial Fit: {poly_str}',
              horizontalalignment='left', verticalalignment='center',
              transform=ax1.transAxes, fontsize=10,

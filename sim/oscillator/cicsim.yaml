@@ -1,9 +1,0 @@
-options:
-  useTmpDir: False
-  sha: True
-corner:
-  Lay: ''
-  Sch: ''
-ngspice:
-  library: JNW_GR05_SKY130A
-  cell: oscillator

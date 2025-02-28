@@ -6,4 +6,4 @@ corner:
   Sch: ''
 ngspice:
   library: JNW_GR05_SKY130A
-  cell: OTA_Manuel
+  cell: OTA_stb

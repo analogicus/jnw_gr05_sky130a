@@ -8,7 +8,7 @@ T {Cascoding?} 330 -20 0 0 0.4 0.4 {}
 T {Bias Cicuitry
 } -280 -290 0 0 0.4 0.4 {}
 N -40 -0 0 -0 {
-lab=VDD}
+lab=V_diff_pair_bias}
 N -360 -300 -360 -240 {
 lab=VDD}
 N -400 -210 -360 -210 {
@@ -19,8 +19,14 @@ N -400 -300 -400 -270 {
 lab=VDD}
 N -400 -300 -360 -300 {
 lab=VDD}
+N -40 -100 -40 -0 {
+lab=V_diff_pair_bias}
+N -160 -100 -160 -20 {
+lab=V_diff_pair_bias}
 N -200 -0 -160 0 {
-lab=VDD}
+lab=V_diff_pair_bias}
+N -160 -20 -160 -0 {
+lab=V_diff_pair_bias}
 N -200 30 -200 150 {
 lab=V_d_dp_n}
 N 0 30 -0 150 {
@@ -88,8 +94,6 @@ lab=VDD}
 N -240 -420 -240 -300 {
 lab=VDD}
 N 240 -320 240 150 {
-lab=I_out}
-N 240 -100 340 -100 {
 lab=I_out}
 N -200 180 -160 180 {
 lab=VSS}
@@ -175,52 +179,6 @@ N -440 210 -380 210 {
 lab=VSS}
 N -370 -370 -370 -350 {
 lab=V_2nd_current_mirror}
-N 590 -100 640 -100 {
-lab=I_out}
-N 680 -100 720 -100 {
-lab=VSS}
-N 590 -100 590 -70 {
-lab=I_out}
-N 680 -70 680 10 {
-lab=I_out_int}
-N 680 10 680 50 {
-lab=I_out_int}
-N 430 -100 510 -100 {
-lab=I_out}
-N 510 -100 590 -100 {
-lab=I_out}
-N 340 -100 430 -100 {
-lab=I_out}
-N 680 -420 680 -390 {
-lab=VDD}
-N 280 -420 680 -420 {
-lab=VDD}
-N 680 -390 680 -380 {
-lab=VDD}
-N 680 -320 680 -130 {
-lab=Output_stage}
-N 680 -350 720 -350 {
-lab=VDD}
-N 720 -420 720 -350 {
-lab=VDD}
-N 680 -420 720 -420 {
-lab=VDD}
-N 640 -300 680 -300 {
-lab=Output_stage}
-N 640 -350 640 -300 {
-lab=Output_stage}
-N 590 0 590 240 {
-lab=VSS}
-N 280 240 590 240 {
-lab=VSS}
-N 720 -100 800 -100 {
-lab=VSS}
-N 800 -100 800 240 {
-lab=VSS}
-N 590 240 800 240 {
-lab=VSS}
-N -160 -0 -40 -0 {lab=VDD}
-N -100 -30 -100 -0 {lab=VDD}
 C {devices/ipin.sym} -760 -420 2 1 {name=p1 lab=VDD
 }
 C {devices/ipin.sym} -760 240 2 1 {name=p2 lab=VSS
@@ -252,11 +210,3 @@ C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -360 60 1 0 {name=x2}
 C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -360 170 1 0 {name=x3}
 C {JNW_ATR_SKY130A/JNWATR_PCH_12C5F0.sym} -320 -210 0 1 {name=x2[19:0] }
 C {devices/lab_pin.sym} -370 -370 0 1 {name=p10 sig_type=std_logic lab=V_2nd_current_mirror}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 640 -350 0 0 {name=x6[4:0]}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 640 -100 0 0 {name=x4[2:0]}
-C {devices/lab_wire.sym} 500 -100 0 0 {name=p12 sig_type=std_logic lab=OTA_out}
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 590 -10 0 0 {name=x12 }
-C {devices/lab_wire.sym} 680 -210 0 0 {name=p13 sig_type=std_logic lab=Output_stage}
-C {devices/opin.sym} 680 50 2 1 {name=p14 lab=I_out_int}
-C {devices/lab_pin.sym} -100 -30 0 1 {name=p15 sig_type=std_logic lab=VDD
-}

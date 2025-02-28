@@ -24,7 +24,7 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD  VSS  pwl 0 0 10n {AVDD}
+VDD  VDD  VSS  dc 1.8
 
 *-----------------------------------------------------------------
 * DUT
@@ -46,10 +46,10 @@ set color0=white
 set color1=black
 unset askquit
 
-optran 0 0 0 1n 1u 0
+optran 0 0 0 10n 10u 0
 
 
-tran 1n 10n 1p
+tran 1n 10u 1n
 write
 quit
 

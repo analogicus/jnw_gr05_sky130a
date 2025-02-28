@@ -4,10 +4,10 @@ all: typical etc mc summary
 
 
 
-TB=tran
+TB=lstb
 VIEW=Sch
 #VIEW=Lay
-CELL=OTA_Manuel
+CELL=OTA_stb
 LIB =JNW_GR05_SKY130A
 OPT=
 

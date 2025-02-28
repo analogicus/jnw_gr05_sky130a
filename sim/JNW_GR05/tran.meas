@@ -8,14 +8,16 @@ echo "MEAS_START"
 # meas tran v_bias find v(xdut.x11.V_diff_pair_bias) at=1u
 # meas tran v_current_mirror find v(xdut.x11.V_diff_pair_bias_res) at=1u
 
-# meas tran i_bias0 find i(v_i0) at=1u
 
 
 set fend = .raw
-foreach vtemp -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120
+# -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120
+foreach vtemp -20,  30, 80, 120
 	load {cicname}_$vtemp$fend
 	meas tran i_out_$vtemp find i(v_i1) at=1u
 	meas tran v_out_$vtemp find v(xdut.sys_out) at=1u
+	meas tran i_bias0_$vtemp find i(v_i0) at=1u
+
 end
 
 	
