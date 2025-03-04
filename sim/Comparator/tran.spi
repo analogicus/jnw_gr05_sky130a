@@ -19,7 +19,7 @@
 .param TRF = 10p
 .param vdda = 1.8
 .param AVDD = {vdda}
-.param PERIOD_CLK = 10u
+.param PERIOD_CLK = 1u
 .param PERIOD_VOLT = 40u
 *-----------------------------------------------------------------
 * FORCE
@@ -29,8 +29,6 @@ VDD   VDD  VSS  dc  {AVDD}
 VCLK  CLK      0    dc  0 pulse (0 {AVDD} 2n {TRF} {TRF} {PERIOD_CLK/2}  {PERIOD_CLK} )
 Vin1  Vin1     0    dc  0 pulse (0 {AVDD} 1u {TRF} {TRF} {PERIOD_VOLT/2} {PERIOD_VOLT})
 Vin2  Vin2     0    dc  0.9
-Vout1 Vout1    0    dc  0 
-Vout2 Vout2    0    dc  0
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
