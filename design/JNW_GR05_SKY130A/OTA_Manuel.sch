@@ -4,209 +4,194 @@ K {}
 V {}
 S {}
 E {}
-T {Cascoding?} 330 -20 0 0 0.4 0.4 {}
+T {Cascoding?} 20 -60 0 0 0.4 0.4 {}
 T {Bias Cicuitry
-} -280 -290 0 0 0.4 0.4 {}
-N -40 -0 0 -0 {
+} -590 -330 0 0 0.4 0.4 {}
+N -350 -40 -310 -40 {
 lab=V_diff_pair_bias}
-N -360 -300 -360 -240 {
+N -670 -340 -670 -280 {
 lab=VDD}
-N -400 -210 -360 -210 {
+N -710 -250 -670 -250 {
 lab=VDD}
-N -400 -270 -400 -210 {
+N -710 -310 -710 -250 {
 lab=VDD}
-N -400 -300 -400 -270 {
+N -710 -340 -710 -310 {
 lab=VDD}
-N -400 -300 -360 -300 {
+N -710 -340 -670 -340 {
 lab=VDD}
-N -40 -100 -40 -0 {
+N -350 -140 -350 -40 {
 lab=V_diff_pair_bias}
-N -160 -100 -160 -20 {
+N -470 -140 -470 -60 {
 lab=V_diff_pair_bias}
-N -200 -0 -160 0 {
+N -510 -40 -470 -40 {
 lab=V_diff_pair_bias}
-N -160 -20 -160 -0 {
+N -470 -60 -470 -40 {
 lab=V_diff_pair_bias}
-N -200 30 -200 150 {
+N -510 -10 -510 110 {
 lab=V_d_dp_n}
-N 0 30 -0 150 {
+N -310 -10 -310 110 {
 lab=V_d_dp_p}
-N -200 210 -200 240 {
+N -510 200 -310 200 {
 lab=VSS}
-N -200 240 0 240 {
+N -310 200 -70 200 {
 lab=VSS}
-N 0 210 0 240 {
+N -70 170 -70 200 {
 lab=VSS}
-N 0 210 -0 240 {
-lab=VSS}
-N -0 240 240 240 {
-lab=VSS}
-N 240 210 240 240 {
-lab=VSS}
-N 40 180 200 180 {
+N -270 140 -110 140 {
 lab=V_d_dp_p}
-N 240 180 280 180 {
+N -70 140 -30 140 {
 lab=VSS}
-N 280 180 280 240 {
+N -30 140 -30 200 {
 lab=VSS}
-N 240 240 280 240 {
+N -70 200 -30 200 {
 lab=VSS}
-N -620 210 -620 240 {
+N -930 170 -930 200 {
 lab=VSS}
-N -280 -0 -240 0 {
+N -590 -40 -550 -40 {
 lab=V_n}
-N 40 0 80 0 {
+N -270 -40 -230 -40 {
 lab=V_p}
-N -320 -210 -140 -210 {
+N -630 -250 -450 -250 {
 lab=V_diff_pair_bias_res}
-N -300 -210 -300 -140 {
+N -610 -250 -610 -180 {
 lab=V_diff_pair_bias_res}
-N -360 -140 -300 -140 {
+N -670 -180 -610 -180 {
 lab=V_diff_pair_bias_res}
-N -100 -210 -60 -210 {
+N -410 -250 -370 -250 {
 lab=VDD}
-N -60 -300 -60 -210 {
+N -370 -340 -370 -250 {
 lab=VDD}
-N -360 -300 -60 -300 {
+N -670 -340 -370 -340 {
 lab=VDD}
-N -580 180 -240 180 {
+N -890 140 -550 140 {
 lab=V_d_dp_n}
-N -620 240 -360 240 {
+N -930 200 -670 200 {
 lab=VSS}
-N -360 240 -200 240 {
+N -670 200 -510 200 {
 lab=VSS}
-N -620 -330 -620 150 {
+N -930 -370 -930 110 {
 lab=V_2nd_current_mirror}
-N -660 -350 -620 -350 {
+N -970 -390 -930 -390 {
 lab=VDD}
-N -660 -420 -660 -350 {
+N -970 -460 -970 -390 {
 lab=VDD}
-N -620 -420 -620 -380 {
+N -930 -460 -930 -420 {
 lab=VDD}
-N -660 -420 -620 -420 {
+N -970 -460 -930 -460 {
 lab=VDD}
-N -580 -350 200 -350 {
+N -890 -390 -110 -390 {
 lab=V_2nd_current_mirror}
-N -620 -420 240 -420 {
+N -930 -460 -70 -460 {
 lab=VDD}
-N 240 -420 240 -380 {
+N -70 -460 -70 -420 {
 lab=VDD}
-N -240 -420 -240 -300 {
+N -550 -460 -550 -340 {
 lab=VDD}
-N 240 -320 240 150 {
+N -70 -360 -70 110 {
 lab=I_out}
-N -200 180 -160 180 {
+N -70 -140 30 -140 {
+lab=I_out}
+N -510 140 -470 140 {
 lab=VSS}
-N -160 180 -160 240 {
+N -470 140 -470 200 {
 lab=VSS}
-N -40 180 0 180 {
+N -350 140 -310 140 {
 lab=VSS}
-N -40 180 -40 200 {
+N -350 140 -350 160 {
 lab=VSS}
-N -40 200 -40 240 {
+N -350 160 -350 200 {
 lab=VSS}
-N -660 180 -620 180 {
+N -970 140 -930 140 {
 lab=VSS}
-N -660 180 -660 240 {
+N -970 140 -970 200 {
 lab=VSS}
-N -620 -280 -560 -280 {
+N -930 -320 -870 -320 {
 lab=V_2nd_current_mirror}
-N -560 -300 -560 -280 {
+N -870 -340 -870 -320 {
 lab=V_2nd_current_mirror}
-N -560 -350 -560 -300 {
+N -870 -390 -870 -340 {
 lab=V_2nd_current_mirror}
-N -660 240 -620 240 {
+N -970 200 -930 200 {
 lab=VSS}
-N -760 240 -660 240 {
+N -1070 200 -970 200 {
 lab=VSS}
-N -760 -420 -660 -420 {
+N -1070 -460 -970 -460 {
 lab=VDD}
-N -440 60 -440 240 {
+N -750 20 -750 200 {
 lab=VSS}
-N -100 -300 -100 -240 {
+N -410 -340 -410 -280 {
 lab=VDD}
-N 240 -350 280 -350 {
+N -70 -390 -30 -390 {
 lab=VDD}
-N 240 -420 280 -420 {
+N -70 -460 -30 -460 {
 lab=VDD}
-N 280 -420 280 -350 {
+N -30 -460 -30 -390 {
 lab=VDD}
-N 0 130 60 130 {
+N -310 90 -250 90 {
 lab=V_d_dp_p}
-N 60 130 60 180 {
+N -250 90 -250 140 {
 lab=V_d_dp_p}
-N -260 130 -200 130 {
+N -570 90 -510 90 {
 lab=V_d_dp_n}
-N -260 130 -260 180 {
+N -570 90 -570 140 {
 lab=V_d_dp_n}
-N -200 -100 -200 -30 {
+N -510 -140 -510 -70 {
 lab=V_diff_pair_bias}
-N -200 -100 -160 -100 {
+N -510 -140 -470 -140 {
 lab=V_diff_pair_bias}
-N -160 -100 -40 -100 {
+N -470 -140 -350 -140 {
 lab=V_diff_pair_bias}
-N -40 -100 -0 -100 {
+N -350 -140 -310 -140 {
 lab=V_diff_pair_bias}
-N 0 -100 0 -30 {
+N -310 -140 -310 -70 {
 lab=V_diff_pair_bias}
-N -100 -180 -100 -150 {
+N -410 -220 -410 -190 {
 lab=V_diff_pair_bias}
-N -100 -150 -100 -100 {
+N -410 -190 -410 -140 {
 lab=V_diff_pair_bias}
-N -440 -100 -440 60 {
+N -750 -140 -750 20 {
 lab=VSS}
-N -440 -100 -380 -100 {
+N -750 -140 -690 -140 {
 lab=VSS}
-N -360 -180 -360 -140 {
+N -670 -220 -670 -180 {
 lab=V_diff_pair_bias_res}
-N -360 140 -360 160 {
+N -670 10 -670 20 {
+lab=VSS}
+N -670 -100 -670 -70 {
 lab=#net1}
-N -360 50 -360 60 {
-lab=#net2}
-N -360 -60 -360 -30 {
-lab=#net3}
-N -440 10 -380 10 {
+N -750 -30 -690 -30 {
 lab=VSS}
-N -440 100 -380 100 {
-lab=VSS}
-N -360 160 -360 170 {
-lab=#net1}
-N -360 260 -360 310 {
-lab=probe}
-N -360 250 -360 260 {
-lab=probe}
-N -440 210 -380 210 {
-lab=VSS}
-N -370 -370 -370 -350 {
+N -680 -410 -680 -390 {
 lab=V_2nd_current_mirror}
-C {devices/ipin.sym} -760 -420 2 1 {name=p1 lab=VDD
+N -410 180 -310 180 {lab=VSS}
+N -310 170 -310 180 {lab=VSS}
+N -510 180 -410 180 {lab=VSS}
+N -510 170 -510 180 {lab=VSS}
+N -670 20 -670 200 {lab=VSS}
+N -410 180 -410 200 {lab=VSS}
+C {devices/ipin.sym} -1070 -460 2 1 {name=p1 lab=VDD
 }
-C {devices/ipin.sym} -760 240 2 1 {name=p2 lab=VSS
+C {devices/ipin.sym} -1070 200 2 1 {name=p2 lab=VSS
 
 }
-C {devices/ipin.sym} -280 0 2 1 {name=p3 lab=V_n}
-C {devices/ipin.sym} 80 0 2 0 {name=p4 lab=V_p
+C {devices/ipin.sym} -590 -40 2 1 {name=p3 lab=V_n}
+C {devices/ipin.sym} -230 -40 2 0 {name=p4 lab=V_p
 }
-C {devices/opin.sym} 240 -160 2 1 {name=p5 lab=I_out}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 40 0 0 1 {name=x3[9:0]}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -240 0 0 0 {name=x1[9:0]}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 200 -350 0 0 {name=x4}
-C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -360 -140 1 0 {name=x5}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -240 180 0 0 {name=x6}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -140 -210 0 0 {name=x7}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 40 180 0 1 {name=x8}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 200 180 0 0 {name=x9}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -580 180 0 1 {name=x10}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -580 -350 0 1 {name=x11}
-C {devices/lab_pin.sym} 0 -100 0 1 {name=p6 sig_type=std_logic lab=V_diff_pair_bias}
-C {devices/lab_pin.sym} -300 -170 0 1 {name=p7 sig_type=std_logic lab=V_diff_pair_bias_res}
-C {devices/lab_pin.sym} 0 50 0 1 {name=p8 sig_type=std_logic lab=V_d_dp_p}
-C {devices/lab_pin.sym} -200 70 0 1 {name=p9 sig_type=std_logic lab=V_d_dp_n}
-C {devices/opin.sym} -360 310 2 1 {name=p11 lab=probe
-
-}
-C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -360 -30 1 0 {name=x1}
-C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -360 60 1 0 {name=x2}
-C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -360 170 1 0 {name=x3}
-C {JNW_ATR_SKY130A/JNWATR_PCH_12C5F0.sym} -320 -210 0 1 {name=x2[19:0] }
-C {devices/lab_pin.sym} -370 -370 0 1 {name=p10 sig_type=std_logic lab=V_2nd_current_mirror}
+C {devices/opin.sym} -70 -200 2 1 {name=p5 lab=I_out}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} -270 -40 0 1 {name=x8}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} -550 -40 0 0 {name=x3}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -110 -390 0 0 {name=x4}
+C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -670 -180 1 0 {name=x5}
+C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -110 140 0 0 {name=x9}
+C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -890 140 0 1 {name=x10}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -890 -390 0 1 {name=x11}
+C {devices/lab_pin.sym} -310 -140 0 1 {name=p6 sig_type=std_logic lab=V_diff_pair_bias}
+C {devices/lab_pin.sym} -610 -210 0 1 {name=p7 sig_type=std_logic lab=V_diff_pair_bias_res}
+C {devices/lab_pin.sym} -310 10 0 1 {name=p8 sig_type=std_logic lab=V_d_dp_p}
+C {devices/lab_pin.sym} -510 30 0 1 {name=p9 sig_type=std_logic lab=V_d_dp_n}
+C {devices/lab_pin.sym} -680 -410 0 1 {name=p10 sig_type=std_logic lab=V_2nd_current_mirror}
+C {JNW_ATR_SKY130A/JNWATR_PCH_12C5F0.sym} -630 -250 0 1 {name=x7}
+C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -670 -70 1 0 {name=x6}
+C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -550 140 0 0 {name=x1}
+C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -270 140 0 1 {name=x2}
+C {JNW_ATR_SKY130A/JNWATR_PCH_12C5F0.sym} -450 -250 0 0 {name=x20}
