@@ -195,14 +195,13 @@ N -380 -340 -380 -120 {lab=VSS}
 N -280 -360 -280 -320 {lab=VSS}
 N -380 -320 -280 -320 {lab=VSS}
 N -280 -410 -230 -410 {lab=VSS}
-N -210 -510 -210 -450 {lab=sys_out}
+N -210 -510 -210 -450 {lab=#net3}
 N -340 -450 -280 -450 {lab=VSS}
 N 880 -420 880 -280 {lab=VSS}
 N 800 -280 880 -280 {lab=VSS}
 N 880 -580 880 -540 {lab=VDD_1V8}
 N 970 -500 1000 -500 {lab=Q}
 N 970 -460 1000 -460 {lab=nQ}
-N -210 -590 -210 -510 {lab=sys_out}
 N -280 -450 -280 -360 {lab=VSS}
 N 210 -290 240 -290 {lab=sys_out}
 N 380 -440 380 -400 {lab=#net2}
@@ -217,6 +216,8 @@ N 320 -290 380 -290 {lab=#net2}
 N 280 -270 280 -120 {lab=VSS}
 N 940 -1000 940 -980 {lab=VDD_1V8}
 N 940 -900 940 -860 {lab=VSS}
+N -280 -550 -230 -550 {lab=VSS}
+N -280 -550 -280 -450 {lab=VSS}
 C {devices/ipin.sym} -1430 -980 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -1440 -120 0 0 {name=p8 lab=VSS}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -1070 -780 0 1 {name=x9[1:0]}
@@ -263,7 +264,6 @@ model=pnp_05v5_W3p40L3p40
 m=1
 spiceprefix=X
 }
-C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -210 -450 1 0 {name=x3}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -870 -850 0 1 {name=x3[1:0]}
 C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} -110 -330 0 0 {name=x1[0:1]}
 C {JNW_GR05_SKY130A/RS-latch.sym} 890 -480 0 0 {name=x5}
@@ -290,3 +290,5 @@ C {devices/lab_wire.sym} 940 -1000 0 1 {name=p26 sig_type=std_logic lab=VDD_1V8
 }
 C {devices/lab_wire.sym} 940 -860 0 1 {name=p28 sig_type=std_logic lab=VSS
 }
+C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} -210 -450 1 0 {name=x7}
+C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -210 -590 1 0 {name=x13[0:2]}
