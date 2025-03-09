@@ -160,7 +160,7 @@ N 90 -650 90 -500 {lab=V_cap}
 N -50 -470 90 -470 {lab=VSS}
 N 90 -440 90 -400 {lab=VSS}
 N -50 -400 90 -400 {lab=VSS}
-N 130 -470 190 -470 {lab=RESET}
+N 130 -470 190 -470 {lab=Voutc}
 N -1110 -540 -1110 -440 {lab=V_n}
 N 500 -980 500 -570 {lab=VDD_1V8}
 N -30 -980 500 -980 {lab=VDD_1V8}
@@ -189,10 +189,10 @@ N 700 -940 740 -940 {lab=CLK}
 N 820 -940 840 -940 {lab=nCLK}
 N 780 -1000 780 -980 {lab=VDD_1V8}
 N 780 -900 780 -860 {lab=VSS}
-N 380 -400 380 -290 {lab=#net3}
+N 380 -400 380 -290 {lab=sys_outc}
 N 980 -940 1000 -940 {lab=bufCLK}
 N 840 -940 900 -940 {lab=nCLK}
-N 320 -290 380 -290 {lab=#net3}
+N 320 -290 380 -290 {lab=sys_outc}
 N 280 -270 280 -120 {lab=VSS}
 N 940 -1000 940 -980 {lab=VDD_1V8}
 N 940 -900 940 -860 {lab=VSS}
@@ -202,9 +202,23 @@ N 500 -570 500 -530 {lab=VDD_1V8}
 N 500 -430 500 -390 {lab=VSS}
 N 580 -480 740 -480 {lab=Voutc}
 N 380 -510 420 -510 {lab=bufCLK}
-N 380 -450 420 -450 {lab=#net3}
+N 380 -450 420 -450 {lab=sys_outc}
 N 380 -480 420 -480 {lab=V_cap}
-N 380 -450 380 -400 {lab=#net3}
+N 380 -450 380 -400 {lab=sys_outc}
+N 740 -580 740 -480 {lab=Voutc}
+N 200 -580 740 -580 {lab=Voutc}
+N 200 -580 200 -470 {lab=Voutc}
+N 190 -470 200 -470 {lab=Voutc}
+N 960 -460 990 -460 {lab=RESET}
+N 960 -440 990 -440 {lab=VSS}
+N 960 -480 990 -480 {lab=Voutc}
+N 960 -500 990 -500 {lab=VDD_1V8}
+N 930 -460 960 -460 {lab=RESET}
+N 740 -480 960 -480 {lab=Voutc}
+N 1290 -460 1360 -460 {lab=Q4}
+N 1290 -500 1360 -500 {lab=Q1}
+N 1290 -480 1360 -480 {lab=Q3}
+N 1290 -440 1360 -440 {lab=Q2}
 C {devices/ipin.sym} -1430 -980 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -1440 -120 0 0 {name=p8 lab=VSS}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -1070 -780 0 1 {name=x9[1:0]}
@@ -230,7 +244,7 @@ C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} -420 -450 0 0 {name=x2 }
 C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -1110 -390 1 0 {name=x9}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -90 -730 0 0 {name=x6}
 C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 130 -470 0 1 {name=x4 }
-C {devices/ipin.sym} 190 -470 0 1 {name=p5 lab=RESET
+C {devices/ipin.sym} 930 -460 0 0 {name=p5 lab=RESET
 }
 C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} -50 -540 0 0 {name=x2[0:4]}
 C {devices/lab_wire.sym} -210 -610 0 0 {name=p7 sig_type=std_logic lab=sys_out}
@@ -266,3 +280,14 @@ C {devices/lab_wire.sym} 740 -480 0 0 {name=p2 sig_type=std_logic lab=Voutc}
 C {devices/ipin.sym} 700 -940 0 0 {name=p14 lab=CLK
 }
 C {devices/lab_wire.sym} 380 -450 0 0 {name=p3 sig_type=std_logic lab=sys_outc}
+C {JNW_GR05_SKY130A/asynCounter.sym} 1140 -470 0 0 {name=x3}
+C {devices/lab_wire.sym} 960 -440 0 0 {name=p4 sig_type=std_logic lab=VSS
+}
+C {devices/lab_pin.sym} 960 -500 0 0 {name=p20 sig_type=std_logic lab=VDD_1V8
+}
+C {devices/lab_pin.sym} 1360 -440 0 0 {name=p16 sig_type=std_logic lab=Q2
+}
+C {devices/lab_pin.sym} 1360 -500 0 0 {name=p23 sig_type=std_logic lab=Q1
+}
+C {devices/lab_pin.sym} 1360 -480 0 0 {name=p24 sig_type=std_logic lab=Q3}
+C {devices/lab_pin.sym} 1360 -460 0 0 {name=p25 sig_type=std_logic lab=Q4}
