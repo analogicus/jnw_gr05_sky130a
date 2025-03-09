@@ -189,10 +189,10 @@ N 700 -940 740 -940 {lab=CLK}
 N 820 -940 840 -940 {lab=nCLK}
 N 780 -1000 780 -980 {lab=VDD_1V8}
 N 780 -900 780 -860 {lab=VSS}
-N 380 -400 380 -290 {lab=#net3}
+N 380 -400 380 -290 {lab=sys_outc}
 N 980 -940 1000 -940 {lab=bufCLK}
 N 840 -940 900 -940 {lab=nCLK}
-N 320 -290 380 -290 {lab=#net3}
+N 320 -290 380 -290 {lab=sys_outc}
 N 280 -270 280 -120 {lab=VSS}
 N 940 -1000 940 -980 {lab=VDD_1V8}
 N 940 -900 940 -860 {lab=VSS}
@@ -202,9 +202,9 @@ N 500 -570 500 -530 {lab=VDD_1V8}
 N 500 -430 500 -390 {lab=VSS}
 N 580 -480 740 -480 {lab=Voutc}
 N 380 -510 420 -510 {lab=bufCLK}
-N 380 -450 420 -450 {lab=#net3}
+N 380 -450 420 -450 {lab=sys_outc}
 N 380 -480 420 -480 {lab=V_cap}
-N 380 -450 380 -400 {lab=#net3}
+N 380 -450 380 -400 {lab=sys_outc}
 C {devices/ipin.sym} -1430 -980 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -1440 -120 0 0 {name=p8 lab=VSS}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -1070 -780 0 1 {name=x9[1:0]}
