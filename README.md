@@ -55,8 +55,19 @@ Caution: The plot you find at the bottom of this page is as of now just a local 
 
 # OTA Analysis
 
+
+Results for RT are: 
+| Parameter  | Value      | Unit           | Description               |
+|------------|------------|----------------|---------------------------|
+| f3db       | 175.57     | kHz            | -3 dB Bandwidth           |
+| gm_db      | -16.309    | dB             | Gain Margin               |
+| lf_gain    | 40.073     | dB             | Low-Frequency Gain        |
+| pm_deg     | 67.513     | Degrees        | Phase Margin              |
+| ug         | 17.257     | MHz            | Unity Gain Frequency      |
+
+Obtained plot:
 ![I_out/V_out vs. Temperature ](Media/bodeplot.png)
 
-
-The file [`lstb.yaml`](sim/lstb.yaml) `lg_mag` und `lg_phase` contains the corner simulations.
+The file [`lstb.yaml`](sim/OTA_stability(lstb.yaml) `lg_mag` und `lg_phase` contains the corner simulations.
+Corners might not be implemented yet.
 
