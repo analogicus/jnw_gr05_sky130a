@@ -15,7 +15,6 @@ This module creates an output current (almost linearly) dependent on the present
 # How
 
 Observe temperature-dependency in the diode equation, and use that to create a temperature dependent voltage based on the difference in the base-emitter voltage of two different BJTs.
-Caution: The plot you find at the bottom of this page is as of now just a local upload, might be included into the github actions at a later point.
 
 # What
 
@@ -51,7 +50,7 @@ Caution: The plot you find at the bottom of this page is as of now just a local 
 | AVDD                | 1.7    | 1.8           | 1.9    | V     |
 | Temperature         | -40     | 27            | 125     | C     |
 
-![I_out/V_out vs. Temperature ](sim/JNW_GR05/output_vs_temperature.png)
+![I_out/V_out vs. Temperature ](Media/output_vs_temperature.png)
 
 # OTA Analysis
 

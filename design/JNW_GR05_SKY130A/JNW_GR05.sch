@@ -16,6 +16,14 @@ T {big diode
 } -1140 -180 0 0 0.4 0.4 {}
 T {small diode
 } -770 -190 0 0 0.4 0.4 {}
+T {Shift-I          Insert new component
+Shift-Z         Zoom in
+Ctrl-Z           Zoom out
+R                 Rotate
+F                 Full view
+
+Manual: https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.pdf
+} -1390 -1300 0 0 0.6 0.6 {}
 N 240 -390 300 -390 {lab=Voutc}
 N 620 -390 620 -120 {lab=VSS}
 N 330 -290 360 -290 {lab=sys_out}
@@ -68,56 +76,20 @@ N -1000 -360 -1000 -310 {
 lab=V_n}
 N -800 -40 -720 -40 {
 lab=VSS}
-N -1000 -900 -840 -900 {
-lab=VDD_1V8}
 N -360 -370 -310 -370 {
 lab=OTA_out}
 N -270 -370 -230 -370 {
 lab=VSS}
-N -800 -900 -360 -900 {
-lab=VDD_1V8}
-N -360 -900 -320 -900 {
-lab=VDD_1V8}
 N -270 -650 -270 -400 {
 lab=V_current_drive}
-N -360 -900 -360 -800 {
-lab=VDD_1V8}
-N -360 -770 -320 -770 {
-lab=VDD_1V8}
-N -320 -900 -320 -770 {
-lab=VDD_1V8}
-N -460 -770 -460 -700 {
-lab=V_current_drive}
-N -1150 -900 -1150 -400 {
-lab=VDD_1V8}
-N -1320 -900 -1060 -900 {
-lab=VDD_1V8}
-N -800 -900 -800 -800 {
-lab=VDD_1V8}
-N -840 -900 -840 -770 {
-lab=VDD_1V8}
-N -460 -770 -400 -770 {
-lab=V_current_drive}
-N -840 -770 -800 -770 {
-lab=VDD_1V8}
 N -150 -620 -150 -560 {
 lab=sys_out}
-N -320 -900 -150 -900 {
-lab=VDD_1V8}
 N -150 -650 -110 -650 {
 lab=VDD_1V8}
 N -150 -900 -110 -900 {
 lab=VDD_1V8}
 N -360 -650 -190 -650 {
 lab=V_current_drive}
-N -460 -700 -360 -700 {
-lab=V_current_drive}
-N -1060 -700 -1000 -700 {
-lab=VDD_1V8}
-N -1060 -900 -1060 -700 {
-lab=VDD_1V8}
-N -1000 -900 -1000 -730 {
-lab=VDD_1V8}
 N -150 -900 -150 -680 {
 lab=VDD_1V8}
 N -110 -900 -110 -650 {
@@ -136,23 +108,9 @@ N -1000 -40 -900 -40 {
 lab=VSS}
 N -270 -340 -270 -260 {
 lab=VSS}
-N -760 -770 -460 -770 {
-lab=V_current_drive}
-N -960 -700 -460 -700 {
-lab=V_current_drive}
-N -360 -740 -360 -700 {
-lab=V_current_drive}
-N -840 -900 -800 -900 {
-lab=VDD_1V8}
-N -360 -700 -360 -650 {
-lab=V_current_drive}
-N -1060 -900 -1000 -900 {
-lab=VDD_1V8}
 N -1150 -40 -1120 -40 {
 lab=VSS}
 N -720 -380 -690 -380 {
-lab=V_p}
-N -800 -740 -800 -170 {
 lab=V_p}
 N -720 -360 -690 -360 {
 lab=V_n}
@@ -223,6 +181,56 @@ N 400 -120 400 -40 {lab=VSS}
 N 610 -900 620 -900 {lab=VDD_1V8}
 N 620 -900 620 -560 {lab=VDD_1V8}
 N 620 -560 620 -530 {lab=VDD_1V8}
+N -1000 -900 -840 -900 {
+lab=VDD_1V8}
+N -800 -900 -360 -900 {
+lab=VDD_1V8}
+N -360 -900 -320 -900 {
+lab=VDD_1V8}
+N -360 -900 -360 -800 {
+lab=VDD_1V8}
+N -360 -770 -320 -770 {
+lab=VDD_1V8}
+N -320 -900 -320 -770 {
+lab=VDD_1V8}
+N -460 -770 -460 -700 {
+lab=V_current_drive}
+N -1150 -900 -1150 -400 {
+lab=VDD_1V8}
+N -1320 -900 -1060 -900 {
+lab=VDD_1V8}
+N -800 -900 -800 -800 {
+lab=VDD_1V8}
+N -840 -900 -840 -770 {
+lab=VDD_1V8}
+N -460 -770 -400 -770 {
+lab=V_current_drive}
+N -840 -770 -800 -770 {
+lab=VDD_1V8}
+N -320 -900 -150 -900 {
+lab=VDD_1V8}
+N -460 -700 -360 -700 {
+lab=V_current_drive}
+N -1060 -700 -1000 -700 {
+lab=VDD_1V8}
+N -1060 -900 -1060 -700 {
+lab=VDD_1V8}
+N -1000 -900 -1000 -730 {
+lab=VDD_1V8}
+N -760 -770 -460 -770 {
+lab=V_current_drive}
+N -960 -700 -460 -700 {
+lab=V_current_drive}
+N -360 -740 -360 -700 {
+lab=V_current_drive}
+N -840 -900 -800 -900 {
+lab=VDD_1V8}
+N -360 -700 -360 -650 {
+lab=V_current_drive}
+N -1060 -900 -1000 -900 {
+lab=VDD_1V8}
+N -800 -740 -800 -170 {
+lab=V_p}
 C {devices/ipin.sym} 1050 -460 0 0 {name=p5 lab=RESET
 }
 C {JNW_GR05_SKY130A/Comparator.sym} 620 -480 0 0 {name=x8}
@@ -259,8 +267,6 @@ C {devices/lab_pin.sym} 1480 -480 0 0 {name=p24 sig_type=std_logic lab=Q3}
 C {devices/lab_pin.sym} 1480 -460 0 0 {name=p25 sig_type=std_logic lab=Q4}
 C {devices/ipin.sym} -1320 -900 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -1330 -40 0 0 {name=p8 lab=VSS}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -960 -700 0 1 {name=x9[1:0]}
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -400 -770 0 0 {name=x6[1:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} -190 -650 0 0 {name=x7[1:0]}
 C {sky130_fd_pr/pnp_05v5.sym} -820 -140 0 0 {name=Q3
 model=pnp_05v5_W3p40L3p40
@@ -273,7 +279,6 @@ m=5
 spiceprefix=X
 }
 C {devices/lab_wire.sym} -390 -370 0 0 {name=p10 sig_type=std_logic lab=OTA_out}
-C {devices/lab_wire.sym} -610 -770 0 0 {name=p11 sig_type=std_logic lab=V_current_drive}
 C {devices/lab_wire.sym} -720 -380 0 0 {name=p12 sig_type=std_logic lab=V_p}
 C {devices/lab_wire.sym} -720 -360 0 0 {name=p13 sig_type=std_logic lab=V_n}
 C {JNW_GR05_SKY130A/OTA_Manuel.sym} -470 -370 0 0 {name=x11}
@@ -291,7 +296,10 @@ model=pnp_05v5_W3p40L3p40
 m=1
 spiceprefix=X
 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -760 -770 0 1 {name=x3[1:0]}
 C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 0 -250 0 0 {name=x1[0:1]}
 C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} -100 -370 1 0 {name=x7}
 C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -100 -510 1 0 {name=x13[0:2]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -960 -700 0 1 {name=x9[1:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -400 -770 0 0 {name=x6[1:0]}
+C {devices/lab_wire.sym} -610 -770 0 0 {name=p11 sig_type=std_logic lab=V_current_drive}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -760 -770 0 1 {name=x3[1:0]}
