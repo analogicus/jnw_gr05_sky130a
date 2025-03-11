@@ -53,3 +53,10 @@ Caution: The plot you find at the bottom of this page is as of now just a local 
 
 ![I_out/V_out vs. Temperature ](sim/JNW_GR05/output_vs_temperature.png)
 
+# OTA Analysis
+
+![I_out/V_out vs. Temperature ](Media/bodeplot.png)
+
+
+The file [`lstb.yaml`](sim/lstb.yaml) `lg_mag` und `lg_phase` contains the corner simulations.
+

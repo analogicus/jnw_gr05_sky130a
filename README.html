@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>README</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide section level1">
+
+<p><a href="../../actions/workflows/gds.yaml"><img
+src="../../actions/workflows/gds.yaml/badge.svg" alt="GDS" /></a> <a
+href="../../actions/workflows/drc.yaml"><img
+src="../../actions/workflows/drc.yaml/badge.svg" alt="DRC" /></a> <a
+href="../../actions/workflows/lvs.yaml"><img
+src="../../actions/workflows/lvs.yaml/badge.svg" alt="LVS" /></a> <a
+href="../../actions/workflows/docs.yaml"><img
+src="../../actions/workflows/docs.yaml/badge.svg" alt="DOCS" /></a> <a
+href="../../actions/workflows/sim.yaml"><img
+src="../../actions/workflows/sim.yaml/badge.svg" alt="SIM" /></a></p>
+</div>
+<div id="who" class="slide section level1">
+<h1>Who</h1>
+<p>Group 05 (Manuel,Emilien,Amir,Fabrice)</p>
+</div>
+<div id="why" class="slide section level1">
+<h1>Why</h1>
+<p>This module creates an output current (almost linearly) dependent on
+the present temperatutre.</p>
+</div>
+<div id="how" class="slide section level1">
+<h1>How</h1>
+<p>Observe temperature-dependency in the diode equation, and use that to
+create a temperature dependent voltage based on the difference in the
+base-emitter voltage of two different BJTs. Caution: The plot you find
+at the bottom of this page is as of now just a local upload, might be
+included into the github actions at a later point.</p>
+</div>
+<div id="what" class="slide section level1">
+<h1>What</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">What</th>
+<th align="center">Cell/Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Schematic</td>
+<td align="center">design/JNW_GR05_SKY130A/JNW_GR05.sch</td>
+</tr>
+<tr class="even">
+<td align="left">Layout</td>
+<td align="center">design/JNW_GR05_SKY130A/JNW_GR05.mag</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="changelogplan" class="slide section level1">
+<h1>Changelog/Plan</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Version</th>
+<th align="left">Status</th>
+<th align="left">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0.1.0</td>
+<td align="left">:Approved:</td>
+<td align="left">Fulfills the criterions for milestone 01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="signal-interface" class="slide section level1">
+<h1>Signal interface</h1>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="27%" />
+<col width="27%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Signal</th>
+<th align="center">Direction</th>
+<th align="center">Domain</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">VDD_1V8</td>
+<td align="center">Input</td>
+<td align="center">VDD_1V8</td>
+<td align="left">Main supply</td>
+</tr>
+<tr class="even">
+<td align="left">VSS</td>
+<td align="center">Input</td>
+<td align="center">Ground</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">PWRUP_1V8</td>
+<td align="center">Input</td>
+<td align="center">VDD_1V8</td>
+<td align="left">Power up the circuit (not implemented yet)</td>
+</tr>
+<tr class="even">
+<td align="left">I_out</td>
+<td align="center">Output</td>
+<td align="center">I=f(T)</td>
+<td align="left">Temperature dependent output current</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="key-parameters" class="slide section level1">
+<h1>Key parameters</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="center">Min</th>
+<th align="center">Typ</th>
+<th align="center">Max</th>
+<th align="center">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Technology</td>
+<td align="center"></td>
+<td align="center">Skywater 130 nm</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">AVDD</td>
+<td align="center">1.7</td>
+<td align="center">1.8</td>
+<td align="center">1.9</td>
+<td align="center">V</td>
+</tr>
+<tr class="odd">
+<td align="left">Temperature</td>
+<td align="center">-40</td>
+<td align="center">27</td>
+<td align="center">125</td>
+<td align="center">C</td>
+</tr>
+</tbody>
+</table>
+<div class="float">
+<img src="sim/JNW_GR05/output_vs_temperature.png"
+alt="I_out/V_out vs. Temperature" />
+<div class="figcaption">I_out/V_out vs. Temperature</div>
+</div>
+</div>
+<div id="ota-analysis" class="slide section level1">
+<h1>OTA Analysis</h1>
+<div class="float">
+<img src="Media/bodeplot.png" alt="I_out/V_out vs. Temperature" />
+<div class="figcaption">I_out/V_out vs. Temperature</div>
+</div>
+<p>The file <a href="sim/lstb.yaml"><code>lstb.yaml</code></a>
+<code>lg_mag</code> und <code>lg_phase</code> contains the corner
+simulations.</p>
+</div>
+</body>
+</html>

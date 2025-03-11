@@ -14,11 +14,11 @@ write {cicname}_meas.raw
 
 load {cicname}_op.raw
 
-* let vdiff = v(xdut.vd1) - v(xdut.vr1)
+* let vdiff = v(xdut.v_p) - v(xdut.v_n)
 * print vdiff
 * print v(lpo)
-* print v(xdut.vr1)
-* print v(xdut.vd1)
+* print v(xdut.v_p)
+* print v(xdut.v_n)
 * print v(xdut.xota.vstart)
 
 * write {cicname}_meas.raw

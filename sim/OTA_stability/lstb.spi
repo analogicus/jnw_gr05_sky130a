@@ -49,7 +49,7 @@ X999 LPI LPO loopgainprobe
 * NGSPICE control
 *----------------------------------------------------------------
 .control
-set num_threads=8
+set num_threads=14
 set color0=white
 set color1=black
 unset askquit

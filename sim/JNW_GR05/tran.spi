@@ -26,9 +26,9 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  dc 1.8
-Vreset RESET VSS PULSE(0 1.8 0 1n 1n 10n 40u)
-VCLK  CLK   VSS  pulse (0 {AVDD} 2n {TRF} {TRF} {PERIOD_CLK/2}  {PERIOD_CLK} )
+VDD  VDD_1V8  VSS  dc {vdda}
+Vreset RESET VSS PULSE(0 {vdda} 0 1n 1n 10n 40u)
+VCLK  CLK   VSS  pulse (0 {vdda} 2n {TRF} {TRF} {PERIOD_CLK/2}  {PERIOD_CLK} )
 
 *-----------------------------------------------------------------
 * DUT
@@ -58,7 +58,7 @@ optran 0 0 0 1n 1u 0
 set fend = .raw
 foreach vtemp -20,  30, 80, 120
 	option temp=$vtemp
-	tran 1n 50u 10n
+	tran 1n 2u 10n
 	write {cicname}_$vtemp$fend
 end
 quit
