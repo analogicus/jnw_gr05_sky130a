@@ -18,7 +18,7 @@
 * PARAMETERS
 *-----------------------------------------------------------------
 .param TRF = 10p
-.param PERIOD_CLK = 100n
+.param PERIOD_CLK = 20n
 .param vdda = 1.8
 .param AVDD = {vdda}
 
@@ -59,7 +59,7 @@ optran 0 0 0 1n 1u 0
 set fend = .raw
 foreach vtemp 20
 	option temp=$vtemp
-	tran 1n 50u 10n
+	tran 1n 2u 10n
 	write {cicname}_$vtemp$fend
 end
 quit

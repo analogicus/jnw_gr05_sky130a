@@ -33,15 +33,14 @@ N 390 -240 460 -240 {lab=#net4}
 N 430 -180 460 -180 {lab=CLK}
 N 520 -300 520 -270 {lab=VDD}
 N 520 -150 520 -120 {lab=VSS}
-N 450 -120 490 -120 {lab=VSS}
-N 490 -150 490 -120 {lab=VSS}
+N 450 -120 490 -120 {lab=RESET_N}
+N 490 -150 490 -120 {lab=RESET_N}
 C {JNW_TR_SKY130A/JNWTR_ANX1_CV.sym} 130 -340 0 0 {name=x1 }
 C {JNW_TR_SKY130A/JNWTR_ANX1_CV.sym} 130 -120 0 0 {name=x2 }
 C {devices/ipin.sym} 60 -340 0 0 {name=p4 lab=J}
 C {devices/ipin.sym} -120 -140 0 0 {name=p1 lab=K}
 C {devices/ipin.sym} 430 -180 0 0 {name=p2 lab=CLK}
 C {devices/ipin.sym} 140 -450 0 0 {name=p3 lab=VDD}
-C {devices/ipin.sym} 140 -30 0 0 {name=p5 lab=VSS}
 C {devices/lab_wire.sym} 90 -90 0 0 {name=p9 sig_type=std_logic lab=Q}
 C {devices/lab_wire.sym} 90 -390 0 0 {name=p11 sig_type=std_logic lab=nQ}
 C {devices/lab_wire.sym} 170 -280 0 0 {name=p12 sig_type=std_logic lab=VSS}
