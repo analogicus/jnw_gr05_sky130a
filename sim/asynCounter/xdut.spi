@@ -1,2 +1,2 @@
 *Automatic generated instance fron ../../tech/scripts/genxdut asynCounter
-XDUT VDD Q1 VSS CLK Q2 Q3 Q4  asynCounter
+XDUT VDD Q1 VSS CLK Q2 Q3 Q4 RESET  asynCounter

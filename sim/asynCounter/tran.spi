@@ -17,7 +17,7 @@
 * PARAMETERS
 *-----------------------------------------------------------------
 .param TRF = 10p
-.param PERIOD_CLK=20n
+.param PERIOD_CLK=50n
 .param vdda = 1.8
 .param AVDD = {vdda}
 
@@ -27,7 +27,7 @@
 VSS  VSS  0     dc 0
 VDD  VDD  VSS   dc 1.8
 VCLK CLK  0     dc 0   pulse(0 {AVDD} 10n {TRF} {TRF} {PERIOD_CLK/2} {PERIOD_CLK})
-
+VRESET RESET 0  dc 0   pulse(0 {AVDD} 2u  {TRF} {TRF} {PERIOD_CLK*6} 2u)
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
@@ -50,7 +50,7 @@ unset askquit
 
 
 
-tran 5n 3u
+tran 1n 6u
 write
 quit
 
