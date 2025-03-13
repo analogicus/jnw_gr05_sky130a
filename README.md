@@ -50,7 +50,17 @@ Observe temperature-dependency in the diode equation, and use that to create a t
 | AVDD                | 1.7    | 1.8           | 1.9    | V     |
 | Temperature         | -40     | 27            | 125     | C     |
 
-![I_out/V_out vs. Temperature ](Media/output_vs_temperature.png)
+A output for a (take the word!) typical simulation is given by the following figure.
+It shows the temperature-dependent output current which is fed into the capacitor on the right hand side
+and the reference voltage used for the comparator on the right hand side.
+![I_out/V_ref vs. Temperature ](Media/output_vs_temperature.png)
+
+Running for corners yields a similar but less consistent result (see below).
+CAUTION: This is the first corner results, obtained on March 13. No steps taken yet to make it more consistent.
+Output current:
+![All corners: I_out vs. Temperature ](Media/current_vs_temperature_corners.png)
+Reference voltage:
+![All corners: V_ref vs. Temperature ](Media/voltage_vs_temperature_corners.png)
 
 # OTA Analysis
 
