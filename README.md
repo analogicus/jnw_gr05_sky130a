@@ -54,19 +54,19 @@ Observe temperature-dependency in the diode equation, and use that to create a t
 
 # OTA Analysis
 
-
-Results for RT are: 
+** Results for RT are:  **
 | Parameter  | Value      | Unit           | Description               |
 |------------|------------|----------------|---------------------------|
-| f3db       | 175.57     | kHz            | -3 dB Bandwidth           |
+| f3db       | 175.57     | kHz            | 3 dB Bandwidth           |
 | gm_db      | -16.309    | dB             | Gain Margin               |
 | lf_gain    | 40.073     | dB             | Low-Frequency Gain        |
 | pm_deg     | 67.513     | Degrees        | Phase Margin              |
 | ug         | 17.257     | MHz            | Unity Gain Frequency      |
 
-Obtained plot:
+Most importantly, the OTA is stable and meets the typical 40 dB DC gain for two-stage systems.
+Further, the parameters indicate a rather low 3dB bandwidth and low unity gain frequency.
+In physical systems, temperature increases or decreasses with a (compared to the OTA paramters) large time constant, 
+thus we see no need for adapting the amplifier design.
+
+** Obtained bodeplot: **
 ![I_out/V_out vs. Temperature ](Media/bodeplot.png)
-
-The file [`lstb.yaml`](sim/OTA_stability(lstb.yaml) `lg_mag` und `lg_phase` contains the corner simulations.
-Corners might not be implemented yet.
-
