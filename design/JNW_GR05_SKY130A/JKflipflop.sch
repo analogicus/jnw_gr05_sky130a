@@ -13,7 +13,7 @@ N 170 -60 170 -30 {lab=VSS}
 N 140 -30 170 -30 {lab=VSS}
 N 140 -450 170 -450 {lab=VDD}
 N 560 -240 660 -240 {lab=Q}
-N 560 -180 660 -180 {lab=#net1}
+N 560 -180 660 -180 {lab=nQ}
 N 90 -360 130 -360 {lab=nQ}
 N 90 -390 90 -360 {lab=nQ}
 N 60 -340 130 -340 {lab=J}
@@ -22,17 +22,19 @@ N 90 -120 130 -120 {lab=Q}
 N 90 -120 90 -90 {lab=Q}
 N -10 -210 -10 -180 {lab=VDD}
 N -10 -100 -10 -70 {lab=VSS}
-N 30 -140 130 -140 {lab=#net2}
-N 220 -350 300 -350 {lab=#net3}
-N 300 -350 300 -250 {lab=#net3}
-N 300 -230 300 -130 {lab=#net4}
-N 220 -130 300 -130 {lab=#net4}
+N 30 -140 130 -140 {lab=#net1}
+N 220 -350 300 -350 {lab=#net2}
+N 300 -350 300 -250 {lab=#net2}
+N 300 -230 300 -130 {lab=#net3}
+N 220 -130 300 -130 {lab=#net3}
 N 340 -310 340 -280 {lab=VDD}
 N 340 -200 340 -170 {lab=VSS}
-N 390 -240 460 -240 {lab=#net5}
+N 390 -240 460 -240 {lab=#net4}
 N 430 -180 460 -180 {lab=CLK}
 N 520 -300 520 -270 {lab=VDD}
 N 520 -150 520 -120 {lab=VSS}
+N 450 -120 490 -120 {lab=VSS}
+N 490 -150 490 -120 {lab=VSS}
 C {JNW_TR_SKY130A/JNWTR_ANX1_CV.sym} 130 -340 0 0 {name=x1 }
 C {JNW_TR_SKY130A/JNWTR_ANX1_CV.sym} 130 -120 0 0 {name=x2 }
 C {devices/ipin.sym} 60 -340 0 0 {name=p4 lab=J}
@@ -57,3 +59,5 @@ C {devices/opin.sym} 660 -180 2 1 {name=p18 lab=nQ
 }
 C {devices/opin.sym} 660 -240 2 1 {name=p19 lab=Q
 }
+C {devices/ipin.sym} 140 -30 0 0 {name=p6 lab=VSS}
+C {devices/ipin.sym} 450 -120 0 0 {name=p7 lab=RESET_N}

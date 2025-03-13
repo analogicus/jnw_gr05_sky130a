@@ -52,10 +52,6 @@ N 1080 -480 1110 -480 {lab=Voutc}
 N 1080 -500 1110 -500 {lab=VDD_1V8}
 N 1050 -460 1080 -460 {lab=RESET}
 N 860 -480 1080 -480 {lab=Voutc}
-N 1410 -460 1480 -460 {lab=Q4}
-N 1410 -500 1480 -500 {lab=Q1}
-N 1410 -480 1480 -480 {lab=Q3}
-N 1410 -440 1480 -440 {lab=Q2}
 N 300 -390 320 -390 {lab=Voutc}
 N 320 -580 320 -390 {lab=Voutc}
 N -1000 -230 -1000 -170 {
@@ -231,6 +227,14 @@ N -1060 -900 -1000 -900 {
 lab=VDD_1V8}
 N -800 -740 -800 -170 {
 lab=V_p}
+N 1410 -500 1450 -500 {lab=Q1}
+N 1410 -480 1450 -480 {lab=Q2}
+N 1410 -460 1450 -460 {lab=Q3}
+N 1410 -440 1450 -440 {lab=Q4}
+N 1410 -420 1450 -420 {lab=Q5}
+N 1410 -400 1450 -400 {lab=Q5}
+N 1410 -380 1450 -380 {lab=Q7}
+N 1410 -360 1450 -360 {lab=Q8}
 C {devices/ipin.sym} 1050 -460 0 0 {name=p5 lab=RESET
 }
 C {JNW_GR05_SKY130A/Comparator.sym} 620 -480 0 0 {name=x8}
@@ -254,17 +258,16 @@ C {devices/lab_wire.sym} 860 -480 0 0 {name=p2 sig_type=std_logic lab=Voutc}
 C {devices/ipin.sym} 820 -940 0 0 {name=p14 lab=CLK
 }
 C {devices/lab_wire.sym} 500 -450 0 0 {name=p3 sig_type=std_logic lab=sys_outc}
-C {JNW_GR05_SKY130A/asynCounter.sym} 1260 -470 0 0 {name=x3}
 C {devices/lab_wire.sym} 1080 -440 0 0 {name=p4 sig_type=std_logic lab=VSS
 }
 C {devices/lab_pin.sym} 1080 -500 0 0 {name=p20 sig_type=std_logic lab=VDD_1V8
 }
-C {devices/lab_pin.sym} 1480 -440 0 0 {name=p16 sig_type=std_logic lab=Q2
+C {devices/lab_pin.sym} 1450 -400 0 1 {name=p16 sig_type=std_logic lab=Q6
 }
-C {devices/lab_pin.sym} 1480 -500 0 0 {name=p23 sig_type=std_logic lab=Q1
+C {devices/lab_pin.sym} 1450 -500 0 1 {name=p23 sig_type=std_logic lab=Q1
 }
-C {devices/lab_pin.sym} 1480 -480 0 0 {name=p24 sig_type=std_logic lab=Q3}
-C {devices/lab_pin.sym} 1480 -460 0 0 {name=p25 sig_type=std_logic lab=Q4}
+C {devices/lab_pin.sym} 1450 -460 0 1 {name=p24 sig_type=std_logic lab=Q3}
+C {devices/lab_pin.sym} 1450 -440 0 1 {name=p25 sig_type=std_logic lab=Q4}
 C {devices/ipin.sym} -1320 -900 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -1330 -40 0 0 {name=p8 lab=VSS}
 C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} -190 -650 0 0 {name=x7[1:0]}
@@ -303,3 +306,11 @@ C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -960 -700 0 1 {name=x9[1:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -400 -770 0 0 {name=x6[1:0]}
 C {devices/lab_wire.sym} -610 -770 0 0 {name=p11 sig_type=std_logic lab=V_current_drive}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -760 -770 0 1 {name=x3[1:0]}
+C {JNW_GR05_SKY130A/asynCounter_8bit.sym} 1260 -430 0 0 {name=x9}
+C {devices/lab_pin.sym} 1450 -360 0 1 {name=p29 sig_type=std_logic lab=Q8
+
+}
+C {devices/lab_pin.sym} 1450 -420 0 1 {name=p30 sig_type=std_logic lab=Q5
+}
+C {devices/lab_pin.sym} 1450 -480 0 1 {name=p31 sig_type=std_logic lab=Q2}
+C {devices/lab_pin.sym} 1450 -380 0 1 {name=p32 sig_type=std_logic lab=Q7}
