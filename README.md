@@ -13,30 +13,6 @@ We want to bake. Thus, we somehow have to measure the temperature in the oven --
 This module creates an output current (almost linearly) dependent on the present temperature.
 
 
-# About the time-dependent current
-* Observe temperature-dependency in the diode equation
-* Take two  Bipolar-Transistors (BJTs) with different cross-sectional area and make them diode-connected.
-* Source a not necessarily identical current through both BJTs, but have the ratio fixed. The current ratio is not allowed to cancel the cross-sectional area ratio.
-* Add a resistor in series to the wider BJT, BJT remains connected to ground.
-* Connect the top terminal of the resistor and the terminal of the BJT to the input of an Operational-Transconductance-Amplifier (OTA)
-* Connect the output of the OTA to a Common-Source amplifier whose output current is mirrored back into the BJTs.
-
-Now, the inputs of the OTA are equal, and a temperature dependent voltage across the resistor is generated based on the difference in the base-emitter voltage of two different BJTs.
-Thus, the current sourced into the BJTs is also linearly dependent in temperature - as desired.
-The general structure is shown in this sketch:
-![Temperature Dependent Current Generation](Media/ptat_ctat_vref.png)
-
-# About the reference voltage:
-The temperature-dependent current is mirrored into a resistor connected in series to another diode-connected BJT. The temperature dependency cancels or at least counteracts for a proper choice of the series resistance. Thus, a local temperature-invariant voltage is created which will be used as a reference.
-# About the OTA:
-The OTA is used to force the terminal of the smaller BJT to the voltage on the terminal of the resistor connected in series to the bigger BJT.
-It consists of a differential pair followed by a current-mirror stage.
-Since the voltage at the OTA inputs is basically a diode voltage, the inputs are close to the threshold voltage of the NMOS. Thus, PMOSes are used for the input pair.
-The figure below presents the OTA schematic. Further down, a stability analysis of the OTA is used to check for a stable system.
-![OTA Schematics ](Media/OTA_Manuel.svg)
-
-# About the comparator:
-
 
 # What
 
@@ -87,9 +63,34 @@ Output current:
 Reference voltage:
 ![All corners: V_ref vs. Temperature ](Media/voltage_vs_temperature_corners.png)
 
-# OTA Analysis
 
-** Results for RT are:  **
+
+# Description of the individual blocks
+## About the time-dependent current
+* Observe temperature-dependency in the diode equation
+* Take two  Bipolar-Transistors (BJTs) with different cross-sectional area and make them diode-connected.
+* Source a not necessarily identical current through both BJTs, but have the ratio fixed. The current ratio is not allowed to cancel the cross-sectional area ratio.
+* Add a resistor in series to the wider BJT, BJT remains connected to ground.
+* Connect the top terminal of the resistor and the terminal of the BJT to the input of an Operational-Transconductance-Amplifier (OTA)
+* Connect the output of the OTA to a Common-Source amplifier whose output current is mirrored back into the BJTs.
+
+Now, the inputs of the OTA are equal, and a temperature dependent voltage across the resistor is generated based on the difference in the base-emitter voltage of two different BJTs.
+Thus, the current sourced into the BJTs is also linearly dependent in temperature - as desired.
+The general structure is shown in this sketch:
+![Temperature Dependent Current Generation](Media/ptat_ctat_vref.png)
+
+## About the reference voltage:
+The temperature-dependent current is mirrored into a resistor connected in series to another diode-connected BJT. The temperature dependency cancels or at least counteracts for a proper choice of the series resistance. Thus, a local temperature-invariant voltage is created which will be used as a reference. The voltage reference is also shown in the plot above.
+## About the OTA:
+The OTA is used to force the terminal of the smaller BJT to the voltage on the terminal of the resistor connected in series to the bigger BJT.
+It consists of a differential pair followed by a current-mirror stage.
+Since the voltage at the OTA inputs is basically a diode voltage, the inputs are close to the threshold voltage of the NMOS. Thus, PMOSes are used for the input pair.
+The figure below presents the OTA schematic. Further down, a stability analysis of the OTA is used to check for a stable system.
+<img src="Media/OTA_Manuel.svg" alt="OTA Schematics" width="50%">
+
+## OTA Analysis
+
+#### Results for RT are:
 | Parameter  | Value      | Unit           | Description               |
 |------------|------------|----------------|---------------------------|
 | f3db       | 175.57     | kHz            | 3 dB Bandwidth           |
@@ -103,8 +104,16 @@ Further, the parameters indicate a rather low 3dB bandwidth and low unity gain f
 In physical systems, temperature increases or decreasses with a (compared to the OTA paramters) large time constant, 
 thus we see no need for adapting the amplifier design.
 
-** Obtained bodeplot: **
+#### Obtained bodeplot:
 ![I_out/V_out vs. Temperature ](Media/bodeplot.png)
 
-# For completeness: View of the entire Top-Level design
+
+## About the comparator:
+
+## About the counter:
+
+## For completeness: View of the entire Top-Level design
 ![Top-Level Design](Media/system_design.svg)
+
+
+The end.
