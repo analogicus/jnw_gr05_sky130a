@@ -134,17 +134,9 @@ C {JNW_GR05_SKY130A/JKflipflop.sym} 70 -80 0 0 {name=x1}
 C {JNW_GR05_SKY130A/JKflipflop.sym} 290 -80 0 0 {name=x2}
 C {JNW_GR05_SKY130A/JKflipflop.sym} 510 -80 0 0 {name=x3}
 C {JNW_GR05_SKY130A/JKflipflop.sym} 730 -80 0 0 {name=x4}
-C {devices/ipin.sym} -200 -160 0 0 {name=p4 lab=VDD}
-C {devices/opin.sym} 140 -100 2 1 {name=p19 lab=Q1
-}
-C {devices/ipin.sym} -210 60 0 0 {name=p1 lab=VSS}
-C {devices/ipin.sym} -40 -80 0 0 {name=p2 lab=CLK}
-C {devices/opin.sym} 360 -100 2 1 {name=p3 lab=Q2
-}
-C {devices/opin.sym} 580 -100 2 1 {name=p5 lab=Q3
-}
-C {devices/opin.sym} 800 -100 2 1 {name=p6 lab=Q4}
-C {devices/ipin.sym} -240 -30 0 0 {name=p8 lab=Reset
+C {devices/ipin.sym} -200 -160 0 0 {name=p1 lab=VDD}
+C {devices/ipin.sym} -210 60 0 0 {name=p2 lab=VSS}
+C {devices/ipin.sym} -240 -30 0 0 {name=p3 lab=Reset
 }
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} -210 -30 0 0 {name=x5 }
 C {devices/lab_pin.sym} 55 0 0 0 {name=p7 sig_type=std_logic lab=RESET_N
@@ -152,15 +144,7 @@ C {devices/lab_pin.sym} 55 0 0 0 {name=p7 sig_type=std_logic lab=RESET_N
 C {JNW_GR05_SKY130A/JKflipflop.sym} 950 -80 0 0 {name=x6}
 C {JNW_GR05_SKY130A/JKflipflop.sym} 1170 -80 0 0 {name=x7}
 C {JNW_GR05_SKY130A/JKflipflop.sym} 1390 -80 0 0 {name=x8}
-C {devices/opin.sym} 1020 -100 2 1 {name=p9 lab=Q5
-}
-C {devices/opin.sym} 1240 -100 2 1 {name=p13 lab=Q6
-
-}
-C {devices/opin.sym} 1460 -100 2 1 {name=p14 lab=Q7}
 C {JNW_GR05_SKY130A/JKflipflop.sym} 1610 -80 0 0 {name=x9}
-C {devices/opin.sym} 1680 -100 2 1 {name=p18 lab=Q8
-}
 C {devices/lab_pin.sym} 1595 20 0 0 {name=p10 sig_type=std_logic lab=RESET_N
 }
 C {devices/lab_pin.sym} 715 20 0 0 {name=p21 sig_type=std_logic lab=RESET_N
@@ -174,4 +158,28 @@ C {devices/lab_pin.sym} 1375 15 0 0 {name=p24 sig_type=std_logic lab=RESET_N
 C {devices/lab_pin.sym} 275 15 0 0 {name=p25 sig_type=std_logic lab=RESET_N
 }
 C {devices/lab_pin.sym} 495 15 0 0 {name=p26 sig_type=std_logic lab=RESET_N
+}
+C {devices/ipin.sym} -40 -80 0 0 {name=p4 lab=CLK
+}
+C {devices/opin.sym} 140 -100 0 0 {name=p5 lab=Q1
+}
+C {devices/opin.sym} 360 -100 0 0 {name=p6 lab=Q2
+}
+C {devices/opin.sym} 580 -100 0 0 {name=p8 lab=Q3
+
+}
+C {devices/opin.sym} 800 -100 0 0 {name=p9 lab=Q4
+
+}
+C {devices/opin.sym} 1020 -100 0 0 {name=p11 lab=Q5
+
+}
+C {devices/opin.sym} 1240 -100 0 0 {name=p12 lab=Q6
+
+}
+C {devices/opin.sym} 1460 -100 0 0 {name=p13 lab=Q7
+
+}
+C {devices/opin.sym} 1680 -100 0 0 {name=p14 lab=Q8
+
 }
