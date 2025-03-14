@@ -3,9 +3,9 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/asynCounter_lpe.spi
+.include ../../../work/lpe/asynCounter_8bit_lpe.spi
 #else
-.include ../../../work/xsch/asynCounter.spice
+.include ../../../work/xsch/asynCounter_8bit.spice
 #endif
 
 *-----------------------------------------------------------------
@@ -27,7 +27,8 @@
 VSS  VSS  0     dc 0
 VDD  VDD  VSS   dc 1.8
 VCLK CLK  0     dc 0   pulse(0 {AVDD} 10n {TRF} {TRF} {PERIOD_CLK/2} {PERIOD_CLK})
-VRESET RESET 0  dc 0   pulse(0 {AVDD} 11u  {TRF} {TRF} {PERIOD_CLK*6} 2u)
+VRESET RESET 0  dc 0   pulse(0 {AVDD} 2u  {TRF} {TRF} {PERIOD_CLK*6} 2u)
+
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
@@ -50,7 +51,7 @@ unset askquit
 
 
 
-tran 10n 11u
+tran 1n 6u
 write
 quit
 
