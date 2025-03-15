@@ -57,7 +57,7 @@ unset askquit
 set fend = .raw
 foreach vtemp 120
 	option temp=$vtemp
-	tran 25n 590.64u 
+	tran 25n 2.7u 
 	write {cicname}_$vtemp$fend
 end
 quit

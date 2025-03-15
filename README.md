@@ -109,23 +109,36 @@ thus we see no need for adapting the amplifier design.
 
 
 ## About the comparator:
-The comparator allows us to know when the capacitor voltage is higher than the reference voltage. It is a strongARM latch as shown in an article of Behzad Razavi.
-Its functionment is composed of a phase of charge and a phase of evaluation driven by a clock. When the clock signal is low, the internal nodes (outputs and intermediate nodes) are pre-charged to VDD. When the clock signal goes high, the input transistors compare the differential input voltages. If one input is higher than the other, the positive feedback mechanism quickly drives the outputs to opposite logic levels, producing a strong digital output (high or low).
-Since the comparator gives the wanted output half of the time (because of the charge's phase), the output is connected to a RS latch.
+The comparator detects when the capacitor voltage exceeds the reference voltage. It is a StrongARM latch, as described in an article by Behzad Razavi.
+
+Its operation consists of two phases, controlled by a clock signal:
+
+* Pre-charge Phase: When the clock is low, the internal nodes (outputs and intermediate nodes) are pre-charged to VDD.
+* Evaluation Phase: When the clock goes high, the input transistors compare the differential input voltages. If one input is higher than the other, a positive feedback mechanism rapidly drives the outputs to opposite logic levels, generating a strong digital output (high or low).
+Since the comparator produces a valid output only half of the time (due to the pre-charge phase), its output is connected to an RS latch to maintain a stable signal.
 The schematic of this comparator can be seen on the next figure.
 ![Comparator's schematic ](Media/comparator.png)
 link to Behzad Razavi's article : https://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine4.pdf
 
 ## About the counter:
-Our objective is to count the number of time the capacitor can be charge during a certain amount of time, to count we use a synchronous counter made of JK fliflop. In this counter, every flipflop is connected to the same clock which eliminite any delay compared to an asynchronous counter. The J and K output of each flipflop are driven by the input and ouput of the precedent flipflop with an AND gate allowing to count in binary. A reset input allows to reset every flipflop of the counter at the same time.
+Our objective is to count how many times the capacitor can charge within a given time period. To achieve this, we use a synchronous counter made of JK flip-flops.
+
+In this counter, all flip-flops share the same clock signal, eliminating the delays found in asynchronous counters. The J and K inputs of each flip-flop are controlled by an AND gate, which takes the input and output of the previous flip-flop. This setup allows the counter to increment in binary.
+
+Additionally, a reset input ensures that all flip-flops in the counter can be reset simultaneously.
 The schematic of the 8 bits counter is shown in the figure below.
 ![Counter schematic ](Media/counter.png)
 
 ## About the digital output proportional to temperature
-The principle is to count the number of time the capacitor can be charged and discharged for a certain amount of time. To do that the comparator compare the voltage of the capacitor with the reference voltage. The output allows to discharge the capacitor thanks to a transistor. then the output is a pulse signal that goes high every time the capacitor voltage is higher than the reference. The counter then counts these pulses.
-Counting how much the capacitor charge and discharge allows us to be more precise than just counting how much time the capacitor take to charge one time.
-the more time we take to count, the more the accuracy is high. For the moment we can count for 590,59 μs because with this much time there is a difference of 160 periods between the count at -40°C and 120°C so one more period means one more degree, if it is perfectly linear it would mean an accuracy of +- 1°C.
-The reset signal allows to determine the measurment time so in this case it must be a pulse signal that pulse every 590,59 μs. Since we can only count to 256 and that, in the worse case, we have to count 455 period (at 120°C) and at best 295 periods (at -40°C). So there will be an overflow but it is not a problem since no matter the temperature there will only be one overflow. To know the temperature we will then need to convert the binary output into decimal number and then do an offset to have a correct value.
+The idea is to count how many times the capacitor charges and discharges within a certain period. To do this, the comparator checks if the capacitor's voltage is higher than a reference voltage. When this happens, the comparator output goes high, which then activates a transistor to discharge the capacitor. As a result, the output is a pulse signal that goes high every time the capacitor voltage crosses the reference.
+
+A counter records these pulses. Counting how many times the capacitor charges and discharges gives more precision than just measuring how long it takes for one charge cycle. The longer we count, the higher the accuracy.
+
+Currently, we count for 590.59 μs. Within this time, there is a difference of 160 pulses between the lowest temperature (-40°C) and the highest (120°C). This means each additional pulse corresponds to 1°C if the response is perfectly linear, leading to an accuracy of ±1°C.
+
+A reset signal sets the measurement duration. In this case, it must be a pulse signal that activates every 590.59 μs. However, since our counter can only go up to 256, and the number of pulses can range from 295 (at -40°C) to 455 (at 120°C), an overflow will occur. This is not a problem because there will always be only one overflow, regardless of the temperature.
+
+To determine the temperature, we will convert the counter’s binary output to a decimal number and apply an offset to get the correct temperature value.
 
 ## For completeness: View of the entire Top-Level design
 ![Top-Level Design](Media/system_design.svg)
