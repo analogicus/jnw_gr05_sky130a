@@ -109,8 +109,23 @@ thus we see no need for adapting the amplifier design.
 
 
 ## About the comparator:
+The comparator allows us to know when the capacitor voltage is higher than the reference voltage. It is a strongARM latch as shown in an article of Behzad Razavi.
+Its functionment is composed of a phase of charge and a phase of evaluation driven by a clock. When the clock signal is low, the internal nodes (outputs and intermediate nodes) are pre-charged to VDD. When the clock signal goes high, the input transistors compare the differential input voltages. If one input is higher than the other, the positive feedback mechanism quickly drives the outputs to opposite logic levels, producing a strong digital output (high or low).
+Since the comparator gives the wanted output half of the time (because of the charge's phase), the output is connected to a RS latch.
+The schematic of this comparator can be seen on the next figure.
+![Comparator's schematic ](Media/comparator.png)
+link to Behzad Razavi's article : https://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine4.pdf
 
 ## About the counter:
+Our objective is to count the number of time the capacitor can be charge during a certain amount of time, to count we use a synchronous counter made of JK fliflop. In this counter, every flipflop is connected to the same clock which eliminite any delay compared to an asynchronous counter. The J and K output of each flipflop are driven by the input and ouput of the precedent flipflop with an AND gate allowing to count in binary. A reset input allows to reset every flipflop of the counter at the same time.
+The schematic of the 8 bits counter is shown in the figure below.
+![I_out/V_out vs. Temperature ](Media/counter.png)
+
+## About the digital output proportional to temperature
+The principle is to count the number of time the capacitor can be charged and discharged for a certain amount of time. To do that the comparator compare the voltage of the capacitor with the reference voltage. The output allows to discharge the capacitor thanks to a transistor. then the output is a pulse signal that goes high every time the capacitor voltage is higher than the reference. The counter then counts these pulses.
+Counting how much the capacitor charge and discharge allows us to be more precise than just counting how much time the capacitor take to charge one time.
+the more time we take to count, the more the accuracy is high. For the moment we can count for 590,59 μs becausewith this much time there is a difference of 160 periods between the count at -40°C and 120°C.
+The reset signal allows to determine the measurment time so in this case it must be a pulse signal that pulse every 590,59 μs but since we can only count to 256 and that, in the worse case, we have to count 455 period (at 120°C) we have to do an offset. at -40°C we have to count 295 periods so the reset signal have to also give a pulse every time the counter reach 280 (not 295 to have a security marging). 
 
 ## For completeness: View of the entire Top-Level design
 ![Top-Level Design](Media/system_design.svg)
