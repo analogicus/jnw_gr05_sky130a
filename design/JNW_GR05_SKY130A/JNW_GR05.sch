@@ -29,7 +29,7 @@ capacitor} 430 -150 0 0 0.4 0.4 {}
 T {reference voltage
 (temperature invariant)
 } -215 -480 0 0 0.4 0.4 {}
-T {<-- I_left = I_right -->} -1000 -560 0 0 0.4 0.4 {}
+T {<-- I_left = I_right -->} -1000 -560 0 0 0.345 0.345 {}
 T {charging
 capacitor} 170 -135 0 0 0.4 0.4 {}
 N 300 -420 340 -420 {lab=bufCLK}
@@ -286,7 +286,6 @@ C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -960 -700 0 1 {name=x9[1:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -400 -770 0 0 {name=x6[1:0]}
 C {devices/lab_wire.sym} -610 -770 0 0 {name=p11 sig_type=std_logic lab=V_current_drive}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -760 -770 0 1 {name=x3[1:0]}
-C {JNW_GR05_SKY130A/asynCounter_8bit.sym} 670 -590 0 0 {name=x9}
 C {devices/lab_pin.sym} 860 -520 0 1 {name=p29 sig_type=std_logic lab=Q8
 
 }
@@ -308,3 +307,4 @@ C {devices/ipin.sym} 415 -780 0 0 {name=p14 lab=CLK
 }
 C {devices/lab_wire.sym} 480 -640 0 0 {name=p18 sig_type=std_logic lab=Voutc}
 C {devices/lab_pin.sym} 860 -580 0 1 {name=p19 sig_type=std_logic lab=Q5}
+C {JNW_GR05_SKY130A/synCounter_8bit.sym} 670 -590 0 0 {name=x3}

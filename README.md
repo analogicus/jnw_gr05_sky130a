@@ -145,12 +145,12 @@ A counter records these pulses. Counting how many times the capacitor charges an
 
 Currently, we count for 590.59 μs. Within this time, there is a difference of 160 pulses between the lowest temperature (-40°C) and the highest (120°C). This means each additional pulse corresponds to 1°C if the response is perfectly linear, leading to an accuracy of ±1°C.
 
-A reset signal acting on the counter sets the measurement duration. In this case, it must be a pulse signal that activates every 590.59 μs. However, since our counter can only go up to 256, and the number of pulses can range from 295 (at -40°C) to 455 (at 120°C), an overflow will occur. This is not a problem because there will always be only one overflow, regardless of the temperature. One of the next steps would be buffering the digital output at the end of the conversion period, which lowers the timing requirements on the digital readout. In this case, the output will be availabe until the next (succesful) conversion cycle is finished.
+A reset signal acting on the counter sets the measurement duration. In this case, it must be a pulse signal that activates every 590.59 μs. However, since our counter can only go up to 256, and the number of pulses can range from 295 (at -40°C) to 455 (at 120°C), an overflow will occur. This is not a problem because there will always be only one overflow, regardless of the temperature. One of the next steps would be buffering the digital output at the end of the conversion period, which lowers the timing requirements on the digital readout. In this case, the output will be available until the next (successful) conversion cycle is finished.
 
 To determine the temperature, we will convert the counter’s (straight) binary output to a decimal number and apply an offset to get the correct temperature value.
 
 ## For completeness: View of the entire Top-Level design
-![Top-Level Design](Media/system_design.svg)
+![Top-Level Design](Media/system_design_good.png)
 
 
 The end.
