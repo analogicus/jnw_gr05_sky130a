@@ -19,7 +19,11 @@ This module creates an output current (almost linearly) dependent on the present
 | What            |        Cell/Name |
 | :-              |  :-:       |
 | Schematic       | design/JNW_GR05_SKY130A/JNW_GR05.sch |
-| Layout          | design/JNW_GR05_SKY130A/JNW_GR05.mag |
+| Schematic       | design/JNW_GR05_SKY130A/OTA_Manuel.sch |
+| Schematic       | design/JNW_GR05_SKY130A/Comparator.sch |
+| Schematic       | design/JNW_GR05_SKY130A/asynCounter_8bit.sch|
+
+
 
 
 # Changelog/Plan
@@ -49,10 +53,11 @@ This module creates an output current (almost linearly) dependent on the present
 | :---                | :---:     | :---:           | :---:     | :---: |
 | Technology          |         | Skywater 130 nm |         |       |
 | AVDD                | 1.7    | 1.8           | 1.9    | V     |
+| Average Supply Current             |  50   | 60         | 150   | uA     |
 | Temperature         | -40     | 27            | 125     | C     |
 
 A output for a (take the word!) typical simulation is given by the following figure.
-It shows the temperature-dependent output current which is fed into the capacitor on the right hand side
+It shows the temperature-dependent output current which is fed into the capacitor on the left hand side
 and the reference voltage used for the comparator on the right hand side.
 ![I_out/V_ref vs. Temperature ](Media/output_vs_temperature.png)
 
@@ -80,12 +85,14 @@ The general structure is shown in this sketch:
 ![Temperature Dependent Current Generation](Media/ptat_ctat_vref.png)
 
 ## About the reference voltage:
-The temperature-dependent current is mirrored into a resistor connected in series to another diode-connected BJT. The temperature dependency cancels or at least counteracts for a proper choice of the series resistance. Thus, a local temperature-invariant voltage is created which will be used as a reference. The voltage reference is also shown in the plot above.
+The temperature-dependent current is mirrored into a resistor connected in series to another diode-connected BJT. The temperature dependency cancels or at least counteracts for a proper choice of the series resistance. Thus, a local temperature-invariant voltage is created which will be used as a reference on the comparator (see below). The voltage reference is also shown in the plot above.
 ## About the OTA:
-The OTA is used to force the terminal of the smaller BJT to the voltage on the terminal of the resistor connected in series to the bigger BJT.
-It consists of a differential pair followed by a current-mirror stage.
+The OTA is used to force the terminal of the smaller BJT to be equal to the voltage on the terminal of the resistor connected in series to the bigger BJT.
+In the schematic, these nodes are labeled v_p and v_n, respectively.
+
+The OTA consists of a differential pair followed by a current-mirror stage.
 Since the voltage at the OTA inputs is basically a diode voltage, the inputs are close to the threshold voltage of the NMOS. Thus, PMOSes are used for the input pair.
-The figure below presents the OTA schematic. Further down, a stability analysis of the OTA is used to check for a stable system.
+The figure below presents the OTA schematic. Below, a stability analysis of the OTA is used to check for a stable system.
 <img src="Media/OTA_Manuel.svg" alt="OTA Schematics" width="50%">
 
 ## OTA Analysis
@@ -99,9 +106,10 @@ The figure below presents the OTA schematic. Further down, a stability analysis 
 | pm_deg     | 67.513     | Degrees        | Phase Margin              |
 | ug         | 17.257     | MHz            | Unity Gain Frequency      |
 
-Most importantly, the OTA is stable and meets the typical 40 dB DC gain for two-stage systems.
+Most importantly, the OTA is stable and meets the typical 40 dB DC gain for two-stage amplifiers.
 Further, the parameters indicate a rather low 3dB bandwidth and low unity gain frequency.
-In physical systems, temperature increases or decreasses with a (compared to the OTA paramters) large time constant, 
+
+In physical systems, temperature increases or decreasses with a (compared to the OTA parameters) large time constant, 
 thus we see no need for adapting the amplifier design.
 
 #### Obtained bodeplot:
@@ -109,12 +117,12 @@ thus we see no need for adapting the amplifier design.
 
 
 ## About the comparator:
-The comparator detects when the capacitor voltage exceeds the reference voltage. It is a StrongARM latch, as described in an article by Behzad Razavi.
+The comparator detects when the capacitor voltage exceeds the reference voltage. It is a StrongARM latch, as described in the article by Behzad Razavi.
 
 Its operation consists of two phases, controlled by a clock signal:
 
 * Pre-charge Phase: When the clock is low, the internal nodes (outputs and intermediate nodes) are pre-charged to VDD.
-* Evaluation Phase: When the clock goes high, the input transistors compare the differential input voltages. If one input is higher than the other, a positive feedback mechanism rapidly drives the outputs to opposite logic levels, generating a strong digital output (high or low).
+* Evaluation Phase: When the clock goes high, the input transistors compare the differential input voltages. If one input is higher than the other, a positive feedback mechanism rapidly drives the outputs to opposite logic levels, generating a strong digital output (high or low). One benefit of the StrongARM latch is its low static power draw.
 Since the comparator produces a valid output only half of the time (due to the pre-charge phase), its output is connected to an RS latch to maintain a stable signal.
 The schematic of this comparator can be seen on the next figure.
 ![Comparator's schematic ](Media/comparator.png)
@@ -130,15 +138,15 @@ The schematic of the 8 bits counter is shown in the figure below.
 ![Counter schematic ](Media/counter.png)
 
 ## About the digital output proportional to temperature
-The idea is to count how many times the capacitor charges and discharges within a certain period. To do this, the comparator checks if the capacitor's voltage is higher than a reference voltage. When this happens, the comparator output goes high, which then activates a transistor to discharge the capacitor. As a result, the output is a pulse signal that goes high every time the capacitor voltage crosses the reference.
+The idea of our implementation is to count how many times the capacitor charges and discharges within a certain period. To do this, the comparator checks if the capacitor's voltage is higher than a reference voltage. When this happens, the comparator output goes high, which then activates a transistor to discharge the capacitor. Thus, the output of the comparator is a pulse signal that goes high for (approximately) one clock cycle each time the capacitor voltage crosses the reference voltage.
 
 A counter records these pulses. Counting how many times the capacitor charges and discharges gives more precision than just measuring how long it takes for one charge cycle. The longer we count, the higher the accuracy.
 
 Currently, we count for 590.59 μs. Within this time, there is a difference of 160 pulses between the lowest temperature (-40°C) and the highest (120°C). This means each additional pulse corresponds to 1°C if the response is perfectly linear, leading to an accuracy of ±1°C.
 
-A reset signal sets the measurement duration. In this case, it must be a pulse signal that activates every 590.59 μs. However, since our counter can only go up to 256, and the number of pulses can range from 295 (at -40°C) to 455 (at 120°C), an overflow will occur. This is not a problem because there will always be only one overflow, regardless of the temperature.
+A reset signal acting on the counter sets the measurement duration. In this case, it must be a pulse signal that activates every 590.59 μs. However, since our counter can only go up to 256, and the number of pulses can range from 295 (at -40°C) to 455 (at 120°C), an overflow will occur. This is not a problem because there will always be only one overflow, regardless of the temperature. One of the next steps would be buffering the digital output at the end of the conversion period, which lowers the timing requirements on the digital readout. In this case, the output will be availabe until the next (succesful) conversion cycle is finished.
 
-To determine the temperature, we will convert the counter’s binary output to a decimal number and apply an offset to get the correct temperature value.
+To determine the temperature, we will convert the counter’s (straight) binary output to a decimal number and apply an offset to get the correct temperature value.
 
 ## For completeness: View of the entire Top-Level design
 ![Top-Level Design](Media/system_design.svg)
