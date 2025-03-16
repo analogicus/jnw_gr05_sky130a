@@ -72,14 +72,15 @@ Reference voltage:
 
 # Description of the individual blocks
 ## About the time-dependent current
+The major steps are:
 * Observe temperature-dependency in the diode equation
 * Take two  Bipolar-Transistors (BJTs) with different cross-sectional area and make them diode-connected.
-* Source a not necessarily identical current through both BJTs, but have the ratio fixed. The current ratio is not allowed to cancel the cross-sectional area ratio.
-* Add a resistor in series to the wider BJT, BJT remains connected to ground.
+* Source (not necessarily identical) current through both BJTs, but have the ratio fixed. The current ratio is **must** not cancel with the the cross-sectional area ratio.
+* Add a resistor in series to the wider BJT, the BJT remains connected to ground.
 * Connect the top terminal of the resistor and the terminal of the BJT to the input of an Operational-Transconductance-Amplifier (OTA)
 * Connect the output of the OTA to a Common-Source amplifier whose output current is mirrored back into the BJTs.
 
-Now, the inputs of the OTA are equal, and a temperature dependent voltage across the resistor is generated based on the difference in the base-emitter voltage of two different BJTs.
+Due to the feedback, the inputs of the OTA are close to equal, and a temperature dependent voltage across the resistor is generated based on the difference in the base-emitter voltage of two different BJTs.
 Thus, the current sourced into the BJTs is also linearly dependent in temperature - as desired.
 The general structure is shown in this sketch:
 ![Temperature Dependent Current Generation](Media/ptat_ctat_vref.png)
