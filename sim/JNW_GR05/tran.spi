@@ -1,6 +1,6 @@
-*TB_SUN_TR_SKY130NM/TB_NCM
+* TB_COUNTER_SKY130NM
 *----------------------------------------------------------------
-* Include
+* Include Design Files
 *----------------------------------------------------------------
 #ifdef Lay
 .include ../../../work/lpe/JNW_GR05_lpe.spi
@@ -17,33 +17,37 @@
 * PARAMETERS
 *-----------------------------------------------------------------
 .param TRF = 10p
+.param PERIOD_CLK = 100n
+.param PW_CLK = {PERIOD_CLK/2}
 
-# dirty fix
 .param vdda = 1.8
 .param AVDD = {vdda}
 
 *-----------------------------------------------------------------
-* FORCE
+* FORCE (Stimulus)
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  dc 1.8
-# v_load PROBE1 VSS dc 0
-v_i0 I0 0 dc 0
-v_i1 I1 0 dc 0
-v_i2 I2 0 dc 0
+VDD  VDD_1V8  VSS  dc {AVDD}
+
+* Clock Source
+VCLK clk 0 dc 0 pulse (0 {AVDD} 0 {TRF} {TRF} {PW_CLK} {PERIOD_CLK})
+
+* Reset Pulse (Active High)
+VRESET reset 0 dc {AVDD} pwl (0 {AVDD} 1n {AVDD} 2n 0)
+
 *-----------------------------------------------------------------
-* DUT
+* DUT (Counter)
 *-----------------------------------------------------------------
 .include ../xdut.spi
 
-*----------------------------------------------------------------
-* PROBE
-*----------------------------------------------------------------
+*-----------------------------------------------------------------
+* PROBES
+*-----------------------------------------------------------------
 .save all
-
+.save clk reset b[4] b[3] b[2] b[1] b[0]
 
 *----------------------------------------------------------------
-* NGSPICE control
+* NGSPICE Simulation Control
 *----------------------------------------------------------------
 .control
 set num_threads=8
@@ -53,18 +57,13 @@ unset askquit
 
 optran 0 0 0 1n 1u 0
 
-
-# write
-
-set fend = .raw
 foreach vtemp -20 -10 0 10 20 30 40 50 60 70 80 90 100 110 120
 	option temp=$vtemp
 	tran 1n 5u 10n
-	write {cicname}_$vtemp$fend
+	write {cicname}_$vtemp.raw
 end
+
 quit
-
-
 .endc
 
 .end
