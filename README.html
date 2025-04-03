@@ -1,0 +1,226 @@
+<p><a href="../../actions/workflows/gds.yaml"><img
+src="../../actions/workflows/gds.yaml/badge.svg" alt="GDS" /></a> <a
+href="../../actions/workflows/drc.yaml"><img
+src="../../actions/workflows/drc.yaml/badge.svg" alt="DRC" /></a> <a
+href="../../actions/workflows/lvs.yaml"><img
+src="../../actions/workflows/lvs.yaml/badge.svg" alt="LVS" /></a> <a
+href="../../actions/workflows/docs.yaml"><img
+src="../../actions/workflows/docs.yaml/badge.svg" alt="DOCS" /></a> <a
+href="../../actions/workflows/sim.yaml"><img
+src="../../actions/workflows/sim.yaml/badge.svg" alt="SIM" /></a></p>
+<h1 id="who">Who</h1>
+<p>Group 05 (Manuel,Emilien,Amir,Fabrice)</p>
+<h1 id="why">Why</h1>
+<p>We want to bake. Thus, we somehow have to measure the temperature in
+the oven –&gt; There is a need for a temperature sensor. This module
+creates an output current (almost linearly) dependent on the present
+temperature.</p>
+<h1 id="about-the-time-dependent-current">About the time-dependent
+current</h1>
+<ul>
+<li>Observe temperature-dependency in the diode equation</li>
+<li>Take two Bipolar-Transistors (BJTs) with different cross-sectional
+area and make them diode-connected.</li>
+<li>Source a not necessarily identical current through both BJTs, but
+have the ratio fixed. The current ratio is not allowed to cancel the
+cross-sectional area ratio.</li>
+<li>Add a resistor in series to the wider BJT, BJT remains connected to
+ground.</li>
+<li>Connect the top terminal of the resistor and the terminal of the BJT
+to the input of an Operational-Transconductance-Amplifier (OTA)</li>
+<li>Connect the output of the OTA to a Common-Source amplifier whose
+output current is mirrored back into the BJTs.</li>
+</ul>
+<p>Now, the inputs of the OTA are equal, and a temperature dependent
+voltage across the resistor is generated based on the difference in the
+base-emitter voltage of two different BJTs. Thus, the current sourced
+into the BJTs is also linearly dependent in temperature - as desired.
+The general structure is shown in this sketch: <img
+src="Media/ptat_ctat_vref.png"
+alt="Temperature Dependent Current Generation" /></p>
+<h1 id="about-the-reference-voltage">About the reference voltage:</h1>
+<p>The temperature-dependent current is mirrored into a resistor
+connected in series to another diode-connected BJT. The temperature
+dependency cancels or at least counteracts for a proper choice of the
+series resistance. Thus, a local temperature-invariant voltage is
+created which will be used as a reference. # About the OTA: The OTA is
+used to force the terminal of the smaller BJT to the voltage on the
+terminal of the resistor connected in series to the bigger BJT. It
+consists of a differential pair followed by a current-mirror stage.
+Since the voltage at the OTA inputs is basically a diode voltage, the
+inputs are close to the threshold voltage of the NMOS. Thus, PMOSes are
+used for the input pair. The figure below presents the OTA schematic.
+Further down, a stability analysis of the OTA is used to check for a
+stable system. <img src="Media/OTA_Manuel.svg"
+alt="OTA Schematics" /></p>
+<h1 id="about-the-comparator">About the comparator:</h1>
+<h1 id="what">What</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">What</th>
+<th style="text-align: center;">Cell/Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Schematic</td>
+<td
+style="text-align: center;">design/JNW_GR05_SKY130A/JNW_GR05.sch</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Layout</td>
+<td
+style="text-align: center;">design/JNW_GR05_SKY130A/JNW_GR05.mag</td>
+</tr>
+</tbody>
+</table>
+<h1 id="changelogplan">Changelog/Plan</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0.1.0</td>
+<td style="text-align: left;">:Approved:</td>
+<td style="text-align: left;">Fulfills the criterions for milestone
+01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1.0.0</td>
+<td style="text-align: left;">:Under Inspection:</td>
+<td style="text-align: left;">Submission for milestone 02</td>
+</tr>
+</tbody>
+</table>
+<h1 id="signal-interface">Signal interface</h1>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 27%" />
+<col style="width: 27%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Signal</th>
+<th style="text-align: center;">Direction</th>
+<th style="text-align: center;">Domain</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">VDD_1V8</td>
+<td style="text-align: center;">Input</td>
+<td style="text-align: center;">VDD_1V8</td>
+<td style="text-align: left;">Main supply</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VSS</td>
+<td style="text-align: center;">Input</td>
+<td style="text-align: center;">Ground</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PWRUP_1V8</td>
+<td style="text-align: center;">Input</td>
+<td style="text-align: center;">VDD_1V8</td>
+<td style="text-align: left;">Power up the circuit (not implemented
+yet)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CLK</td>
+<td style="text-align: center;">Input</td>
+<td style="text-align: center;">System clock, could also be taken from
+on-chip clock source</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RESET</td>
+<td style="text-align: center;">Input</td>
+<td style="text-align: center;">Resets the internal 8 bit counter</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q1…Q7</td>
+<td style="text-align: center;">Output</td>
+<td style="text-align: center;">8 bit output vector, straight
+binary</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="key-parameters">Key parameters</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Min</th>
+<th style="text-align: center;">Typ</th>
+<th style="text-align: center;">Max</th>
+<th style="text-align: center;">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Technology</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Skywater 130 nm</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AVDD</td>
+<td style="text-align: center;">1.7</td>
+<td style="text-align: center;">1.8</td>
+<td style="text-align: center;">1.9</td>
+<td style="text-align: center;">V</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Temperature</td>
+<td style="text-align: center;">-40</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">125</td>
+<td style="text-align: center;">C</td>
+</tr>
+</tbody>
+</table>
+<p>A output for a (take the word!) typical simulation is given by the
+following figure. It shows the temperature-dependent output current
+which is fed into the capacitor on the right hand side and the reference
+voltage used for the comparator on the right hand side. <img
+src="Media/output_vs_temperature.png"
+alt="I_out/V_ref vs. Temperature" /></p>
+<p>Running for corners yields a similar but less consistent result (see
+below). CAUTION: This is the first corner results, obtained on March 13.
+No steps taken yet to make it more consistent. Output current: <img
+src="Media/current_vs_temperature_corners.png"
+alt="All corners: I_out vs. Temperature" /> Reference voltage: <img
+src="Media/voltage_vs_temperature_corners.png"
+alt="All corners: V_ref vs. Temperature" /></p>
+<h1 id="ota-analysis">OTA Analysis</h1>
+<p>** Results for RT are: ** | Parameter | Value | Unit | Description |
+|————|————|—————-|—————————| | f3db | 175.57 | kHz | 3 dB Bandwidth | |
+gm_db | -16.309 | dB | Gain Margin | | lf_gain | 40.073 | dB |
+Low-Frequency Gain | | pm_deg | 67.513 | Degrees | Phase Margin | | ug |
+17.257 | MHz | Unity Gain Frequency |</p>
+<p>Most importantly, the OTA is stable and meets the typical 40 dB DC
+gain for two-stage systems. Further, the parameters indicate a rather
+low 3dB bandwidth and low unity gain frequency. In physical systems,
+temperature increases or decreasses with a (compared to the OTA
+paramters) large time constant, thus we see no need for adapting the
+amplifier design.</p>
+<p>** Obtained bodeplot: ** <img src="Media/bodeplot.png"
+alt="I_out/V_out vs. Temperature" /></p>
+<h1 id="for-completeness-view-of-the-entire-top-level-design">For
+completeness: View of the entire Top-Level design</h1>
+<figure>
+<img src="Media/system_design.svg" alt="Top-Level Design" />
+<figcaption aria-hidden="true">Top-Level Design</figcaption>
+</figure>

@@ -1,0 +1,119 @@
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/Comparator.sch
+**.subckt Comparator Vin1 CLK Vin2 Vout VDD VSS
+*.ipin VDD
+*.ipin VSS
+*.ipin Vin1
+*.ipin Vin2
+*.ipin CLK
+*.opin Vout
+x1 X Vin1 net1 VSS JNWATR_NCH_4C5F0
+x2 Y Vin2 net1 VSS JNWATR_NCH_4C5F0
+x3 Vout2 Vout1 VDD VDD JNWATR_PCH_4C5F0
+x4 Vout2 Vout1 Y VSS JNWATR_NCH_4C5F0
+x5 Vout1 Vout2 X VSS JNWATR_NCH_4C5F0
+x6 Vout1 CLK VDD VDD JNWATR_PCH_4C5F0
+x7 X CLK VDD VDD JNWATR_PCH_4C5F0
+x8 Vout2 CLK VDD VDD JNWATR_PCH_4C5F0
+x9 Y CLK VDD VDD JNWATR_PCH_4C5F0
+x10 Vout1 Vout2 VDD VDD JNWATR_PCH_4C5F0
+x11 net1 CLK VSS VSS JNWATR_NCH_4C1F2
+x16 R Vout1 VSS VSS JNWATR_NCH_4C5F0
+x17 R Vout1 VDD VDD JNWATR_PCH_4C5F0
+x18 S Vout2 VSS VSS JNWATR_NCH_4C5F0
+x19 S Vout2 VDD VDD JNWATR_PCH_4C5F0
+x12 OUT1 Vout VDD VSS JNWTR_IVX1_CV
+x13 Vout OUT1 VDD VSS JNWTR_IVX1_CV
+x14 Vout S VSS VSS JNWATR_NCH_4C5F0
+x15 OUT1 R VSS VSS JNWATR_NCH_4C5F0
+x20 VSS Vout JNWTR_CAPX1
+x21 VSS OUT1 JNWTR_CAPX1
+**.ends
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym # of pins=4
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sch
+.subckt JNWATR_NCH_4C5F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__nfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym # of pins=4
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sch
+.subckt JNWATR_PCH_4C5F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_NCH_4C1F2.sym # of pins=4
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_ATR_SKY130A/JNWATR_NCH_4C1F2.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_ATR_SKY130A/JNWATR_NCH_4C1F2.sch
+.subckt JNWATR_NCH_4C1F2 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__nfet_01v8 L=0.22 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_IVX1_CV.sym # of pins=4
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_IVX1_CV.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_IVX1_CV.sch
+.subckt JNWTR_IVX1_CV A Y AVDD AVSS
+*.ipin A
+*.opin Y
+*.ipin AVDD
+*.ipin AVSS
+XMN0 Y A AVSS AVSS JNWTR_NCHDL
+XMP0 Y A AVDD AVDD JNWTR_PCHDL
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_CAPX1.sym # of pins=2
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX1.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX1.sch
+.subckt JNWTR_CAPX1 A B
+*.iopin A
+*.iopin B
+XC1 B A sky130_fd_pr__cap_mim_m3_1 W=5 L=5 MF=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_NCHDL.sym # of pins=4
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_NCHDL.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_NCHDL.sch
+.subckt JNWTR_NCHDL D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__nfet_01v8 L=0.16 W=0.9 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_PCHDL.sym # of pins=4
+** sym_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_PCHDL.sym
+** sch_path: /home/emilien/pro/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A/JNWTR_PCHDL.sch
+.subckt JNWTR_PCHDL D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.16 W=0.9 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.end

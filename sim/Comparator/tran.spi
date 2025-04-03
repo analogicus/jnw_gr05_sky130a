@@ -3,29 +3,32 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/JNW_GR05_lpe.spi
+.include ../../../work/lpe/Comparator_lpe.spi
 #else
-.include ../../../work/xsch/JNW_GR05.spice
+.include ../../../work/xsch/Comparator.spice
 #endif
 
 *-----------------------------------------------------------------
 * OPTIONS
 *-----------------------------------------------------------------
 .option TNOM=27 GMIN=1e-15 reltol=1e-3
-.option reltol=1e-4
+
 *-----------------------------------------------------------------
 * PARAMETERS
 *-----------------------------------------------------------------
 .param TRF = 10p
-
+.param vdda = 1.8
 .param AVDD = {vdda}
-
+.param PERIOD_CLK = 1u
+.param PERIOD_VOLT = 30u
 *-----------------------------------------------------------------
 * FORCE
 *-----------------------------------------------------------------
-VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  dc 1.8
-
+VSS   VSS      0    dc  0
+VDD   VDD      VSS  dc  {AVDD}
+VCLK  CLK      0    dc  0 pulse (0 {AVDD} 2n {TRF} {TRF} {PERIOD_CLK/2}  {PERIOD_CLK} )
+Vin1  Vin1     0    dc  0 pulse (0 {AVDD} 1u {TRF} {TRF} {PERIOD_VOLT/2} {PERIOD_VOLT})
+Vin2  Vin2     0    dc  0.9
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
@@ -46,10 +49,8 @@ set color0=white
 set color1=black
 unset askquit
 
-optran 0 0 0 100n 100u 0
-
-dc TEMP -40 100 10
-write 
+tran 10n 100u 
+write
 quit
 
 .endc
