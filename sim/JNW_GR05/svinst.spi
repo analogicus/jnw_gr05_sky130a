@@ -1,0 +1,11 @@
+*Automatic generated instance fron ../../tech/scripts/genxdut dig
+adut [
++ ]
++ [
++ ] null dut
+.model dut d_cosim simulation="../dig.so" delay=10p
+
+* Inputs
+
+* Outputs
+
