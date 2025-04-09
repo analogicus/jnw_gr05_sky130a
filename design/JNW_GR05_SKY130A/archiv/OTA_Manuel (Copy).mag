@@ -1,0 +1,61 @@
+magic
+tech sky130A
+timestamp 1743097816
+<< checkpaint >>
+rect -722 2120 1874 2814
+rect 3658 2120 7878 2350
+rect -722 1094 8080 2120
+rect -722 -630 8802 1094
+rect -722 -694 5010 -630
+rect 6526 -694 8802 -630
+use JNWATR_NCH_4C5F0  x1 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 0 0 1 0
+box -92 -64 668 464
+use JNWATR_NCH_4C5F0  x2
+timestamp 1734044400
+transform 1 0 1728 0 1 0
+box -92 -64 668 464
+use JNWATR_PCH_4C1F2  x3 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 3136 0 1 0
+box -92 -64 668 464
+use JNWATR_PCH_4C5F0  x4 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 3712 0 1 0
+box -92 -64 668 464
+use JNWTR_RPPO2  x5 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_TR_SKY130A
+timestamp 1743097816
+transform 1 0 4288 0 1 0
+box 0 0 724 1720
+use JNWTR_RPPO16  x6 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_TR_SKY130A
+timestamp 1743097816
+transform 1 0 5012 0 1 0
+box 0 0 2236 1720
+use JNWATR_PCH_12C5F0  x7 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 7248 0 1 0
+box -92 -64 924 464
+use JNWATR_PCH_4C1F2  x8
+timestamp 1734044400
+transform 1 0 0 0 1 1720
+box -92 -64 668 464
+use JNWATR_NCH_4C5F0  x9
+timestamp 1734044400
+transform 1 0 576 0 1 1720
+box -92 -64 668 464
+use JNWATR_NCH_4C5F0  x10
+timestamp 1734044400
+transform 1 0 576 0 1 0
+box -92 -64 668 464
+use JNWATR_PCH_4C5F0  x11
+timestamp 1734044400
+transform 1 0 1152 0 1 0
+box -92 -64 668 464
+use JNWATR_PCH_12C5F0  x20
+timestamp 1734044400
+transform 1 0 2304 0 1 0
+box -92 -64 924 464
+<< properties >>
+string FIXED_BBOX 0 0 8080 2120
+<< end >>

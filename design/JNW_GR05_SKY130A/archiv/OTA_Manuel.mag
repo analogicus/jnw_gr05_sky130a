@@ -1,0 +1,94 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1744187571
+<< checkpaint >>
+rect 2440 7216 8880 7516
+rect 2440 3940 10780 7216
+rect 3040 3640 10780 3940
+rect 3040 3540 10480 3640
+rect 3040 3240 8092 3540
+rect 4052 2652 8092 3240
+<< error_s >>
+rect 5312 4712 6832 4968
+rect 1160 300 1202 3740
+rect 5470 3234 5486 3426
+rect 5504 3200 5520 3460
+<< locali >>
+rect 6704 3552 7596 3744
+rect 520 3220 1700 3460
+rect 3276 1900 3516 3450
+rect 5028 3426 5222 3460
+rect 6470 3427 6471 3487
+rect 5028 3420 5486 3426
+rect 5028 3240 5300 3420
+rect 5480 3240 5486 3420
+rect 5028 3234 5486 3240
+rect 5028 3220 5222 3234
+rect 6006 1888 6296 2080
+rect 6776 1888 7696 2080
+<< viali >>
+rect 5300 3240 5480 3420
+<< metal1 >>
+rect 5764 3488 5956 3496
+rect 5764 3426 6242 3488
+rect 5288 3424 6242 3426
+rect 6886 3424 7632 3488
+rect 5288 3420 5956 3424
+rect 5288 3240 5300 3420
+rect 5480 3240 5956 3420
+rect 5288 3234 5956 3240
+rect 5764 2464 5956 3234
+rect 6886 3168 7732 3360
+rect 5764 2272 6466 2464
+use JNWATR_PCH_4C1F2  JNWATR_PCH_4C1F2_0 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 1884 0 1 6128
+box -184 -128 1336 928
+use JNWTR_RPPO2  x5 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_TR_SKY130A
+timestamp 1743097816
+transform 1 0 -300 0 1 300
+box 0 0 1448 3440
+use JNWTR_RPPO16  x6 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_TR_SKY130A
+timestamp 1743097816
+transform 1 0 1160 0 1 300
+box 0 0 4472 3440
+use JNWATR_PCH_12C5F0  xb1 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 0 1 6128 -1 0 3648
+box -184 -128 1848 928
+use JNWATR_PCH_12C5F0  xb2
+timestamp 1734044400
+transform 0 1 7528 -1 0 3648
+box -184 -128 1848 928
+use JNWATR_NCH_4C5F0  xli1 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1744065478
+transform 1 0 6184 0 1 628
+box -184 -128 1336 928
+use JNWATR_NCH_4C5F0  xlo1
+timestamp 1744065478
+transform 1 0 1832 0 1 4040
+box -184 -128 1336 928
+use JNWATR_PCH_4C5F0  xlo2 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 -416 0 1 5408
+box -184 -128 1336 928
+use JNWATR_NCH_4C5F0  xri1
+timestamp 1744065478
+transform 1 0 7884 0 1 628
+box -184 -128 1336 928
+use JNWATR_PCH_4C1F2  xri2
+timestamp 1734044400
+transform 1 0 3684 0 1 6128
+box -184 -128 1336 928
+use JNWATR_NCH_4C5F0  xro1
+timestamp 1744065478
+transform 1 0 5984 0 1 5328
+box -184 -128 1336 928
+use JNWATR_PCH_4C5F0  xro2
+timestamp 1734044400
+transform 1 0 8184 0 1 5028
+box -184 -128 1336 928
+<< properties >>
+string FIXED_BBOX 0 0 8944 6440
+<< end >>
