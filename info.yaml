@@ -10,6 +10,8 @@ url: justlikemanuel.github.io
 doc:
   libraries:
     JNW_GR05_SKY130A:
-      - JNW_GR05      - 
+      - JNW_GR05  
+      - OTA_Manuel
+      - Comparator
 sim:
   JNW_GR05: make typical
