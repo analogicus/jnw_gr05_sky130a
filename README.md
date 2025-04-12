@@ -25,17 +25,16 @@ This module creates an output current (almost linearly) dependent on the present
 
 
 
+&#10060; Das ist eine abgelehnte Option.
 
 # Changelog/Plan
 
 | Version | Status | Comment|
-| :---| :---| :---|<<w>>
-|0.1.0 | :heavy_check_mark: | Fulfills the criterions for milestone 01 (principles) |
-|1.0.0 | :heavy_check_mark: | Submission for milestone 02 (schematic)|
-|2.0.0 | :Under Inspection: | Submission for milestone 03 (layout) |
+| :---| :---| :---|
+|0.1.0 | &#9989; | Fulfills the criterions for milestone 01 (principles) |
+|1.0.0 | &#9989; | Submission for milestone 02 (schematic)|
+|2.0.0 | &#10060;| Submission for milestone 03 (layout) |
 
-- [x] Aufgabe erledigt
-- [ ] Aufgabe noch offen
 
 
 # Signal interface
