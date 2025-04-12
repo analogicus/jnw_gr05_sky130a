@@ -25,8 +25,6 @@ This module creates an output current (almost linearly) dependent on the present
 
 
 
-&#10060; Das ist eine abgelehnte Option.
-
 # Changelog/Plan
 
 | Version | Status | Comment|
