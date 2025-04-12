@@ -25,4 +25,4 @@ In physical systems, temperature increases or decreasses with a (compared to the
 thus we see no need for adapting the amplifier design.
 
 #### Obtained bodeplot:
-![I_out/V_out vs. Temperature ](../../Media/bodeplot.png)
+<img src="../../Media/bodeplot.png" alt="Bodeplot of OTA" width="50%">
