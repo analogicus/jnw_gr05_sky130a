@@ -70,73 +70,7 @@ Reference voltage:
 
 
 
-# Description of the individual blocks
-## About the time-dependent current
-The major steps are:
-* Observe temperature-dependency in the diode equation
-* Take two  Bipolar-Transistors (BJTs) with different cross-sectional area and make them diode-connected.
-* Source (not necessarily identical) current through both BJTs, but have the ratio fixed. The current ratio is **must** not cancel with the the cross-sectional area ratio.
-* Add a resistor in series to the wider BJT, the BJT remains connected to ground.
-* Connect the top terminal of the resistor and the terminal of the BJT to the input of an Operational-Transconductance-Amplifier (OTA)
-* Connect the output of the OTA to a Common-Source amplifier whose output current is mirrored back into the BJTs.
-
-Due to the feedback, the inputs of the OTA are close to equal, and a temperature dependent voltage across the resistor is generated based on the difference in the base-emitter voltage of two different BJTs.
-Thus, the current sourced into the BJTs is also linearly dependent in temperature - as desired.
-The general structure is shown in this sketch:
-![Temperature Dependent Current Generation](Media/ptat_ctat_vref.png)
-
-## About the reference voltage:
-The temperature-dependent current is mirrored into a resistor connected in series to another diode-connected BJT. The temperature dependency cancels or at least counteracts for a proper choice of the series resistance. Thus, a local temperature-invariant voltage is created which will be used as a reference on the comparator (see below). The voltage reference is also shown in the plot above.
-## About the OTA:
-The OTA is used to force the terminal of the smaller BJT to be equal to the voltage on the terminal of the resistor connected in series to the bigger BJT.
-In the schematic, these nodes are labeled v_p and v_n, respectively.
-
-The OTA consists of a differential pair followed by a current-mirror stage.
-Since the voltage at the OTA inputs is basically a diode voltage, the inputs are close to the threshold voltage of the NMOS. Thus, PMOSes are used for the input pair.
-The figure below presents the OTA schematic. Below, a stability analysis of the OTA is used to check for a stable system.
-<img src="Media/OTA_Manuel.svg" alt="OTA Schematics" width="50%">
-
-## OTA Analysis
-
-#### Results for RT are:
-| Parameter  | Value      | Unit           | Description               |
-|------------|------------|----------------|---------------------------|
-| f3db       | 175.57     | kHz            | 3 dB Bandwidth           |
-| gm_db      | -16.309    | dB             | Gain Margin               |
-| lf_gain    | 40.073     | dB             | Low-Frequency Gain        |
-| pm_deg     | 67.513     | Degrees        | Phase Margin              |
-| ug         | 17.257     | MHz            | Unity Gain Frequency      |
-
-Most importantly, the OTA is stable and meets the typical 40 dB DC gain for two-stage amplifiers.
-Further, the parameters indicate a rather low 3dB bandwidth and low unity gain frequency.
-
-In physical systems, temperature increases or decreasses with a (compared to the OTA parameters) large time constant, 
-thus we see no need for adapting the amplifier design.
-
-#### Obtained bodeplot:
-![I_out/V_out vs. Temperature ](Media/bodeplot.png)
-
-
-## About the comparator:
-The comparator detects when the capacitor voltage exceeds the reference voltage. It is a StrongARM latch, as described in the article by Behzad Razavi.
-
-Its operation consists of two phases, controlled by a clock signal:
-
-* Pre-charge Phase: When the clock is low, the internal nodes (outputs and intermediate nodes) are pre-charged to VDD.
-* Evaluation Phase: When the clock goes high, the input transistors compare the differential input voltages. If one input is higher than the other, a positive feedback mechanism rapidly drives the outputs to opposite logic levels, generating a strong digital output (high or low). One benefit of the StrongARM latch is its low static power draw.
-Since the comparator produces a valid output only half of the time (due to the pre-charge phase), its output is connected to an RS latch to maintain a stable signal.
-The schematic of this comparator can be seen on the next figure.
-![Comparator's schematic ](Media/comparator.png)
-link to Behzad Razavi's article : https://www.seas.ucla.edu/brweb/papers/Journals/BR_Magzine4.pdf
-
-## About the counter:
-Our objective is to count how many times the capacitor can charge within a given time period. To achieve this, we use a synchronous counter made of JK flip-flops.
-
-In this counter, all flip-flops share the same clock signal, eliminating the delays found in asynchronous counters. The J and K inputs of each flip-flop are controlled by an AND gate, which takes the input and output of the previous flip-flop. This setup allows the counter to increment in binary.
-
-Additionally, a reset input ensures that all flip-flops in the counter can be reset simultaneously.
-The schematic of the 8 bits counter is shown in the figure below.
-![Counter schematic ](Media/counter.png)
+# Description of the individual blocks can be found on the schmeatic page
 
 ## About the digital output proportional to temperature
 The idea of our implementation is to count how many times the capacitor charges and discharges within a certain period. To do this, the comparator checks if the capacitor's voltage is higher than a reference voltage. When this happens, the comparator output goes high, which then activates a transistor to discharge the capacitor. Thus, the output of the comparator is a pulse signal that goes high for (approximately) one clock cycle each time the capacitor voltage crosses the reference voltage.
@@ -148,9 +82,6 @@ Currently, we count for 590.59 μs. Within this time, there is a difference of 1
 A reset signal acting on the counter sets the measurement duration. In this case, it must be a pulse signal that activates every 590.59 μs. However, since our counter can only go up to 256, and the number of pulses can range from 295 (at -40°C) to 455 (at 120°C), an overflow will occur. This is not a problem because there will always be only one overflow, regardless of the temperature. One of the next steps would be buffering the digital output at the end of the conversion period, which lowers the timing requirements on the digital readout. In this case, the output will be available until the next (successful) conversion cycle is finished.
 
 To determine the temperature, we will convert the counter’s (straight) binary output to a decimal number and apply an offset to get the correct temperature value.
-
-## For completeness: View of the entire Top-Level design
-![Top-Level Design](Media/system_design_good.png)
 
 
 The end.

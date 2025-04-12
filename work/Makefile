@@ -12,9 +12,9 @@
 
 PREFIX=
 LIB=JNW_GR05_SKY130A
-#- CELL=JNW_GR05
+CELL=JNW_GR05
 # CELL = OTA_Manuel
-CELL = Comparator
+# CELL = Comparator
 #- Provide cells you want to check for the lvsall drcall commands
 CELLS = JNW_GR05
 
