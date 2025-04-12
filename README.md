@@ -24,7 +24,6 @@ This module creates an output current (almost linearly) dependent on the present
 | Schematic       | design/JNW_GR05_SKY130A/asynCounter_8bit.sch|
 
 
-
 # Changelog/Plan
 
 | Version | Status | Comment|

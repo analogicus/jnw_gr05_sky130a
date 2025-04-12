@@ -32,7 +32,7 @@ The temperature-dependent current is mirrored into a resistor connected in serie
 
 
 
-# Key parameters
+## Key parameters
 
 | Parameter           | Min     | Typ           | Max     | Unit  |
 | :---                | :---:     | :---:           | :---:     | :---: |
