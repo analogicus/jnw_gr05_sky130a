@@ -29,9 +29,13 @@ This module creates an output current (almost linearly) dependent on the present
 # Changelog/Plan
 
 | Version | Status | Comment|
-| :---| :---| :---|
-|0.1.0 | :Approved: | Fulfills the criterions for milestone 01 |
-|1.0.0 | :Under Inspection: | Submission for milestone 02 |
+| :---| :---| :---|<<w>>
+|0.1.0 | :heavy_check_mark: | Fulfills the criterions for milestone 01 (principles) |
+|1.0.0 | :heavy_check_mark: | Submission for milestone 02 (schematic)|
+|2.0.0 | :Under Inspection: | Submission for milestone 03 (layout) |
+
+- [x] Aufgabe erledigt
+- [ ] Aufgabe noch offen
 
 
 # Signal interface
