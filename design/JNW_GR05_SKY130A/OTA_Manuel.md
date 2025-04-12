@@ -1,4 +1,4 @@
-## About the OTA:
+# About the OTA:
 The OTA is used to force the terminal of the smaller BJT to be equal to the voltage on the terminal of the resistor connected in series to the bigger BJT.
 In the schematic, these nodes are labeled v_p and v_n, respectively.
 
@@ -7,9 +7,9 @@ Since the voltage at the OTA inputs is basically a diode voltage, the inputs are
 The figure below presents the OTA schematic. Below, a stability analysis of the OTA is used to check for a stable system.
 <img src="../../Media/OTA_Manuel.svg" alt="OTA Schematics" width="50%">
 
-## OTA Analysis
+# OTA Analysis
 
-#### Results for RT are:
+## Results for RT are:
 | Parameter  | Value      | Unit           | Description               |
 |------------|------------|----------------|---------------------------|
 | f3db       | 175.57     | kHz            | 3 dB Bandwidth           |
@@ -24,5 +24,5 @@ Further, the parameters indicate a rather low 3dB bandwidth and low unity gain f
 In physical systems, temperature increases or decreasses with a (compared to the OTA parameters) large time constant, 
 thus we see no need for adapting the amplifier design.
 
-#### Obtained bodeplot:
+## Obtained bodeplot:
 <img src="../../Media/bodeplot.png" alt="Bodeplot of OTA" width="50%">

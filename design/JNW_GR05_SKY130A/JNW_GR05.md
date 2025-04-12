@@ -1,5 +1,4 @@
-
-## About the digital output proportional to temperature
+# About the digital output proportional to temperature
 The idea of our implementation is to count how many times a capacitor charges and discharges within a certain period. To do this, the comparator checks if the capacitor's voltage is higher than a reference voltage. When this happens, the comparator output goes high, which then activates a transistor to discharge the capacitor. Thus, the output of the comparator is a pulse signal that goes high for (approximately) one clock cycle each time the capacitor voltage crosses the reference voltage.
 
 A counter records these pulses. Counting how many times the capacitor charges and discharges gives more precision than just measuring how long it takes for one charge cycle. The longer we count, the higher the accuracy.
@@ -12,8 +11,7 @@ To determine the temperature, we will convert the counter’s (straight) binary 
 
 
 
-
-## About the time-dependent current
+# About the time-dependent current
 The major steps are:
 * Observe temperature-dependency in the diode equation
 * Take two  Bipolar-Transistors (BJTs) with different cross-sectional area and make them diode-connected.
@@ -27,12 +25,12 @@ Thus, the current sourced into the BJTs is also linearly dependent in temperatur
 The general structure is shown in this sketch:
 ![Temperature Dependent Current Generation](Media/ptat_ctat_vref.png)
 
-## About the reference voltage:
+# About the reference voltage:
 The temperature-dependent current is mirrored into a resistor connected in series to another diode-connected BJT. The temperature dependency cancels or at least counteracts for a proper choice of the series resistance. Thus, a local temperature-invariant voltage is created which will be used as a reference on the comparator (see below). The voltage reference is also shown in the plot above.
 
 
 
-## Key parameters
+# Key parameters
 
 | Parameter           | Min     | Typ           | Max     | Unit  |
 | :---                | :---:     | :---:           | :---:     | :---: |
@@ -53,7 +51,7 @@ Output current:
 Reference voltage:
 ![All corners: V_ref vs. Temperature ](../../Media/voltage_vs_temperature_corners.png)
 
-## About the counter:
+# About the counter:
 Our objective is to count how many times the capacitor can charge within a given time period. To achieve this, we use a synchronous counter made of JK flip-flops.
 
 In this counter, all flip-flops share the same clock signal, eliminating the delays found in asynchronous counters. The J and K inputs of each flip-flop are controlled by an AND gate, which takes the input and output of the previous flip-flop. This setup allows the counter to increment in binary.
@@ -63,5 +61,5 @@ The schematic of the 8 bits counter is shown in the figure below.
 ![Counter schematic ](Media/counter.png)
 
 
-## For completeness: View of the entire Top-Level design
+# For completeness: View of the entire Top-Level design
 ![Top-Level Design](../../Media/system_design_good.png)
