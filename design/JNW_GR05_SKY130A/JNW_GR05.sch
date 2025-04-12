@@ -32,7 +32,6 @@ T {reference voltage
 T {<-- I_left = I_right -->} -1000 -560 0 0 0.345 0.345 {}
 T {charging
 capacitor} 170 -135 0 0 0.4 0.4 {}
-N 300 -420 340 -420 {lab=bufCLK}
 N 490 -600 520 -600 {lab=VSS}
 N 390 -490 420 -490 {lab=VDD_1V8}
 N -1000 -230 -1000 -170 {
@@ -198,14 +197,6 @@ N 160 -260 320 -260 {lab=V_cap}
 N 420 -340 420 -70 {lab=VSS}
 N 520 -390 520 -150 {lab=Voutc}
 N 360 -120 520 -120 {lab=Voutc}
-N 415 -780 455 -780 {lab=CLK}
-N 535 -780 555 -780 {lab=nCLK}
-N 495 -840 495 -820 {lab=VDD_1V8}
-N 495 -740 495 -700 {lab=VSS}
-N 695 -780 715 -780 {lab=bufCLK}
-N 555 -780 615 -780 {lab=nCLK}
-N 655 -840 655 -820 {lab=VDD_1V8}
-N 655 -740 655 -700 {lab=VSS}
 N 495 -620 520 -620 {lab=RESET}
 N 465 -620 495 -620 {lab=RESET}
 N 420 -490 420 -440 {lab=VDD_1V8}
@@ -231,10 +222,10 @@ N 500 -390 615 -390 {lab=Voutc}
 N -180 -235 -180 -220 {lab=#net1}
 N -180 -140 -180 -120 {lab=#net2}
 N 160 -45 160 -40 {lab=VSS}
+N 290 -420 340 -420 {lab=CLK}
 C {devices/ipin.sym} 440 -620 0 0 {name=p5 lab=RESET
 }
 C {JNW_GR05_SKY130A/Comparator.sym} 420 -390 0 0 {name=x8}
-C {devices/lab_wire.sym} 300 -420 0 0 {name=p9 sig_type=std_logic lab=bufCLK}
 C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -20 -360 0 0 {name=x10}
 C {devices/lab_wire.sym} 615 -390 0 1 {name=p2 sig_type=std_logic lab=Voutc}
 C {devices/lab_wire.sym} 255 -360 0 0 {name=p3 sig_type=std_logic lab=sys_outc}
@@ -291,20 +282,7 @@ C {devices/lab_pin.sym} 860 -520 0 1 {name=p29 sig_type=std_logic lab=Q8
 }
 C {devices/lab_pin.sym} 860 -640 0 1 {name=p31 sig_type=std_logic lab=Q2}
 C {devices/lab_pin.sym} 860 -540 0 1 {name=p32 sig_type=std_logic lab=Q7}
-C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 455 -780 0 0 {name=x1 }
-C {devices/lab_wire.sym} 555 -780 0 1 {name=p6 sig_type=std_logic lab=nCLK}
-C {devices/lab_wire.sym} 495 -840 0 1 {name=p21 sig_type=std_logic lab=VDD_1V8
-}
-C {devices/lab_wire.sym} 495 -700 0 1 {name=p22 sig_type=std_logic lab=VSS
-}
-C {devices/lab_wire.sym} 715 -780 0 1 {name=p27 sig_type=std_logic lab=bufCLK}
-C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 615 -780 0 0 {name=x12 }
-C {devices/lab_wire.sym} 655 -840 0 1 {name=p26 sig_type=std_logic lab=VDD_1V8
-}
-C {devices/lab_wire.sym} 655 -700 0 1 {name=p28 sig_type=std_logic lab=VSS
-}
-C {devices/ipin.sym} 415 -780 0 0 {name=p14 lab=CLK
+C {devices/ipin.sym} 290 -420 0 0 {name=p14 lab=CLK
 }
 C {devices/lab_wire.sym} 480 -640 0 0 {name=p18 sig_type=std_logic lab=Voutc}
 C {devices/lab_pin.sym} 860 -580 0 1 {name=p19 sig_type=std_logic lab=Q5}
-C {JNW_GR05_SKY130A/synCounter_8bit.sym} 670 -590 0 0 {name=x3}

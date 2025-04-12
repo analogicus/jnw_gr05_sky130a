@@ -1,0 +1,183 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1744268907
+<< locali >>
+rect 5548 937 12132 1129
+rect 5548 655 5740 937
+rect 6700 782 7197 937
+rect 8416 816 9239 937
+rect 6700 664 7116 782
+rect 8416 676 9196 816
+rect 10456 676 10980 937
+rect 11940 628 12132 937
+rect 6724 180 7200 196
+rect 5548 -336 5740 180
+rect 6700 4 7200 180
+rect 8416 116 9048 180
+rect 6700 -376 6892 4
+rect 8604 -12 9048 116
+rect 10456 -12 10980 180
+rect 10788 -356 10980 -12
+rect 11940 -256 12132 228
+rect 8540 -812 8604 -432
+rect 7388 -1285 7580 -879
+rect 7686 -1147 8348 -1141
+rect 7686 -1199 8290 -1147
+rect 8342 -1199 8348 -1147
+rect 7686 -1205 8348 -1199
+rect 8412 -1337 8604 -842
+rect 9048 -1331 9240 -873
+rect 9304 -1150 9958 -1144
+rect 9304 -1202 9310 -1150
+rect 9362 -1202 9958 -1150
+rect 9304 -1208 9958 -1202
+rect 10072 -1285 10264 -832
+rect 7388 -1984 7580 -1820
+rect 10072 -1984 10264 -1820
+rect 7388 -2176 10264 -1984
+rect 8228 -2385 8420 -2176
+rect 9252 -2432 9444 -2176
+rect 10072 -2178 10264 -2176
+rect 8228 -3089 8420 -2880
+rect 9252 -3089 9444 -2848
+rect 8228 -3281 9444 -3089
+<< viali >>
+rect 7634 -1205 7686 -1141
+rect 8290 -1199 8342 -1147
+rect 9310 -1202 9362 -1150
+rect 9958 -1208 10010 -1144
+<< metal1 >>
+rect 5932 -700 6124 196
+rect 8032 -556 8224 396
+rect 9432 -80 9624 260
+rect 8284 -144 9624 -80
+rect 8284 -380 8348 -144
+rect 9432 -536 9624 -144
+rect 11172 -700 11364 156
+rect 7628 -1141 7692 -1129
+rect 6948 -1205 7634 -1141
+rect 7686 -1205 7692 -1141
+rect 7628 -1217 7692 -1205
+rect 7772 -1430 7964 -800
+rect 8087 -1026 8151 -911
+rect 9304 -1026 9368 -924
+rect 8087 -1090 9368 -1026
+rect 8284 -1147 8348 -1135
+rect 8284 -1199 8290 -1147
+rect 8342 -1199 8348 -1147
+rect 8284 -1276 8348 -1199
+rect 9304 -1150 9368 -1138
+rect 9304 -1202 9310 -1150
+rect 9362 -1202 9368 -1150
+rect 9304 -1295 9368 -1202
+rect 9688 -1404 9880 -824
+rect 9952 -1144 10016 -1132
+rect 9952 -1208 9958 -1144
+rect 10010 -1208 10596 -1144
+rect 9952 -1220 10016 -1208
+rect 8028 -1982 8220 -1508
+rect 9432 -1982 9624 -1508
+rect 8028 -2174 9624 -1982
+rect 8028 -2177 8220 -2174
+rect 8612 -2760 8804 -2174
+use JNWATR_NCH_2C1F2  JNWATR_NCH_2C1F2_0 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1734044400
+transform -1 0 8508 0 -1 -232
+box -184 -128 1208 928
+use JNWTR_IVX1_CV  x1 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_TR_SKY130A
+timestamp 1744212116
+transform 1 0 0 0 1 0
+box -150 -120 2130 440
+use JNWTR_IVX1_CV  x2
+timestamp 1744212116
+transform 1 0 6750 0 1 4820
+box -150 -120 2130 440
+use JNWTR_IVX1_CV  x12
+timestamp 1744212116
+transform 1 0 2660 0 1 0
+box -150 -120 2130 440
+use JNWTR_IVX1_CV  x13
+timestamp 1744212116
+transform 1 0 8150 0 1 6020
+box -150 -120 2130 440
+use JNWATR_NCH_4C5F0  x14 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1744065478
+transform 1 0 0 0 1 920
+box -184 -128 1336 928
+use JNWATR_NCH_4C5F0  x15
+timestamp 1744065478
+transform 1 0 1832 0 1 920
+box -184 -128 1336 928
+use JNWTR_CAPX1  x20 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_TR_SKY130A
+timestamp 1737500400
+transform 1 0 18800 0 1 5500
+box 0 0 1080 1080
+use JNWTR_CAPX1  x21
+timestamp 1737500400
+transform 1 0 4420 0 1 4840
+box 0 0 1080 1080
+use JNWTR_CAPX1  xbuf1
+timestamp 1737500400
+transform 1 0 8400 0 1 3000
+box 0 0 1080 1080
+use JNWTR_CAPX1  xbuf2
+timestamp 1737500400
+transform 1 0 11400 0 1 2800
+box 0 0 1080 1080
+use JNWTR_CAPX1  xbuf3
+timestamp 1737500400
+transform 1 0 13164 0 1 3080
+box 0 0 1080 1080
+use JNWTR_CAPX1  xbuf4
+timestamp 1737500400
+transform 1 0 11800 0 1 5000
+box 0 0 1080 1080
+use JNWATR_NCH_2C1F2  xeval1
+timestamp 1734044400
+transform 1 0 8324 0 1 -3032
+box -184 -128 1208 928
+use JNWATR_NCH_2C1F2  xlatch1
+timestamp 1734044400
+transform -1 0 8508 0 -1 -1172
+box -184 -128 1208 928
+use JNWATR_NCH_2C1F2  xlatch2
+timestamp 1734044400
+transform 1 0 9144 0 1 -1972
+box -184 -128 1208 928
+use JNWATR_NCH_2C1F2  xlatch4
+timestamp 1734044400
+transform 1 0 9144 0 1 -1032
+box -184 -128 1208 928
+use JNWATR_PCH_4C1F2  xpre1 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 5644 0 1 -972
+box -184 -128 1336 928
+use JNWATR_PCH_4C1F2  xpre2
+timestamp 1734044400
+transform 1 0 5644 0 1 28
+box -184 -128 1336 928
+use JNWATR_PCH_8C1F2  xpre3 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 7104 0 1 28
+box -184 -128 1592 928
+use JNWATR_PCH_8C1F2  xpre4
+timestamp 1734044400
+transform -1 0 10552 0 -1 828
+box -184 -128 1592 928
+use JNWATR_PCH_4C1F2  xpre5
+timestamp 1734044400
+transform 1 0 10884 0 1 28
+box -184 -128 1336 928
+use JNWATR_PCH_4C1F2  xpre6
+timestamp 1734044400
+transform 1 0 10884 0 1 -972
+box -184 -128 1336 928
+<< labels >>
+flabel metal1 10010 -1208 10596 -1144 0 FreeSans 1600 0 0 0 Vin2
+port 0 nsew
+flabel metal1 6948 -1205 7634 -1141 0 FreeSans 1600 0 0 0 Vin1
+port 2 nsew
+<< properties >>
+string FIXED_BBOX 0 0 19740 5720
+<< end >>
