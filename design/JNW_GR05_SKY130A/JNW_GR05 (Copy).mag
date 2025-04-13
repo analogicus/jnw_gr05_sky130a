@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1744533418
+timestamp 1744533318
 << locali >>
 rect -2139 3140 771 3332
 rect -6896 2942 -6444 2948
@@ -93,10 +93,6 @@ rect -4558 1863 -4494 1869
 rect -4558 1245 -4494 1799
 rect -4564 1181 -4558 1245
 rect -4494 1181 -4488 1245
-use Comparator  Comparator_0 ../design/JNW_GR05_SKY130A
-timestamp 1744491797
-transform 1 0 1287 0 1 -10504
-box 5350 -4666 13822 1906
 use JNWATR_PCH_2C5F0  JNWATR_PCH_2C5F0_0 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
 timestamp 1734044400
 transform 1 0 -5862 0 1 8356

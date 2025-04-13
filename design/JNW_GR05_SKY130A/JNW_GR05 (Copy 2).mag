@@ -1,0 +1,30 @@
+magic
+tech sky130A
+timestamp 1744529745
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40  sky130_fd_pr__rf_pnp_05v5_W3p40L3p40_0 $PDKPATH/libs.ref/sky130_fd_pr/mag
+timestamp 1738263620
+transform 1 0 -2440 0 1 5600
+box 0 0 670 670
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40  sky130_fd_pr__rf_pnp_05v5_W3p40L3p40_1
+timestamp 1738263620
+transform 1 0 -2519 0 1 3896
+box 0 0 670 670
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40  sky130_fd_pr__rf_pnp_05v5_W3p40L3p40_2
+timestamp 1738263620
+transform 1 0 -2351 0 1 4914
+box 0 0 670 670
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40  sky130_fd_pr__rf_pnp_05v5_W3p40L3p40_3
+timestamp 1738263620
+transform 1 0 -3250 0 1 5897
+box 0 0 670 670
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40  sky130_fd_pr__rf_pnp_05v5_W3p40L3p40_4
+timestamp 1738263620
+transform 1 0 -3379 0 1 4759
+box 0 0 670 670
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40  sky130_fd_pr__rf_pnp_05v5_W3p40L3p40_7
+timestamp 1738263620
+transform 1 0 -2164 0 1 6555
+box 0 0 670 670
+<< properties >>
+string FIXED_BBOX 0 0 2768 3740
+<< end >>

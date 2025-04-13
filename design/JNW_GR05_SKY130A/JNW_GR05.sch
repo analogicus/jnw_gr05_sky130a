@@ -225,7 +225,6 @@ N 160 -45 160 -40 {lab=VSS}
 N 290 -420 340 -420 {lab=CLK}
 C {devices/ipin.sym} 440 -620 0 0 {name=p5 lab=RESET
 }
-C {JNW_GR05_SKY130A/Comparator.sym} 420 -390 0 0 {name=x8}
 C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -20 -360 0 0 {name=x10}
 C {devices/lab_wire.sym} 615 -390 0 1 {name=p2 sig_type=std_logic lab=Voutc}
 C {devices/lab_wire.sym} 255 -360 0 0 {name=p3 sig_type=std_logic lab=sys_outc}
@@ -255,7 +254,6 @@ spiceprefix=X
 C {devices/lab_wire.sym} -390 -370 0 0 {name=p10 sig_type=std_logic lab=OTA_out}
 C {devices/lab_wire.sym} -720 -380 0 0 {name=p12 sig_type=std_logic lab=V_p}
 C {devices/lab_wire.sym} -720 -360 0 0 {name=p13 sig_type=std_logic lab=V_n}
-C {JNW_GR05_SKY130A/OTA_Manuel.sym} -470 -370 0 0 {name=x11}
 C {devices/lab_wire.sym} -1000 -190 0 0 {name=p15 sig_type=std_logic lab=V_bjt_n}
 C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} -310 -370 0 0 {name=x2 }
 C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -1000 -310 1 0 {name=x5}
@@ -286,3 +284,5 @@ C {devices/ipin.sym} 290 -420 0 0 {name=p14 lab=CLK
 }
 C {devices/lab_wire.sym} 480 -640 0 0 {name=p18 sig_type=std_logic lab=Voutc}
 C {devices/lab_pin.sym} 860 -580 0 1 {name=p19 sig_type=std_logic lab=Q5}
+C {JNW_GR05_SKY130A/OTA_Manuel.sym} -470 -370 0 0 {name=x1}
+C {JNW_GR05_SKY130A/Comparator.sym} 420 -390 0 0 {name=x3}
