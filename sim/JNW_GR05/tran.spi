@@ -27,7 +27,6 @@
 *-----------------------------------------------------------------
 VSS     VSS      0     dc 0
 VDD     VDD_1V8  VSS   dc {vdda}
-Vreset  RESET    VSS   dc 0       pulse (0 {vdda} 0  {TRF} {TRF} 50n             590640n      )
 VCLK    CLK      VSS   dc 0       pulse (0 {vdda} 0  {TRF} {TRF} {PERIOD_CLK/2}  {PERIOD_CLK} )
 
 
@@ -35,11 +34,21 @@ VCLK    CLK      VSS   dc 0       pulse (0 {vdda} 0  {TRF} {TRF} {PERIOD_CLK/2} 
 * DUT
 *-----------------------------------------------------------------
 .include ../xdut.spi
+.include ../svinst.spi
+
+VT0 T.0 T<0> dc 0
+VT1 T.1 T<1> dc 0
+VT2 T.2 T<2> dc 0
+VT3 T.3 T<3> dc 0
+VT4 T.4 T<4> dc 0
+VT5 T.5 T<5> dc 0
+VT6 T.6 T<6> dc 0
+VT7 T.7 T<7> dc 0
 
 *----------------------------------------------------------------
 * PROBE
 *----------------------------------------------------------------
-.save all
+.save v(Voutc)
 
 
 *----------------------------------------------------------------
@@ -55,9 +64,9 @@ unset askquit
 # write
 # -40 -35 -30 -25 -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120
 set fend = .raw
-foreach vtemp 40
+foreach vtemp -20 20 60 100
 	option temp=$vtemp
-	tran 25n 2.7u 
+	tran 50n 600u 
 	write {cicname}_$vtemp$fend
 end
 quit
