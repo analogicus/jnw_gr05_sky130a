@@ -32,7 +32,6 @@ T {reference voltage
 T {<-- I_left = I_right -->} -1000 -560 0 0 0.345 0.345 {}
 T {charging
 capacitor} 170 -135 0 0 0.4 0.4 {}
-N 490 -600 520 -600 {lab=VSS}
 N 390 -490 420 -490 {lab=VDD_1V8}
 N -1000 -230 -1000 -170 {
 lab=V_bjt_n}
@@ -156,14 +155,6 @@ N -1060 -900 -1000 -900 {
 lab=VDD_1V8}
 N -800 -740 -800 -170 {
 lab=V_p}
-N 820 -660 860 -660 {lab=Q1}
-N 820 -640 860 -640 {lab=Q2}
-N 820 -620 860 -620 {lab=Q3}
-N 820 -600 860 -600 {lab=Q4}
-N 820 -580 860 -580 {lab=Q5}
-N 820 -560 860 -560 {lab=Q6}
-N 820 -540 860 -540 {lab=Q7}
-N 820 -520 860 -520 {lab=Q8}
 N -230 -40 65 -40 {lab=VSS}
 N 160 -600 180 -600 {lab=VDD_1V8}
 N 180 -650 180 -600 {lab=VDD_1V8}
@@ -171,13 +162,11 @@ N -1200 -900 -1060 -900 {lab=VDD_1V8}
 N -1200 -40 -1150 -40 {lab=VSS}
 N -1180 -270 -1180 -40 {lab=VSS}
 N -1180 -270 -1120 -270 {lab=VSS}
-N 60 -360 125 -360 {lab=sys_outc}
+N 60 -360 125 -360 {lab=sys_out}
 N -180 -60 -180 -40 {lab=VSS}
-N -220 -280 -200 -280 {lab=VSS}
 N -220 -370 -220 -280 {lab=VSS}
 N -230 -370 -220 -370 {lab=VSS}
 N -220 -280 -220 -40 {lab=VSS}
-N -220 -180 -200 -180 {lab=VSS}
 N -180 -560 -180 -320 {lab=sys_out}
 N -180 -360 -140 -360 {lab=sys_out}
 N -360 -650 -220 -650 {lab=V_current_drive}
@@ -195,53 +184,38 @@ N 320 -90 320 -40 {lab=VSS}
 N 320 -260 320 -150 {lab=V_cap}
 N 160 -260 320 -260 {lab=V_cap}
 N 420 -340 420 -70 {lab=VSS}
-N 520 -390 520 -150 {lab=Voutc}
-N 360 -120 520 -120 {lab=Voutc}
-N 495 -620 520 -620 {lab=RESET}
-N 465 -620 495 -620 {lab=RESET}
+N 520 -390 520 -150 {lab=CompOut}
+N 360 -120 520 -120 {lab=CompOut}
 N 420 -490 420 -440 {lab=VDD_1V8}
-N 480 -640 520 -640 {lab=Voutc}
-N 480 -600 490 -600 {lab=VSS}
-N 440 -620 465 -620 {lab=RESET}
 N -30 -600 120 -600 {lab=V_current_drive}
 N 160 -570 160 -525 {lab=V_cap}
-N 180 -660 520 -660 {lab=VDD_1V8}
 N 140 -900 180 -900 {lab=VDD_1V8}
 N 160 -900 160 -630 {lab=VDD_1V8}
-N 20 -340 20 -40 {lab=VSS}
-N 280 -360 340 -360 {lab=sys_outc}
-N 125 -360 275 -360 {lab=sys_outc}
+N 280 -360 340 -360 {lab=sys_out}
+N 125 -360 275 -360 {lab=sys_out}
 N 160 -260 160 -235 {lab=V_cap}
-N 520 -150 520 -120 {lab=Voutc}
+N 520 -150 520 -120 {lab=CompOut}
 N 355 -40 420 -40 {lab=VSS}
 N 420 -70 420 -40 {lab=VSS}
-N 275 -360 280 -360 {lab=sys_outc}
+N 275 -360 280 -360 {lab=sys_out}
 N 160 -390 160 -260 {lab=V_cap}
 N 160 -525 160 -390 {lab=V_cap}
-N 500 -390 615 -390 {lab=Voutc}
-N -180 -235 -180 -220 {lab=#net1}
-N -180 -140 -180 -120 {lab=#net2}
+N 500 -390 615 -390 {lab=CompOut}
+N -180 -235 -180 -220 {lab=sys_out}
+N -180 -140 -180 -120 {lab=#net1}
 N 160 -45 160 -40 {lab=VSS}
 N 290 -420 340 -420 {lab=CLK}
-C {devices/ipin.sym} 440 -620 0 0 {name=p5 lab=RESET
+N -20 -360 60 -360 {lab=sys_out}
+N -180 -320 -180 -235 {lab=sys_out}
+N -160 -180 -100 -180 {lab=VSS}
+C {devices/opin.sym} 615 -390 0 0 {name=p5 lab=CompOut
 }
 C {JNW_GR05_SKY130A/Comparator.sym} 420 -390 0 0 {name=x8}
-C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -20 -360 0 0 {name=x10}
-C {devices/lab_wire.sym} 615 -390 0 1 {name=p2 sig_type=std_logic lab=Voutc}
-C {devices/lab_wire.sym} 255 -360 0 0 {name=p3 sig_type=std_logic lab=sys_outc}
-C {devices/lab_wire.sym} 480 -600 0 0 {name=p4 sig_type=std_logic lab=VSS
-}
 C {devices/lab_pin.sym} 390 -490 0 0 {name=p20 sig_type=std_logic lab=VDD_1V8
 }
-C {devices/lab_pin.sym} 860 -560 0 1 {name=p16 sig_type=std_logic lab=Q6
-}
-C {devices/lab_pin.sym} 860 -660 0 1 {name=p23 sig_type=std_logic lab=Q1
-}
-C {devices/lab_pin.sym} 860 -620 0 1 {name=p24 sig_type=std_logic lab=Q3}
-C {devices/lab_pin.sym} 860 -600 0 1 {name=p25 sig_type=std_logic lab=Q4}
 C {devices/ipin.sym} -1200 -900 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -1200 -40 0 0 {name=p8 lab=VSS}
-C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} -220 -650 0 0 {name=x7[1:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} -220 -650 0 0 {name=x4[1:0]}
 C {sky130_fd_pr/pnp_05v5.sym} -820 -140 0 0 {name=Q3
 model=pnp_05v5_W3p40L3p40
 m=1
@@ -259,9 +233,9 @@ C {JNW_GR05_SKY130A/OTA_Manuel.sym} -470 -370 0 0 {name=x11}
 C {devices/lab_wire.sym} -1000 -190 0 0 {name=p15 sig_type=std_logic lab=V_bjt_n}
 C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} -310 -370 0 0 {name=x2 }
 C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -1000 -310 1 0 {name=x5}
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 120 -600 0 0 {name=x6}
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 120 -600 0 0 {name=x20}
 C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 360 -120 0 1 {name=x4 }
-C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 160 -175 0 0 {name=x2[0:4]}
+C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 160 -175 0 0 {name=x2[0:5]}
 C {devices/lab_wire.sym} -100 -360 0 1 {name=p7 sig_type=std_logic lab=sys_out}
 C {devices/lab_wire.sym} 245 -390 0 0 {name=p17 sig_type=std_logic lab=V_cap}
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -360 -280 0 0 {name=x12[0:1]}
@@ -270,19 +244,11 @@ model=pnp_05v5_W3p40L3p40
 m=1
 spiceprefix=X
 }
-C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} -100 -210 0 0 {name=x1[0:1]}
-C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} -180 -220 1 0 {name=x7}
-C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -180 -320 1 0 {name=x13[0:2]}
+C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} -100 -210 0 0 {name=x1}
+C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -180 -220 3 1 {name=x7}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -960 -700 0 1 {name=x9[1:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -400 -770 0 0 {name=x6[1:0]}
 C {devices/lab_wire.sym} -610 -770 0 0 {name=p11 sig_type=std_logic lab=V_current_drive}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -760 -770 0 1 {name=x3[1:0]}
-C {devices/lab_pin.sym} 860 -520 0 1 {name=p29 sig_type=std_logic lab=Q8
-
-}
-C {devices/lab_pin.sym} 860 -640 0 1 {name=p31 sig_type=std_logic lab=Q2}
-C {devices/lab_pin.sym} 860 -540 0 1 {name=p32 sig_type=std_logic lab=Q7}
 C {devices/ipin.sym} 290 -420 0 0 {name=p14 lab=CLK
 }
-C {devices/lab_wire.sym} 480 -640 0 0 {name=p18 sig_type=std_logic lab=Voutc}
-C {devices/lab_pin.sym} 860 -580 0 1 {name=p19 sig_type=std_logic lab=Q5}

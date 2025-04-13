@@ -41,8 +41,10 @@ VCLK    CLK      VSS   dc 0       pulse (0 {vdda} 0  {TRF} {TRF} {PERIOD_CLK/2} 
 * PROBE
 *----------------------------------------------------------------
 * .save all
-.save i(@m.xdut.x11.x20.xm1.msky130_fd_pr__pfet_01v8[id])
+.save i(@m.xdut.x20.xm1.msky130_fd_pr__pfet_01v8[id])
+.save i(@m.xdut.x11.xb2.xm1.msky130_fd_pr__pfet_01v8[id])
 .save v(xdut.sys_out)
+.save v(xdut.V_cap)
 
 *----------------------------------------------------------------
 * NGSPICE control
@@ -57,9 +59,9 @@ unset askquit
 # write
 # -40 -35 -30 -25 -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120
 set fend = .raw
-foreach vtemp -40 -30 -20 -10 0 10 20 30 40 50 60 70 80 90 100 110 120
+foreach vtemp -30 0 40  80  120
 	option temp=$vtemp
-	tran 25n 2.7u 
+	tran 25n 1u 
 	write {cicname}_$vtemp$fend
 end
 quit
