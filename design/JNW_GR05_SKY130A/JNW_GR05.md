@@ -30,16 +30,17 @@ The temperature-dependent current is mirrored into a resistor connected in serie
 
 
 # Key parameters
+This table is obtained from a simulation run by "make typical".
+| Parameter                     | Min   | Typ              | Max   | Unit   |
+|------------------------------|:-----:|:----------------:|:-----:|:------:|
+| Technology                   |   –   | Skywater 130 nm  |   –   |   –    |
+| AVDD                         | 1.7   | 1.8              | 1.9   | V      |
+| Average Supply Current       | 50    | 60               | 150   | µA     |
+| Temperature                  | -40   | 27               | 125   | °C     |
+| Temperature Dependent Current| 0.96  | N/A              | 1.62  | µA     |
+| Sensitivity                  | -   | 3.98             | -   | nA/°C  |
+| Internal Reference Voltage   | 1.171 | 1.20             | 1.208 | V      |
 
-| Parameter           | Min     | Typ           | Max     | Unit  |
-| :---                | :---:     | :---:           | :---:     | :---: |
-| Technology          |         | Skywater 130 nm |         |       |
-| AVDD                | 1.7    | 1.8           | 1.9    | V     |
-| Average Supply Current             |  50   | 60         | 150   | uA     |
-| Temperature         | -40     | 27            | 125     | C     |
-| Temperature Dependent Current | 0.96     | N/A           | 1.62     | uA     |
-| Sensitivity         | N/A     | 3.98    | N/A | nA/°C  |
-| Internal Reference Voltage | 1.171 | 1.20     | 1.208 | V |
 
 Running for corners yields a similar but less consistent result (see report, this markdown file refuses to load images).
 In contrast, Monte-Carlo Simulation show a significant variation in the output current and the reference voltage. This is unfavorable,
@@ -48,6 +49,3 @@ but can be handled by trimming.
 # About the counter:
 Our objective is to count how many times the capacitor can charge within a given time period. To achieve this, we use a synchronous counter made of JK flip-flops.
 The counter is implemented via verilog.
-
-# For completeness: View of the entire Top-Level design
-![Top-Level Design](../../Media/system_design_good.png)
