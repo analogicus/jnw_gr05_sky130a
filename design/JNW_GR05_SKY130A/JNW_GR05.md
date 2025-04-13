@@ -22,8 +22,7 @@ The major steps are:
 
 Due to the feedback, the inputs of the OTA are close to equal, and a temperature dependent voltage across the resistor is generated based on the difference in the base-emitter voltage of two different BJTs.
 Thus, the current sourced into the BJTs is also linearly dependent in temperature - as desired.
-The general structure is shown in this sketch:
-![Temperature Dependent Current Generation](Media/ptat_ctat_vref.png)
+
 
 # About the reference voltage:
 The temperature-dependent current is mirrored into a resistor connected in series to another diode-connected BJT. The temperature dependency cancels or at least counteracts for a proper choice of the series resistance. Thus, a local temperature-invariant voltage is created which will be used as a reference on the comparator (see below). The voltage reference is also shown in the plot above.
@@ -38,28 +37,17 @@ The temperature-dependent current is mirrored into a resistor connected in serie
 | AVDD                | 1.7    | 1.8           | 1.9    | V     |
 | Average Supply Current             |  50   | 60         | 150   | uA     |
 | Temperature         | -40     | 27            | 125     | C     |
+| Temperature Dependent Current | 0.96     | N/A           | 1.62     | uA     |
+| Sensitivity         | N/A     | 3.98    | N/A | nA/°C  |
+| Internal Reference Voltage | 1.171 | 1.20     | 1.208 | V |
 
-A output for a (take the word!) typical simulation is given by the following figure.
-It shows the temperature-dependent output current which is fed into the capacitor on the left hand side
-and the reference voltage used for the comparator on the right hand side.
-![I_out/V_ref vs. Temperature ](Media/output_vs_temperature.png)
-
-Running for corners yields a similar but less consistent result (see below).
-CAUTION: This is the first corner results, obtained on March 13. No steps taken yet to make it more consistent.
-Output current:
-![All corners: I_out vs. Temperature ](../..Media/current_vs_temperature_corners.png)
-Reference voltage:
-![All corners: V_ref vs. Temperature ](../../Media/voltage_vs_temperature_corners.png)
+Running for corners yields a similar but less consistent result (see report, this markdown file refuses to load images).
+In contrast, Monte-Carlo Simulation show a significant variation in the output current and the reference voltage. This is unfavorable,
+but can be handled by trimming.
 
 # About the counter:
 Our objective is to count how many times the capacitor can charge within a given time period. To achieve this, we use a synchronous counter made of JK flip-flops.
-
-In this counter, all flip-flops share the same clock signal, eliminating the delays found in asynchronous counters. The J and K inputs of each flip-flop are controlled by an AND gate, which takes the input and output of the previous flip-flop. This setup allows the counter to increment in binary.
-
-Additionally, a reset input ensures that all flip-flops in the counter can be reset simultaneously.
-The schematic of the 8 bits counter is shown in the figure below.
-![Counter schematic ](Media/counter.png)
-
+The counter is implemented via verilog.
 
 # For completeness: View of the entire Top-Level design
 ![Top-Level Design](../../Media/system_design_good.png)

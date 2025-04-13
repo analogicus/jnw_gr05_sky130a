@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1744209957
+timestamp 1744576234
 << locali >>
 rect 11788 5433 11980 5438
 rect 4598 5292 11980 5433
@@ -80,12 +80,10 @@ rect 10078 1054 10258 1234
 rect 8668 -375 8836 -207
 rect 10078 -388 10258 -208
 << metal1 >>
-rect 7326 5032 8208 5096
 rect 4550 4743 4731 4749
 rect 4550 4598 4562 4743
 rect 4719 4598 4731 4743
 rect 8144 4624 8208 5032
-rect 9944 5036 10926 5100
 rect 9944 4607 10008 5036
 rect 4550 4592 4731 4598
 rect 4562 4087 4719 4592
@@ -225,16 +223,16 @@ timestamp 1734044400
 transform 1 0 9784 0 1 28
 box -184 -128 1336 928
 << labels >>
-flabel metal1 7326 5032 8208 5096 0 FreeSans 1600 0 0 0 V_n
-port 2 nsew
-flabel metal1 9944 5036 10926 5100 0 FreeSans 1600 0 0 0 V_p
-port 3 nsew
 flabel locali 11788 3424 11980 5438 0 FreeSans 1600 0 0 0 VSS
 port 5 nsew
 flabel metal1 10456 990 11584 1182 0 FreeSans 1600 0 0 0 I_out
 port 9 nsew
 flabel locali 10258 -396 11034 -204 0 FreeSans 1600 0 0 0 VDD
 port 15 nsew
+flabel metal1 8144 4624 8208 5032 0 FreeSans 1600 0 0 0 V_n
+port 16 nsew
+flabel metal1 9944 4607 10008 5036 0 FreeSans 1600 0 0 0 V_p
+port 18 nsew
 << properties >>
 string FIXED_BBOX 0 0 8944 5640
 << end >>

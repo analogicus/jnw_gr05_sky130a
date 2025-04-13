@@ -5,6 +5,16 @@
 [![DOCS](../../actions/workflows/docs.yaml/badge.svg)](../../actions/workflows/docs.yaml)
 [![SIM](../../actions/workflows/sim.yaml/badge.svg)](../../actions/workflows/sim.yaml)
 
+# Disclaimer regarding Layout
+The LVS check is run successfully on the individual design of the Comparator and the OTA. Unfavorable, the LVS fails on the layout for the entire system,
+probably due to a undesired shortcut at some place. Further, issues with the docker for generating the digital layout prohibited the conversion.
+For completeness, the overall layout of the analog part (with the lvs error) is published. Changing the Makefile in the work directory allows verifying that lvs runs successfully for the Comparator and the OTA.
+
+# Disclaimer regarding Counter
+The counter was changed to a verilog based implementation and runs smooth locally, and also the reset signal works properly. Sadly, merging it into the main branch caused issued and sim failure.
+Results are expected to show up in the report.
+
+
 # Who
 Group 05 (Manuel,Emilien,Amir,Fabrice)
 
