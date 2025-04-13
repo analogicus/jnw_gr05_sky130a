@@ -547,7 +547,7 @@ rect 10642 -3604 11102 -3506
 rect 11202 -3604 11203 -3506
 rect 10642 -3605 11203 -3604
 rect 6926 -3666 7563 -3665
-use JNWTR_CAPX1  JNWTR_CAPX1_0 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A
+use JNWTR_CAPX1  JNWTR_CAPX1_0 ../JNW_TR_SKY130A
 timestamp 1737500400
 transform 1 0 7600 0 1 -1300
 box 0 0 1080 1080
@@ -571,7 +571,7 @@ use JNWTR_CAPX1  JNWTR_CAPX1_5
 timestamp 1737500400
 transform 1 0 9700 0 1 -4200
 box 0 0 1080 1080
-use JNWTR_IVX1_CV  x1 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_TR_SKY130A
+use JNWTR_IVX1_CV  x1 ../JNW_GR05_SKY130A/../JNW_TR_SKY130A
 timestamp 1744212116
 transform -1 0 7480 0 -1 -1724
 box -150 -120 2130 440
@@ -587,7 +587,7 @@ use JNWTR_IVX1_CV  x13
 timestamp 1744212116
 transform -1 0 9886 0 -1 -3300
 box -150 -120 2130 440
-use JNWATR_NCH_4C5F0  x14 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+use JNWATR_NCH_4C5F0  x14 ../JNW_GR05_SKY130A/../JNW_ATR_SKY130A
 timestamp 1744065478
 transform 1 0 10384 0 1 -3172
 box -184 -128 1336 928
@@ -595,7 +595,7 @@ use JNWATR_NCH_4C5F0  x15
 timestamp 1744065478
 transform 1 0 6234 0 1 -3128
 box -184 -128 1336 928
-use JNWATR_NCH_2C1F2  xeval1 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+use JNWATR_NCH_2C1F2  xeval1 ../JNW_GR05_SKY130A/../JNW_ATR_SKY130A
 timestamp 1734044400
 transform 1 0 8324 0 1 -3032
 box -184 -128 1208 928
@@ -615,7 +615,7 @@ use JNWATR_NCH_2C1F2  xlatch4
 timestamp 1734044400
 transform -1 0 10168 0 -1 -232
 box -184 -128 1208 928
-use JNWATR_PCH_4C1F2  xpre1 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+use JNWATR_PCH_4C1F2  xpre1 ../JNW_GR05_SKY130A/../JNW_ATR_SKY130A
 timestamp 1734044400
 transform 1 0 5644 0 1 -972
 box -184 -128 1336 928
@@ -623,7 +623,7 @@ use JNWATR_PCH_4C1F2  xpre2
 timestamp 1734044400
 transform 1 0 5644 0 1 28
 box -184 -128 1336 928
-use JNWATR_PCH_8C1F2  xpre3 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_GR05_SKY130A/../JNW_ATR_SKY130A
+use JNWATR_PCH_8C1F2  xpre3 ../JNW_GR05_SKY130A/../JNW_ATR_SKY130A
 timestamp 1734044400
 transform 1 0 7104 0 1 28
 box -184 -128 1592 928
