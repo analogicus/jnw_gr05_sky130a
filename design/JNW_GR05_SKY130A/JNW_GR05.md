@@ -1,4 +1,4 @@
-### About the digital output proportional to temperature
+# About the digital output proportional to temperature
 The idea of our implementation is to count how many times a capacitor charges and discharges within a certain period. To do this, the comparator checks if the capacitor's voltage is higher than a reference voltage. When this happens, the comparator output goes high, which then activates a transistor to discharge the capacitor. Thus, the output of the comparator is a pulse signal that goes high for (approximately) one clock cycle each time the capacitor voltage crosses the reference voltage.
 
 A counter records these pulses. Counting how many times the capacitor charges and discharges gives more precision than just measuring how long it takes for one charge cycle. The longer we count, the higher the accuracy.
@@ -11,7 +11,7 @@ To determine the temperature, we will convert the counter’s (straight) binary 
 
 
 
-### About the time-dependent current
+# About the time-dependent current
 The major steps are:
 * Observe temperature-dependency in the diode equation
 * Take two  Bipolar-Transistors (BJTs) with different cross-sectional area and make them diode-connected.
@@ -24,12 +24,12 @@ Due to the feedback, the inputs of the OTA are close to equal, and a temperature
 Thus, the current sourced into the BJTs is also linearly dependent in temperature - as desired.
 
 
-### About the reference voltage:
+# About the reference voltage:
 The temperature-dependent current is mirrored into a resistor connected in series to another diode-connected BJT. The temperature dependency cancels or at least counteracts for a proper choice of the series resistance. Thus, a local temperature-invariant voltage is created which will be used as a reference on the comparator (see below). The voltage reference is also shown in the plot above.
 
 
 
-### Key parameters
+# Key parameters
 This table is obtained from a simulation run by "make typical".
 | Parameter                     | Min   | Typ              | Max   | Unit   |
 |------------------------------|:-----:|:----------------:|:-----:|:------:|
@@ -46,6 +46,6 @@ Running for corners yields a similar but less consistent result (see report, thi
 In contrast, Monte-Carlo Simulation show a significant variation in the output current and the reference voltage. This is unfavorable,
 but can be handled by trimming.
 
-### About the counter:
+# About the counter:
 Our objective is to count how many times the capacitor can charge within a given time period. To achieve this, we use a synchronous counter made of JK flip-flops.
 The counter is implemented via verilog.
