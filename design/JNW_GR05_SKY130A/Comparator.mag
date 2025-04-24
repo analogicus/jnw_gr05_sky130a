@@ -547,7 +547,7 @@ rect 10642 -3604 11102 -3506
 rect 11202 -3604 11203 -3506
 rect 10642 -3605 11203 -3604
 rect 6926 -3666 7563 -3665
-use JNWTR_CAPX1  JNWTR_CAPX1_0 ~/Documents/NTNU/01_Advanced_Integrated_Circuits/aicex/ip/jnw_gr05_sky130a/design/JNW_TR_SKY130A
+use JNWTR_CAPX1  JNWTR_CAPX1_0 ../JNW_TR_SKY130A
 timestamp 1737500400
 transform 1 0 7600 0 1 -1300
 box 0 0 1080 1080
