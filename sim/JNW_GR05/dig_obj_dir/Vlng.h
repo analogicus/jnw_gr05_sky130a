@@ -25,9 +25,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vlng VL_NOT_FINAL : public VerilatedModel {
     // The application code writes and reads these signals to
     // propagate new values into/out from the Verilated model.
     VL_IN8(&clk,0,0);
-    VL_IN8(&pins,7,0);
-    VL_OUT8(&reset,0,0);
-    VL_OUT8(&temperature,7,0);
+    VL_IN8(&Voutc,0,0);
+    VL_OUT8(&T,7,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.

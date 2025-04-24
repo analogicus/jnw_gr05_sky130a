@@ -2,9 +2,8 @@ import yaml
 import matplotlib.pyplot as plt
 import numpy as np
 
-def main(name="output_tran/tran_SchGtKttTtVt"):
-    
-    return
+def analog_scaling(name="output_tran/tran_SchGtKttTtVt"):
+
     # Path to the YAML file
     yaml_file_path  = name + ".yaml"
     
@@ -84,5 +83,66 @@ def main(name="output_tran/tran_SchGtKttTtVt"):
     
     print(f'Saved diagram as {output_file}')
 
+def digital_output(name="output_tran/tran_SchGtKttTtVt"):
+    
+    # Path to the YAML file
+    yaml_file_path  = name + ".yaml"
+    
+    # Lists to store temperature, i_out, and v_ref values
+    temperatures = []
+    digital_outputs = []
+    # Open and read the YAML file
+    with open(yaml_file_path, 'r') as file:
+        data = yaml.load(file, Loader=yaml.FullLoader)
+
+        # only one key and one value
+        for key, value in data.items():
+            temp = int(key.split('_')[-1])
+            temperatures.append(temp)
+            digital_outputs.append(value)
+
+    """
+    # sort the data based on the temperature
+    sorted_indices = np.argsort(temperatures)
+    temperatures = np.array(temperatures)[sorted_indices]
+    digital_outputs = np.array(digital_outputs)[sorted_indices]
+    """
+
+    # generate linear fit
+    order = 4
+    coeffs = np.polyfit(temperatures, digital_outputs, order)
+    fit_eq = np.poly1d(coeffs)
+    fit_str = ' + '.join([f'{coeff:.4e}x^{order-i}' for i, coeff in enumerate(coeffs)])
+    # Cr
+
+    # Create scatter plot
+    figsize = (15, 6)
+    fontsize = 30
+    plt.figure(figsize=figsize, dpi=300)
+
+    plt.scatter(temperatures, digital_outputs, color='blue', label='Digital Output', marker='x', s=100, linewidth = 3)
+    plt.xlabel('Temperature (°C)', fontsize=0.7*fontsize)
+    plt.ylabel('Digital Output', fontsize=0.7*fontsize)
+    plt.title('Digital Output vs Temperature', fontsize=fontsize, fontweight='bold')
+    #plt.plot(temperatures, fit_eq(temperatures), color='red', linestyle='--', label=fit_str, linewidth=3)
+    plt.legend(loc='upper left', fontsize=0.7*fontsize)
+    plt.grid(True, linestyle='--', alpha=0.6)  # Add grid
+    plt.xticks(fontsize=10)
+    plt.yticks(fontsize=10)
+    plt.tight_layout()
+
+
+
+    # Save and show plot
+    output_file = 'digital_output_vs_temperature.png'
+    plt.savefig(output_file, dpi=300, bbox_inches='tight')
+    #plt.show()
+    print(f'Saved diagram as {output_file}')
+
+
+
 if __name__ == '__main__':
-    main()
+    
+    # analog_scaling()
+    digital_output()
+    

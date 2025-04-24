@@ -8,7 +8,7 @@ T {Cascoding?} 295 -10 0 0 0.4 0.4 {}
 T {Bias Cicuitry
 } -590 -330 0 0 0.4 0.4 {}
 N -350 -40 -310 -40 {
-lab=V_diff_pair_bias}
+lab=VDD}
 N -670 -340 -670 -280 {
 lab=VDD}
 N -710 -250 -670 -250 {
@@ -19,14 +19,8 @@ N -710 -340 -710 -310 {
 lab=VDD}
 N -710 -340 -670 -340 {
 lab=VDD}
-N -350 -140 -350 -40 {
-lab=V_diff_pair_bias}
-N -470 -140 -470 -60 {
-lab=V_diff_pair_bias}
 N -510 -40 -470 -40 {
-lab=V_diff_pair_bias}
-N -470 -60 -470 -40 {
-lab=V_diff_pair_bias}
+lab=VDD}
 N -510 -10 -510 110 {
 lab=V_d_dp_n}
 N -310 -10 -310 110 {
@@ -169,6 +163,8 @@ N -510 180 -410 180 {lab=VSS}
 N -510 170 -510 180 {lab=VSS}
 N -670 20 -670 200 {lab=VSS}
 N -410 180 -410 200 {lab=VSS}
+N -470 -40 -350 -40 {lab=VDD}
+N -410 -70 -410 -40 {lab=VDD}
 C {devices/ipin.sym} -1070 -460 2 1 {name=p1 lab=VDD
 }
 C {devices/ipin.sym} -1070 200 2 1 {name=p2 lab=VSS
@@ -178,20 +174,27 @@ C {devices/ipin.sym} -590 -40 2 1 {name=p3 lab=V_n}
 C {devices/ipin.sym} -230 -40 2 0 {name=p4 lab=V_p
 }
 C {devices/opin.sym} -70 -200 2 1 {name=p5 lab=I_out}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} -270 -40 0 1 {name=x8}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} -550 -40 0 0 {name=x3}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -110 -390 0 0 {name=x4}
-C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -670 -180 1 0 {name=x5}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -110 140 0 0 {name=x9}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -890 140 0 1 {name=x10}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -890 -390 0 1 {name=x11}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} -270 -40 0 1 {name=xri2
+}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} -550 -40 0 0 {name=xli2}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -110 -390 0 0 {name=xro2
+}
+C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -670 -70 1 0 {name=x5}
+C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -110 140 0 0 {name=xro1
+}
+C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -890 140 0 1 {name=xlo1}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -890 -390 0 1 {name=xlo2
+}
 C {devices/lab_pin.sym} -310 -140 0 1 {name=p6 sig_type=std_logic lab=V_diff_pair_bias}
 C {devices/lab_pin.sym} -610 -210 0 1 {name=p7 sig_type=std_logic lab=V_diff_pair_bias_res}
 C {devices/lab_pin.sym} -310 10 0 1 {name=p8 sig_type=std_logic lab=V_d_dp_p}
 C {devices/lab_pin.sym} -510 30 0 1 {name=p9 sig_type=std_logic lab=V_d_dp_n}
 C {devices/lab_pin.sym} -680 -410 0 1 {name=p10 sig_type=std_logic lab=V_2nd_current_mirror}
-C {JNW_ATR_SKY130A/JNWATR_PCH_12C5F0.sym} -630 -250 0 1 {name=x7}
-C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -670 -70 1 0 {name=x6}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -550 140 0 0 {name=x1}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -270 140 0 1 {name=x2}
-C {JNW_ATR_SKY130A/JNWATR_PCH_12C5F0.sym} -450 -250 0 0 {name=x20}
+C {JNW_ATR_SKY130A/JNWATR_PCH_12C5F0.sym} -630 -250 0 1 {name=xb1}
+C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -670 -180 1 0 {name=x6}
+C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -550 140 0 0 {name=xli1}
+C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -270 140 0 1 {name=xri1}
+C {JNW_ATR_SKY130A/JNWATR_PCH_12C5F0.sym} -450 -250 0 0 {name=xb2
+}
+C {devices/lab_pin.sym} -410 -70 0 1 {name=p11 sig_type=std_logic lab=VDD
+}

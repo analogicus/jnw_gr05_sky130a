@@ -1,12 +1,30 @@
+*cicsimgen tran
+
+.param SEED=0
+
+*Nothing here
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include "/opt/pdk/share/pdk/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__tt.pm3.spice"
+.include "/opt/pdk/share/pdk/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+.include "/opt/pdk/share/pdk/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__tt.corner.spice"
+.include "/opt/pdk/share/pdk/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+.include "/opt/pdk/share/pdk/sky130A/libs.tech/ngspice/corners/tt/nonfet.spice"
+.include "/opt/pdk/share/pdk/sky130A/libs.tech/ngspice/all.spice"
+.include "/opt/pdk/share/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice"
+.include "/opt/pdk/share/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice"
+.include "/opt/pdk/share/pdk/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice"
+
+.lib "../../../tech/ngspice/temperature.spi" Tt
+
+.lib "../../../tech/ngspice/supply.spi" Vt
+
 *TB_SUN_TR_SKY130NM/TB_NCM
 *----------------------------------------------------------------
 * Include
 *----------------------------------------------------------------
-#ifdef Lay
-.include ../../../work/lpe/JNW_GR05_lpe.spi
-#else
 .include ../../../work/xsch/JNW_GR05.spice
-#endif
 
 *-----------------------------------------------------------------
 * OPTIONS
@@ -18,7 +36,7 @@
 * PARAMETERS
 *-----------------------------------------------------------------
 .param TRF = 10p
-.param PERIOD_CLK = 20n
+.param PERIOD_CLK = 100n
 .param vdda = 1.8
 .param AVDD = {vdda}
 
@@ -66,14 +84,13 @@ unset askquit
 
 
 # write
-set fend = .raw
-# -40 -35 -30 -25 -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120
-# 35 40 45 50 55
+# -40 -35 -30 -25 -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125 
 
-foreach vtemp -40 -35 -30 -25 -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120 
+set fend = .raw
+foreach vtemp -35 -30 -25 -20, -15, -10, -5, 0, 5, 10, 15, 25, 30, 35, 40, 45, 50, 55, 65, 70, 75, 85, 90, 95, 105, 110, 115, 125
 	option temp=$vtemp
-	tran 1n 500u 
-	write {cicname}_$vtemp$fend
+	tran 50n 450u 
+	write tran_SchGtKttTtVt_$vtemp$fend
 end
 quit
 
@@ -81,3 +98,4 @@ quit
 .endc
 
 .end
+

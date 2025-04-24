@@ -28,14 +28,14 @@ Rsvi8 T.1 0 1G
 Rsvi9 T.0 0 1G
 
 E_STATE_T dec_T 0 value={( 0 
-+ + 128*v(T.7)
-+ + 64*v(T.6)
-+ + 32*v(T.5)
-+ + 16*v(T.4)
-+ + 8*v(T.3)
-+ + 4*v(T.2)
-+ + 2*v(T.1)
-+ + 1*v(T.0)
-+)/3.3}
++ + 128*v(T.7)/AVDD
++ + 64*v(T.6)/AVDD
++ + 32*v(T.5)/AVDD
++ + 16*v(T.4)/AVDD
++ + 8*v(T.3)/AVDD
++ + 4*v(T.2)/AVDD
++ + 2*v(T.1)/AVDD
++ + 1*v(T.0)/AVDD
++)/1000}
 .save v(dec_T)
 

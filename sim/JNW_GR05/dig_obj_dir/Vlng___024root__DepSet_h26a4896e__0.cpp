@@ -16,44 +16,29 @@ VL_INLINE_OPT void Vlng___024root___nba_sequent__TOP__0(Vlng___024root* vlSelf) 
     Vlng__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vlng___024root___nba_sequent__TOP__0\n"); );
     // Init
-    CData/*1:0*/ __Vdly__temp_capture__DOT__state;
-    __Vdly__temp_capture__DOT__state = 0;
-    IData/*19:0*/ __Vdly__temp_capture__DOT__counter;
-    __Vdly__temp_capture__DOT__counter = 0;
+    IData/*18:0*/ __Vdly__dig__DOT__cycle_reset;
+    __Vdly__dig__DOT__cycle_reset = 0;
+    CData/*7:0*/ __Vdly__T;
+    __Vdly__T = 0;
     // Body
-    __Vdly__temp_capture__DOT__counter = vlSelf->temp_capture__DOT__counter;
-    __Vdly__temp_capture__DOT__state = vlSelf->temp_capture__DOT__state;
-    if ((0U == (IData)(vlSelf->temp_capture__DOT__state))) {
-        vlSelf->reset = 0U;
-        if ((0xf4240U <= vlSelf->temp_capture__DOT__counter)) {
-            vlSelf->temp_capture__DOT__captured_value 
-                = vlSelf->pins;
-            __Vdly__temp_capture__DOT__state = 1U;
-            __Vdly__temp_capture__DOT__counter = 0U;
-        } else {
-            __Vdly__temp_capture__DOT__counter = (0xfffffU 
-                                                  & ((IData)(1U) 
-                                                     + vlSelf->temp_capture__DOT__counter));
-        }
-    } else if ((1U == (IData)(vlSelf->temp_capture__DOT__state))) {
-        vlSelf->reset = 1U;
-        if ((0x1eU <= vlSelf->temp_capture__DOT__counter)) {
-            __Vdly__temp_capture__DOT__counter = 0U;
-            __Vdly__temp_capture__DOT__state = 0U;
-        } else {
-            __Vdly__temp_capture__DOT__counter = (0xfffffU 
-                                                  & ((IData)(1U) 
-                                                     + vlSelf->temp_capture__DOT__counter));
-        }
-    } else {
-        __Vdly__temp_capture__DOT__state = 0U;
+    __Vdly__dig__DOT__cycle_reset = vlSelf->dig__DOT__cycle_reset;
+    __Vdly__T = vlSelf->T;
+    if (vlSelf->dig__DOT__rst) {
+        __Vdly__T = 0U;
+    } else if (vlSelf->Voutc) {
+        __Vdly__T = (0xffU & ((IData)(1U) + (IData)(vlSelf->T)));
     }
-    vlSelf->temp_capture__DOT__state = __Vdly__temp_capture__DOT__state;
-    vlSelf->temp_capture__DOT__counter = __Vdly__temp_capture__DOT__counter;
-    vlSelf->temperature = (0xffU & ((IData)(0x14U) 
-                                    + ((IData)(0xfffffffaU) 
-                                       * ((IData)(vlSelf->temp_capture__DOT__captured_value) 
-                                          - (IData)(0x41U)))));
+    vlSelf->T = __Vdly__T;
+    if ((0x7530U == vlSelf->dig__DOT__cycle_reset)) {
+        vlSelf->dig__DOT__rst = 1U;
+        __Vdly__dig__DOT__cycle_reset = 0U;
+    } else {
+        __Vdly__dig__DOT__cycle_reset = (0x7ffffU & 
+                                         ((IData)(1U) 
+                                          + vlSelf->dig__DOT__cycle_reset));
+        vlSelf->dig__DOT__rst = 0U;
+    }
+    vlSelf->dig__DOT__cycle_reset = __Vdly__dig__DOT__cycle_reset;
 }
 
 void Vlng___024root___eval_nba(Vlng___024root* vlSelf) {
@@ -157,5 +142,7 @@ void Vlng___024root___eval_debug_assertions(Vlng___024root* vlSelf) {
     // Body
     if (VL_UNLIKELY((vlSelf->clk & 0xfeU))) {
         Verilated::overWidthError("clk");}
+    if (VL_UNLIKELY((vlSelf->Voutc & 0xfeU))) {
+        Verilated::overWidthError("Voutc");}
 }
 #endif  // VL_DEBUG

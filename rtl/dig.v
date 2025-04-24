@@ -5,10 +5,10 @@ module dig (
 );
 
     logic rst = 0;
-    logic [14:0] cycle_reset = 0;
+    logic [18:0] cycle_reset = 0;
 
     always_ff @(posedge clk) begin
-        if (cycle_reset == 5906) begin
+        if (cycle_reset == 30000) begin
             rst <= 1;
             cycle_reset <= 0;
         end else begin

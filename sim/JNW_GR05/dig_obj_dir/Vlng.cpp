@@ -10,9 +10,8 @@ Vlng::Vlng(VerilatedContext* _vcontextp__, const char* _vcname__)
     : VerilatedModel{*_vcontextp__}
     , vlSymsp{new Vlng__Syms(contextp(), _vcname__, this)}
     , clk{vlSymsp->TOP.clk}
-    , pins{vlSymsp->TOP.pins}
-    , reset{vlSymsp->TOP.reset}
-    , temperature{vlSymsp->TOP.temperature}
+    , Voutc{vlSymsp->TOP.Voutc}
+    , T{vlSymsp->TOP.T}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

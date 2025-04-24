@@ -133,7 +133,7 @@ N 1560 -570 1560 -550 {lab=VDD}
 N 1460 -710 1520 -710 {lab=Vout1}
 N 1600 -710 1660 -710 {lab=R}
 N 1460 -510 1520 -510 {lab=Vout2}
-N 1600 -510 1660 -510 {lab=#net2}
+N 1600 -510 1660 -510 {lab=S}
 C {devices/opin.sym} 2090 -690 2 1 {name=p7 lab=Vout
 }
 C {devices/lab_pin.sym} 1460 -710 0 0 {name=p29 sig_type=std_logic lab=Vout1}
@@ -152,8 +152,6 @@ C {devices/lab_pin.sym} 1990 -450 0 1 {name=p22 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 2210 -520 0 1 {name=p23 sig_type=std_logic lab=S}
 C {devices/lab_pin.sym} 1770 -520 0 0 {name=p24 sig_type=std_logic lab=R}
 C {devices/lab_pin.sym} 1890 -670 0 0 {name=p26 sig_type=std_logic lab=OUT1}
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 2090 -780 0 0 {name=x20 }
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 1890 -780 0 1 {name=x21 }
 C {devices/lab_pin.sym} 1890 -860 0 1 {name=p35 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 2090 -860 0 1 {name=p36 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 800 -730 0 1 {name=p3 sig_type=std_logic lab=Vout1}
@@ -172,24 +170,24 @@ C {devices/ipin.sym} 1030 -460 2 0 {name=p41 lab=Vin2
 C {devices/ipin.sym} 290 -360 2 1 {name=p42 lab=CLK
 
 }
-C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 710 -460 0 0 {name=x22}
-C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 990 -460 0 1 {name=x23}
-C {JNW_ATR_SKY130A/JNWATR_PCH_8C1F2.sym} 910 -840 0 0 {name=x24 }
-C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 910 -620 0 0 {name=x25 }
-C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 790 -620 0 1 {name=x26 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} 350 -840 0 0 {name=x27 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_8C1F2.sym} 790 -840 0 1 {name=x28 }
-C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 810 -360 0 0 {name=x29 }
+C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 710 -460 0 0 {name=xlatch1}
+C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 990 -460 0 1 {name=xlatch2
+}
+C {JNW_ATR_SKY130A/JNWATR_PCH_8C1F2.sym} 910 -840 0 0 {name=xpre4}
+C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 910 -620 0 0 {name=xlatch4}
+C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 790 -620 0 1 {name=xlatch3}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} 350 -840 0 0 {name=xpre1
+}
+C {JNW_ATR_SKY130A/JNWATR_PCH_8C1F2.sym} 790 -840 0 1 {name=xpre3}
+C {JNW_ATR_SKY130A/JNWATR_NCH_2C1F2.sym} 810 -360 0 0 {name=xeval1}
 C {devices/lab_pin.sym} 750 -540 0 0 {name=p44 sig_type=std_logic lab=nodeX}
 C {devices/lab_pin.sym} 950 -540 0 0 {name=p45 sig_type=std_logic lab=nodeY}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} 530 -840 0 0 {name=x30 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} 1170 -840 0 1 {name=x31 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} 1350 -840 0 1 {name=x32 }
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 1180 -430 0 0 {name=x5[0:1]}
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 460 -400 0 0 {name=x1[0:1]}
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 1180 -650 0 0 {name=x2[0:1]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} 530 -840 0 0 {name=xpre2
+}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} 1170 -840 0 1 {name=xpre5}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym} 1350 -840 0 1 {name=xpre6
+}
 C {devices/lab_pin.sym} 1180 -620 0 0 {name=p46 sig_type=std_logic lab=VSS}
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 580 -670 0 0 {name=x3[0:1]}
 C {devices/lab_pin.sym} 580 -640 0 0 {name=p47 sig_type=std_logic lab=VSS}
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 1520 -710 0 0 {name=x1 }
 C {devices/lab_pin.sym} 1560 -650 0 1 {name=p1 sig_type=std_logic lab=VSS}
@@ -197,3 +195,9 @@ C {devices/lab_pin.sym} 1560 -770 0 1 {name=p2 sig_type=std_logic lab=VDD}
 C {JNW_TR_SKY130A/JNWTR_IVX1_CV.sym} 1520 -510 0 0 {name=x2 }
 C {devices/lab_pin.sym} 1560 -450 0 1 {name=p4 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 1560 -570 0 1 {name=p5 sig_type=std_logic lab=VDD}
+C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 580 -720 2 1 {name=xbuf4}
+C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 1180 -700 2 1 {name=xbuf1}
+C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 1180 -480 2 1 {name=xbuf2}
+C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 460 -450 2 1 {name=xbuf3}
+C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 1890 -780 0 0 {name=xbuf5}
+C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 2090 -780 0 0 {name=xbuf6}
