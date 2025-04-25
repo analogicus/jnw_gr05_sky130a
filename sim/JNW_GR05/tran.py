@@ -26,6 +26,7 @@ def analog_scaling(name="output_tran/tran_SchGtKttTtVt"):
                 temp = int(key.split('_')[-1])
                 v_ref.append(value)
 
+    
     # Polynomial fitting
     poly_coeffs = np.polyfit(temperatures, i_out, 2)  # Quadratic fit
     poly_eq = np.poly1d(poly_coeffs)
@@ -101,19 +102,23 @@ def digital_output(name="output_tran/tran_SchGtKttTtVt"):
             temperatures.append(temp)
             digital_outputs.append(value)
 
-    """
+    
     # sort the data based on the temperature
     sorted_indices = np.argsort(temperatures)
     temperatures = np.array(temperatures)[sorted_indices]
     digital_outputs = np.array(digital_outputs)[sorted_indices]
-    """
+    
+    # Manual correction due to (somehow) decimal values
+    max_desired = 258 # 8 bits
+    max_observed = 0.4675
+
+    digital_outputs = digital_outputs * max_desired / max_observed
 
     # generate linear fit
-    order = 4
+    order = 1
     coeffs = np.polyfit(temperatures, digital_outputs, order)
     fit_eq = np.poly1d(coeffs)
     fit_str = ' + '.join([f'{coeff:.4e}x^{order-i}' for i, coeff in enumerate(coeffs)])
-    # Cr
 
     # Create scatter plot
     figsize = (15, 6)
@@ -124,7 +129,10 @@ def digital_output(name="output_tran/tran_SchGtKttTtVt"):
     plt.xlabel('Temperature (°C)', fontsize=0.7*fontsize)
     plt.ylabel('Digital Output', fontsize=0.7*fontsize)
     plt.title('Digital Output vs Temperature', fontsize=fontsize, fontweight='bold')
-    #plt.plot(temperatures, fit_eq(temperatures), color='red', linestyle='--', label=fit_str, linewidth=3)
+
+    # Debugging: Rewrite label for the fit
+    fit_str = f"Polynomial fit of order " + str(order)
+    plt.plot(temperatures, fit_eq(temperatures), color='red', linestyle='--', label=fit_str, linewidth=3)
     plt.legend(loc='upper left', fontsize=0.7*fontsize)
     plt.grid(True, linestyle='--', alpha=0.6)  # Add grid
     plt.xticks(fontsize=10)
