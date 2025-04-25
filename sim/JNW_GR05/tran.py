@@ -30,35 +30,36 @@ def main(name="output_tran/tran_SchGtKttTtVt"):
     # Polynomial fitting
     poly_coeffs = np.polyfit(temperatures, i_out, 2)  # Quadratic fit
     poly_eq = np.poly1d(poly_coeffs)
-    poly_str = f"{poly_coeffs[0]:.4e}x² + {poly_coeffs[1]:.4e}x + {poly_coeffs[2]:.4e}"
+    # use scientific notation for polynomial coefficients with 2 decimal places
+    poly_str = f"{poly_coeffs[0]:.2e}x² + {poly_coeffs[1]:.2e}x + {poly_coeffs[2]:.2e}"
     
     # Create scatter plot with two Y-axes
     fig, ax1 = plt.subplots(figsize=(10, 6), dpi=150)
     ax1.grid(True, linestyle='--', alpha=0.6)  # Add grid
     
     # Scatter plot for i_out
-    ax1.set_xlabel('Temperature (°C)', fontsize=12)
-    ax1.set_ylabel('i_out (µA)', color='tab:blue', fontsize=12)
+    axes_fontsize = 16
+    ax1.set_xlabel('Temperature (°C)', fontsize=axes_fontsize)
+    ax1.set_ylabel('i_out (µA)', color='tab:blue', fontsize=axes_fontsize)
     ax1.scatter(temperatures, [i * 1e6 for i in i_out], color='tab:blue', label='i_out', marker='o')
-    ax1.tick_params(axis='y', labelcolor='tab:blue')
+    ax1.tick_params(axis='x', labelsize=axes_fontsize)
+    ax1.tick_params(axis='y', labelcolor='tab:blue', labelsize=axes_fontsize)
     
     # Scatter plot for v_ref
     ax2 = ax1.twinx()
-    ax2.set_ylabel('v_ref (V)', color='tab:red', fontsize=12)
+    ax2.set_ylabel('v_ref (V)', color='tab:red', fontsize=axes_fontsize)
     ax2.scatter(temperatures, v_ref, color='tab:red', label='v_ref', marker='x')
-    ax2.tick_params(axis='y', labelcolor='tab:red')
+    ax2.tick_params(axis='y', labelcolor='tab:red', labelsize=axes_fontsize)
     
     # Add polynomial fit <curve
     temp_range = np.linspace(min(temperatures), max(temperatures), 100)
-    ax1.plot(temp_range, [poly_eq(t) * 1e6 for t in temp_range], 'b--', label='polynomial fit \non the current')
+    ax1.plot(temp_range, [poly_eq(t) * 1e6 for t in temp_range], 'b--', label='polynomial fit on the current')
 
     # Title
-    plt.title('Output Current vs Temperature', fontsize=14)
+    plt.title('Output Current vs Temperature', fontsize=20, fontweight='bold')
     
-    # Legend
-    lines, labels = ax1.get_legend_handles_labels()
-    lines2, labels2 = ax2.get_legend_handles_labels()
-    ax2.legend(lines + lines2, labels + labels2, loc='center left')
+   
+    
     
     # Sensitivity calculation
     min_i_out, max_i_out = min(i_out) * 1e6, max(i_out) * 1e6
@@ -66,17 +67,21 @@ def main(name="output_tran/tran_SchGtKttTtVt"):
     temperature_range = max(temperatures) - min(temperatures)
     sensitivity = (max_i_out - min_i_out) / temperature_range * 1000 # from uA to nA)
     
-    # Annotation box
-    ax1.text(0.25, 0.12, 
-             f'Min i_out: {min_i_out:.2f} µA, Max i_out: {max_i_out:.2f} µA \n'
-             f'Swing in V_ref: {(max_vref - min_vref):.4f} V \n'
-             f'Temperature Range: {temperature_range}°C \n'
-             f'Sensitivity: {sensitivity:.4f} nA/°C \n'
-             f'Polynomial Fit in I_out: {poly_str}',
-             horizontalalignment='left', verticalalignment='center',
-             transform=ax1.transAxes, fontsize=10,
-             bbox=dict(facecolor='white', alpha=1, edgecolor='black', boxstyle='round,pad=0.5'))
+    # Legend
+    parameter_string = (
+        f'Min i_out: {min_i_out:.2f} µA, Max i_out: {max_i_out:.2f} µA\n'
+        f'Swing in V_ref: {(max_vref - min_vref):.4f} V\n'
+        f'Temperature Range: {temperature_range}°C\n'
+        f'Sensitivity: {sensitivity:.4f} nA/°C\n'
+        f'Polynomial Fit in I_out: {poly_str}'
+    )
     
+
+    lines, labels = ax1.get_legend_handles_labels()
+    lines2, labels2 = ax2.get_legend_handles_labels()
+    ax2.legend(lines + lines2, labels + labels2, loc='upper left', title = parameter_string, fontsize=10)
+    # not transparent
+    plt.gca().get_legend().get_frame().set_alpha(1.0)
     # Save and show plot
     output_file = 'output_vs_temperature.png'
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
