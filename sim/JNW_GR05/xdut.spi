@@ -1,2 +1,2 @@
 *Automatic generated instance fron ../../tech/scripts/genxdut JNW_GR05
-XDUT CompOut VDD_1V8 VSS CLK  JNW_GR05
+XDUT CompOut VDD_1V8 VSS CLK RESET  JNW_GR05
