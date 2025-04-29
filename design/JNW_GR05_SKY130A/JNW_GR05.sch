@@ -25,7 +25,7 @@ F                 Full view
 Manual: https://xschem.sourceforge.io/stefan/xschem_man/xschem_man.pdf
 } -2245 -1715 0 0 0.6 0.6 {}
 T {reset of
-capacitor} 430 -150 0 0 0.4 0.4 {}
+capacitor} 370 -210 0 0 0.4 0.4 {}
 T {reference voltage
 (temperature invariant)
 } -215 -480 0 0 0.4 0.4 {}
@@ -184,8 +184,6 @@ N 320 -90 320 -40 {lab=VSS}
 N 320 -260 320 -150 {lab=V_cap}
 N 160 -260 320 -260 {lab=V_cap}
 N 420 -340 420 -70 {lab=VSS}
-N 520 -390 520 -150 {lab=CompOut}
-N 360 -120 520 -120 {lab=CompOut}
 N 420 -490 420 -440 {lab=VDD_1V8}
 N -30 -600 120 -600 {lab=V_current_drive}
 N 160 -570 160 -525 {lab=V_cap}
@@ -194,7 +192,6 @@ N 160 -900 160 -630 {lab=VDD_1V8}
 N 280 -360 340 -360 {lab=sys_out}
 N 125 -360 275 -360 {lab=sys_out}
 N 160 -260 160 -235 {lab=V_cap}
-N 520 -150 520 -120 {lab=CompOut}
 N 355 -40 420 -40 {lab=VSS}
 N 420 -70 420 -40 {lab=VSS}
 N 275 -360 280 -360 {lab=sys_out}
@@ -208,14 +205,22 @@ N 290 -420 340 -420 {lab=CLK}
 N -20 -360 60 -360 {lab=sys_out}
 N -180 -320 -180 -235 {lab=sys_out}
 N -160 -180 -100 -180 {lab=VSS}
-C {devices/opin.sym} 615 -390 0 0 {name=p5 lab=Voutc
+N 360 -120 480 -120 {lab=resetGate}
+N 420 -40 530 -40 {lab=VSS}
+N 530 -60 530 -40 {lab=VSS}
+N 570 -130 590 -130 {lab=CompOut}
+N 590 -390 590 -130 {lab=CompOut}
+N 570 -110 610 -110 {lab=RESET}
+N 530 -245 530 -160 {lab=VDD_1V8}
+N 530 -80 530 -60 {lab=VSS}
+C {devices/opin.sym} 615 -390 0 0 {name=p5 lab=CompOut
 }
 C {JNW_GR05_SKY130A/Comparator.sym} 420 -390 0 0 {name=x8}
 C {devices/lab_pin.sym} 390 -490 0 0 {name=p20 sig_type=std_logic lab=VDD_1V8
 }
 C {devices/ipin.sym} -1200 -900 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -1200 -40 0 0 {name=p8 lab=VSS}
-C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} -220 -650 0 0 {name=x4[1:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_8C5F0.sym} -220 -650 0 0 {name=x4[2:0]}
 C {sky130_fd_pr/pnp_05v5.sym} -820 -140 0 0 {name=Q3
 model=pnp_05v5_W3p40L3p40
 m=1
@@ -249,6 +254,13 @@ C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} -180 -220 3 1 {name=x7}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -960 -700 0 1 {name=x9[1:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -400 -770 0 0 {name=x6[1:0]}
 C {devices/lab_wire.sym} -610 -770 0 0 {name=p11 sig_type=std_logic lab=V_current_drive}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -760 -770 0 1 {name=x3[1:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -760 -770 0 1 {name=x3}
 C {devices/ipin.sym} 290 -420 0 0 {name=p14 lab=CLK
+}
+C {JNW_TR_SKY130A/JNWTR_ORX1_CV.sym} 570 -110 0 1 {name=x6 }
+C {devices/ipin.sym} 610 -110 0 1 {name=p2 lab=RESET
+}
+C {devices/lab_pin.sym} 530 -245 0 0 {name=p3 sig_type=std_logic lab=VDD_1V8
+}
+C {devices/lab_pin.sym} 450 -120 0 0 {name=p4 sig_type=std_logic lab=resetGate
 }
