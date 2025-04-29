@@ -197,7 +197,8 @@ def comp_error():
             # where the time index modulo 20 is below 10, set to 1.8, else set to 0
         v_clk = np.zeros(len(v_cap))
         for i in range(len(v_clk)):
-            if i % 20 < 10:
+            shift = -3
+            if (i + shift) % 20 < 10:
                 v_clk[i] = 1.8
             else:
                 v_clk[i] = 0
@@ -215,40 +216,53 @@ def comp_error():
         v_clk = v_clk[start_idx:end_idx]
 
         # Create time array based on the length of the data (in us)
-        time = np.arange(len(v_cap)) * 1/20 * 1e-3  # 20 ns clock period in us
+        time = np.arange(len(v_cap))#  * 1000
         
         # Create subplots
-        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), dpi=300)
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 10), dpi=300)
         fig.subplots_adjust(hspace=0.6)  # Increase space between plots
-        title_fontsize = 16
-        axes_fontsize = 14
+        title_fontsize = 22
+        axes_fontsize = 20
 
+        bar_linewidth = 2.5
         # Plot the v_comp and v_clk
-        ax1.plot(time, v_comp, label='V_comp', color='orange')
-        ax1.plot(time, v_clk, label='V_clk', color='blue')
-        ax1.set_title(f'V_comp Signal at {temperature}°C', fontsize=title_fontsize)
-        ax1.set_xlabel('Time (us)', fontsize=axes_fontsize)
+        ax1.plot(time, v_comp, label='V_comp', color='orange', linewidth=bar_linewidth)
+        ax1.plot(time, v_clk, label='V_clk', color='blue', linewidth=bar_linewidth, alpha=0.8, linestyle='--')
+        ax1.set_title("V_comp Signal and CLK", fontsize=title_fontsize, fontweight='bold', pad = 10)
+        ax1.set_xlabel('Time (ns)', fontsize=axes_fontsize)
         ax1.set_ylabel('Voltage (V)', fontsize=axes_fontsize)
         ax1.tick_params(axis='both', labelsize=axes_fontsize)
-        ax1.legend()
+        ax1.legend(fontsize=axes_fontsize, framealpha=1.0)
         ax1.grid(True, linestyle='--', alpha=0.6)
 
 
     
         # Plot the v_ref and v_cap
-        ax2.plot(time, v_ref, label='V_ref', color='green')
-        ax2.plot(time, v_cap, label='V_cap', color='red')
-        ax2.set_title(f'V_ref and V_cap Signals at {temperature}°C', fontsize=title_fontsize)
-        ax2.set_xlabel('Time (us)', fontsize=axes_fontsize)
+        ax2.plot(time, v_ref, label='V_ref', color='green', linewidth=bar_linewidth)
+        ax2.plot(time, v_cap, label='V_cap', color='red', linewidth=bar_linewidth)
+        ax2.set_title("V_ref and V_cap Signals", fontsize=title_fontsize, fontweight='bold', pad = 10)
+        ax2.set_xlabel('Time (ns)', fontsize=axes_fontsize)
         ax2.set_ylabel('Voltage (V)', fontsize=axes_fontsize)
         ax2.tick_params(axis='both', labelsize=axes_fontsize)
         # limit between 0.8 and 1.2
         ax2.set_ylim(0.8, 1.2)
-        ax2.legend()
+        ax2.legend(fontsize=axes_fontsize, framealpha=1.0)
         ax2.grid(True, linestyle='--', alpha=0.6)
 
+        # colorcoding: when v_ref is above v_cap, set the color to green, else red
+            # use a line at 1.2V as top barrier
+        reference = 1.2*np.ones(len(v_ref))
+        # Create a mask for the area where v_ref is above v_cap
+        mask = v_ref > v_cap
+
+        # Plot the area where v_ref is above v_cap
+        #ax2.fill_between(time, 0, reference, where=mask, color='green', alpha=0.3, label='V_ref > V_cap')
+        # Plot the area where v_ref is below v_cap
+        ax2.fill_between(time, 0, reference, where=~mask, color='red', alpha=0.3, label='V_ref < V_cap')
+
+
         # Add a title to the figure 
-        fig.suptitle(f'Simulation Results at {temperature}°C', fontsize=20, fontweight='bold')
+        fig.suptitle(f'Simulation Results at {temperature}°C', fontsize=30, fontweight='bold')
 
         # Save the figure
         plt.savefig(f'simulation_results_{temperature}.png', dpi=300, bbox_inches='tight')
@@ -256,7 +270,7 @@ def comp_error():
 
 
 if __name__ == '__main__':
-    blank()
+    #blank()
     # main()
-    # comp_error()
+    comp_error()
     
