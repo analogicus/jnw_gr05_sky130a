@@ -40,11 +40,11 @@ def main(name="output_tran/tran_SchGtKttTtVt"):
     poly_str = f"{poly_coeffs[0]:.2e}x² + {poly_coeffs[1]:.2e}x + {poly_coeffs[2]:.2e}"
     
     # Create scatter plot with two Y-axes
-    fig, ax1 = plt.subplots(figsize=(10, 6), dpi=150)
+    fig, ax1 = plt.subplots(figsize=(5, 4), dpi=150)
     ax1.grid(True, linestyle='--', alpha=0.6)  # Add grid
     
     # Scatter plot for i_out
-    axes_fontsize = 16
+    axes_fontsize = 15
     ax1.set_xlabel('Temperature (°C)', fontsize=axes_fontsize)
     ax1.set_ylabel('i_out (µA)', color='tab:blue', fontsize=axes_fontsize)
     ax1.scatter(temperatures, [i * 1e6 for i in i_out], color='tab:blue', label='i_out', marker='o')
@@ -59,10 +59,10 @@ def main(name="output_tran/tran_SchGtKttTtVt"):
     
     # Add polynomial fit <curve
     temp_range = np.linspace(min(temperatures), max(temperatures), 100)
-    ax1.plot(temp_range, [poly_eq(t) * 1e6 for t in temp_range], 'b--', label='polynomial fit on the current')
+    ax1.plot(temp_range, [poly_eq(t) * 1e6 for t in temp_range], 'b--', label='polynomial fit i_out')
 
     # Title
-    plt.title('Output Current vs Temperature', fontsize=20, fontweight='bold')
+    plt.title('Output Current vs Temperature', fontsize=18, fontweight='bold', pad = 10)
     
    
     
@@ -79,13 +79,15 @@ def main(name="output_tran/tran_SchGtKttTtVt"):
         f'Swing in V_ref: {(max_vref - min_vref):.4f} V\n'
         f'Temperature Range: {temperature_range}°C\n'
         f'Sensitivity: {sensitivity:.4f} nA/°C\n'
-        f'Polynomial Fit in I_out: {poly_str}'
+        f'Polynomial Fit in I_out: \n{poly_str}'
     )
     
 
     lines, labels = ax1.get_legend_handles_labels()
     lines2, labels2 = ax2.get_legend_handles_labels()
-    ax2.legend(lines + lines2, labels + labels2, loc='upper left', title = parameter_string, fontsize=10)
+    ax2.legend(lines + lines2, labels + labels2, loc='upper left', 
+               #title = parameter_string, 
+               fontsize=12, title_fontsize = 15)
     # not transparent
     plt.gca().get_legend().get_frame().set_alpha(1.0)
     # Save and show plot
@@ -95,12 +97,9 @@ def main(name="output_tran/tran_SchGtKttTtVt"):
     
     print(f'Saved diagram as {output_file}')
 
+def comp_error():
 
-if __name__ == '__main__':
-    # blank()
-    # main()
-    # comp_error()
-    
+
     # find yaml file
     directory = "output_tran"
     filename = "tran_SchGtKttTtVt.yaml"
@@ -254,3 +253,10 @@ if __name__ == '__main__':
         # Save the figure
         plt.savefig(f'simulation_results_{temperature}.png', dpi=300, bbox_inches='tight')
         plt.close(fig)  # Close the figure to free memory
+
+
+if __name__ == '__main__':
+    # blank()
+    main()
+    # comp_error()
+    
