@@ -9,7 +9,7 @@ def blank():
 
 def main(name="output_tran/tran_SchGtKttTtVt"):
     
-    # comment out the main function to avoid running it
+    return # comment out the main function to avoid running it
 
     # Path to the YAML file
     yaml_file_path  = name + ".yaml"
@@ -256,7 +256,7 @@ def comp_error():
 
 
 if __name__ == '__main__':
-    # blank()
-    main()
+    blank()
+    # main()
     # comp_error()
     
