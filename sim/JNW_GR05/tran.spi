@@ -53,7 +53,7 @@ VT7 T.7 T<7> dc 0
 *.save i(@m.xdut.x11.xb2.xm1.msky130_fd_pr__pfet_01v8[id])
 *.save v(xdut.sys_out)
 *.save v(xdut.V_cap)
-
+*.save v(CLK)
 
 *----------------------------------------------------------------
 * NGSPICE control
@@ -68,11 +68,10 @@ unset askquit
 # write
 set fend = .raw
 # -40 -35 -30 -25 -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120
-# 35 40 45 50 55
 
-foreach vtemp -40 
+foreach vtemp -40 -35 -30 -25 -20, -15, -10, -5
 	option temp=$vtemp
-	tran 1n 800u 
+	tran 1n 650u 
 	write {cicname}_$vtemp$fend
 end
 quit

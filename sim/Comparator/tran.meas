@@ -5,8 +5,8 @@ load {cicname}.raw
 
 echo "MEAS_START"
 
-meas tran Vout1 find Vout1 at=2u
-meas tran Vout2 find Vout2 at=2u
+meas tran Vout1 find v(xdut.Vout1) at=2u
+meas tran Vout2 find v(xdut.Vout2) at=2u
 
 echo "MEAS_END"
 .endc

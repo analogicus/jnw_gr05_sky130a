@@ -109,10 +109,10 @@ def digital_output(name="output_tran/tran_SchGtKttTtVt"):
     digital_outputs = np.array(digital_outputs)[sorted_indices]
     
     # Manual correction due to (somehow) decimal values
-    max_desired = 258 # 8 bits
+    max_desired = 256 # 8 bits
     max_observed = 0.4675
 
-    digital_outputs = digital_outputs * max_desired / max_observed
+    # digital_outputs = digital_outputs * max_desired / max_observed
 
     # generate linear fit
     order = 1
@@ -120,23 +120,26 @@ def digital_output(name="output_tran/tran_SchGtKttTtVt"):
     fit_eq = np.poly1d(coeffs)
     fit_str = ' + '.join([f'{coeff:.4e}x^{order-i}' for i, coeff in enumerate(coeffs)])
 
+    print(f'Polynomial fit: {fit_str}')
+
     # Create scatter plot
-    figsize = (15, 6)
-    fontsize = 30
+    figsize = (10, 6)
+    title_fontsize = 25
+    axes_fontsize = 20
     plt.figure(figsize=figsize, dpi=300)
 
     plt.scatter(temperatures, digital_outputs, color='blue', label='Digital Output', marker='x', s=100, linewidth = 3)
-    plt.xlabel('Temperature (°C)', fontsize=0.7*fontsize)
-    plt.ylabel('Digital Output', fontsize=0.7*fontsize)
-    plt.title('Digital Output vs Temperature', fontsize=fontsize, fontweight='bold')
+    plt.xlabel('Temperature (°C)', fontsize=axes_fontsize)
+    plt.ylabel('Digital Output', fontsize=axes_fontsize)
+    plt.title('Digital Output vs Temperature', fontsize=title_fontsize, fontweight='bold', pad = 10)
 
     # Debugging: Rewrite label for the fit
     fit_str = f"Polynomial fit of order " + str(order)
     plt.plot(temperatures, fit_eq(temperatures), color='red', linestyle='--', label=fit_str, linewidth=3)
-    plt.legend(loc='upper left', fontsize=0.7*fontsize)
+    plt.legend(loc='upper left', fontsize=axes_fontsize)
     plt.grid(True, linestyle='--', alpha=0.6)  # Add grid
-    plt.xticks(fontsize=10)
-    plt.yticks(fontsize=10)
+    plt.xticks(fontsize=axes_fontsize)
+    plt.yticks(fontsize=axes_fontsize)
     plt.tight_layout()
 
 

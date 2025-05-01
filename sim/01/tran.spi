@@ -1,0 +1,83 @@
+*TB_SUN_TR_SKY130NM/TB_NCM
+*----------------------------------------------------------------
+* Include
+*----------------------------------------------------------------
+#ifdef Lay
+.include ../../../work/lpe/JNW_GR05_lpe.spi
+#else
+.include ../../../work/xsch/JNW_GR05.spice
+#endif
+
+*-----------------------------------------------------------------
+* OPTIONS
+*-----------------------------------------------------------------
+.option TNOM=27 GMIN=1e-15 reltol=1e-3
+*.options savecurrents
+
+*-----------------------------------------------------------------
+* PARAMETERS
+*-----------------------------------------------------------------
+.param TRF = 10p
+.param PERIOD_CLK = 20n
+.param vdda = 1.8
+.param AVDD = {vdda}
+
+*-----------------------------------------------------------------
+* FORCE
+*-----------------------------------------------------------------
+VSS     VSS      0     dc 0
+VDD     VDD_1V8  VSS   dc {vdda}
+VCLK    CLK      VSS   dc 0       pulse (0 {vdda} 0  {TRF} {TRF} {PERIOD_CLK/2}  {PERIOD_CLK} )
+
+
+*-----------------------------------------------------------------
+* DUT
+*-----------------------------------------------------------------
+.include ../xdut.spi
+.include ../svinst.spi
+
+VT0 T.0 T<0> dc 0
+VT1 T.1 T<1> dc 0
+VT2 T.2 T<2> dc 0
+VT3 T.3 T<3> dc 0
+VT4 T.4 T<4> dc 0
+VT5 T.5 T<5> dc 0
+VT6 T.6 T<6> dc 0
+VT7 T.7 T<7> dc 0
+
+*----------------------------------------------------------------
+* PROBE
+*----------------------------------------------------------------
+*.save v(Voutc)
+*.save i(@m.xdut.x20.xm1.msky130_fd_pr__pfet_01v8[id])
+*.save i(@m.xdut.x11.xb2.xm1.msky130_fd_pr__pfet_01v8[id])
+*.save v(xdut.sys_out)
+*.save v(xdut.V_cap)
+*.save v(CLK)
+
+*----------------------------------------------------------------
+* NGSPICE control
+*----------------------------------------------------------------
+.control
+set num_threads=14
+set color0=white
+set color1=black
+unset askquit
+
+
+# write
+set fend = .raw
+# -40 -35 -30 -25 -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120
+# 35 40 45 50 55
+
+foreach vtemp  0, 5, 10, 15, 20, 25, 30, 35
+	option temp=$vtemp
+	tran 1n 650u 
+	write {cicname}_$vtemp$fend
+end
+quit
+
+
+.endc
+
+.end

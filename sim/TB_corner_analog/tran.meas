@@ -13,7 +13,9 @@ foreach vtemp -40 -30 -20 -10 0 10 20 30 40 50 60 70 80 90 100 110 120
 	load {cicname}_$vtemp$fend
 	meas tran i_out_$vtemp find i(@m.xdut.x6.xm1.msky130_fd_pr__pfet_01v8[id]) at=100n
 	meas tran v_ref_$vtemp find v(xdut.sys_out) at=100n
-
+	
+	meas tran v_n_$vtemp find v(xdut.v_n) at=100n
+	meas tran v_p_$vtemp find v(xdut.v_p) at=100n
 end
 
 echo "MEAS_END"

@@ -1,0 +1,40 @@
+* Measure JNW_GR05
+.control
+
+load tran_SchGtKttTtVt.raw
+
+echo "MEAS_START"
+
+# meas tran v_bias find v(xdut.x11.V_diff_pair_bias) at=1u
+# meas tran v_current_mirror find v(xdut.x11.V_diff_pair_bias_res) at=1u
+
+
+
+set fend = .raw
+# -40 -35 -30 -25 -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120
+foreach vtemp -40 -35 -30 -25 -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120
+	load tran_SchGtKttTtVt_$vtemp$fend
+	* meas tran i_out_$vtemp find i(@m.xdut.x6.xm1.msky130_fd_pr__pfet_01v8[id]) at=100n
+	* meas tran v_out_$vtemp find v(xdut.sys_out) at=100n
+	* meas tran i_bias0_$vtemp find i(@m.xdut.x11.x20.xm1.msky130_fd_pr__pfet_01v8[id]) at=100n
+	meas tran dig_output_$vtemp find dec_t at=434u
+
+end
+
+	
+
+# meas tran V_drive find v(xdut.V_current_drive) at=1u
+
+# BJT
+# meas tran V_big find v(xdut.V_bjt_n) at=1u
+# meas tran V_small find v(xdut.V_p) at=1u
+
+# OTA
+# meas tran ota_n find v(xdut.V_n) at=1u
+# meas tran ota_p find v(xdut.V_p) at=1u
+# meas tran ota_out find v(xdut.OTA_out) at=1u
+# meas tran ota_output_stage find i(v_i2) at=1u
+
+echo "MEAS_END"
+.endc
+

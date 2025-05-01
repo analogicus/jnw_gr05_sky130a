@@ -205,15 +205,10 @@ N 290 -420 340 -420 {lab=CLK}
 N -20 -360 60 -360 {lab=sys_out}
 N -180 -320 -180 -235 {lab=sys_out}
 N -160 -180 -100 -180 {lab=VSS}
-N 360 -120 480 -120 {lab=resetGate}
-N 420 -40 530 -40 {lab=VSS}
-N 530 -60 530 -40 {lab=VSS}
-N 570 -130 590 -130 {lab=CompOut}
-N 590 -390 590 -130 {lab=CompOut}
-N 570 -110 610 -110 {lab=RESET}
-N 530 -245 530 -160 {lab=VDD_1V8}
-N 530 -80 530 -60 {lab=VSS}
-C {devices/opin.sym} 615 -390 0 0 {name=p5 lab=CompOut
+N 360 -120 480 -120 {lab=CompOut}
+N 480 -120 560 -120 {lab=CompOut}
+N 560 -390 560 -120 {lab=CompOut}
+C {devices/opin.sym} 615 -390 0 0 {name=p5 lab=Voutc
 }
 C {JNW_GR05_SKY130A/Comparator.sym} 420 -390 0 0 {name=x8}
 C {devices/lab_pin.sym} 390 -490 0 0 {name=p20 sig_type=std_logic lab=VDD_1V8
@@ -256,11 +251,6 @@ C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -400 -770 0 0 {name=x6[1:0]}
 C {devices/lab_wire.sym} -610 -770 0 0 {name=p11 sig_type=std_logic lab=V_current_drive}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -760 -770 0 1 {name=x3}
 C {devices/ipin.sym} 290 -420 0 0 {name=p14 lab=CLK
-}
-C {JNW_TR_SKY130A/JNWTR_ORX1_CV.sym} 570 -110 0 1 {name=x6 }
-C {devices/ipin.sym} 610 -110 0 1 {name=p2 lab=RESET
-}
-C {devices/lab_pin.sym} 530 -245 0 0 {name=p3 sig_type=std_logic lab=VDD_1V8
 }
 C {devices/lab_pin.sym} 450 -120 0 0 {name=p4 sig_type=std_logic lab=resetGate
 }
